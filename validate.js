@@ -22,6 +22,8 @@ for(const [name,count] of [['provinces',26],['provinceDetails',26],['mapPosition
 for(const name of ['explorerQuestions','masterQuestions']){const match=app.match(new RegExp(`const ${name}=\\[(.*?)\\];`,'s'));assert(match&&((match[1].match(/\{topic:/g)||[]).length===10),`${name} must contain 10 questions`)}
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('content-en.js','utf8'),sandbox);const en=sandbox.window.enContent;
 assert(en.provinces.length===26,'English province profiles must contain 26 entries');assert(en.questions.length===10&&en.levelQuestions.explorer.length===10&&en.levelQuestions.master.length===10,'English quiz banks must contain 10 questions each');
+assert(en.provinceProfiles.length===26&&en.provinceProfiles.every(profile=>profile.length===5),'English cultural province profiles must contain 26 complete entries');
+const profileMatch=app.match(/const provinceProfiles = \[(.*?)\];/s);assert(profileMatch&&((profileMatch[1].match(/^  \[/gm)||[]).length===26),'French cultural province profiles must contain 26 entries');
 const build=fs.readFileSync('build.js','utf8'),worker=fs.readFileSync('sw.js','utf8');
 const buildFiles=[...build.matchAll(/'([^']+)'/g)].map(match=>match[1]).filter(file=>fs.existsSync(file)&&fs.statSync(file).isFile());
 for(const file of buildFiles)assert(worker.includes(`./${file}`)||file==='sw.js',`Service worker does not cache build asset: ${file}`);

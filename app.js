@@ -32,6 +32,36 @@ const provinceDetails = [
 
 const mapPositions = [[53,14],[32,32],[65,86],[61,76],[67,17],[76,28],[40,63],[46,68],[52,67],[26,65],[20,74],[31,72],[34,60],[56,70],[51,85],[28,48],[61,53],[41,22],[78,42],[31,13],[52,56],[74,55],[24,22],[69,68],[58,34],[45,38]];
 
+// Introductory snapshots: languages, foods and communities can cross borders.
+const provinceProfiles = [
+  ['Aketi, Bondo','Lingala, français et langues locales','Manioc, banane plantain et poisson de rivière','Agriculture, forêt et commerce local','Rivière Uele et paysages de savane'],
+  ['Bikoro, Basankusu','Lingala, français et langues mongo','Poisson, chikwangue et produits forestiers','Pêche, agriculture et transport fluvial','Jardin botanique d’Eala et fleuve Congo'],
+  ['Likasi, Kasumbalesa','Swahili, français et langues locales','Bukari, haricots et légumes-feuilles','Cuivre, cobalt, industrie et commerce frontalier','Chutes de la Lofoï et musées de Lubumbashi'],
+  ['Bukama, Malemba-Nkulu','Swahili, français et langues locales','Maïs, manioc et poisson','Agriculture, pêche et transport ferroviaire','Parc national de l’Upemba'],
+  ['Watsa, Dungu','Lingala, français, pazande et langues locales','Manioc, arachides et produits de savane','Agriculture, or et élevage','Parc national de la Garamba'],
+  ['Aru, Mahagi, Mambasa','Swahili, français et langues de l’Ituri','Banane plantain, manioc et poisson','Agriculture, commerce, or et élevage','Réserve de faune à okapis et lac Albert'],
+  ['Tshikapa, Ilebo','Tshiluba, français et langues locales','Fufu, feuilles de manioc et poisson','Diamant, agriculture et commerce','Rivière Kasaï et paysages de Tshikapa'],
+  ['Tshimbulu, Demba','Tshiluba et français','Fufu de maïs ou manioc, légumes-feuilles','Agriculture, commerce et artisanat','Rivière Lulua et sites culturels de Kananga'],
+  ['Miabi, Tshilenge','Tshiluba et français','Fufu, haricots et feuilles de manioc','Diamant, agriculture et commerce','Rivière Mbuji-Mayi et paysages du Kasaï'],
+  ['Maluku, Nsele','Lingala et français, avec de nombreuses langues du pays','Liboke, pondu, chikwangue et cuisine urbaine','Services, commerce, culture et industries','Fleuve Congo, Mont Ngaliema et Académie des beaux-arts'],
+  ['Boma, Muanda, Mbanza-Ngungu','Kikongo ya leta, français et langues kongo','Chikwangue, poisson, saka-saka et noix de palme','Ports, agriculture, énergie et commerce','Côte atlantique, Inga et ancien paysage de Mbanza Kongo'],
+  ['Kasongo-Lunda, Popokabaka','Kikongo ya leta, français et langues locales','Manioc, maïs et produits agricoles','Agriculture, élevage et commerce','Rivière Kwango et plateaux du sud-ouest'],
+  ['Kikwit, Bulungu, Idiofa','Kikongo ya leta, français et langues locales','Fufu, poisson et légumes-feuilles','Agriculture, commerce et transformation alimentaire','Rivières Kwilu et Kasaï'],
+  ['Mwene-Ditu, Lubao','Tshiluba, français et langues locales','Fufu, manioc, maïs et arachides','Agriculture, transport et commerce','Rivière Lomami et carrefour de Mwene-Ditu'],
+  ['Dilolo, Fungurume','Swahili, français et langues locales','Bukari, haricots et légumes','Cuivre, cobalt, industrie et transport','Gorges de la Lufira et paysages du plateau minier'],
+  ['Kutu, Mushie','Lingala, kikongo ya leta, français et langues locales','Poisson, manioc et produits forestiers','Pêche, agriculture et transport lacustre','Lac Mai-Ndombe et forêt du bassin central'],
+  ['Kasongo, Punia','Swahili, français et langues locales','Riz, manioc, poisson et banane plantain','Agriculture, or, étain et transport fluvial','Fleuve Lualaba et forêt de Maniema'],
+  ['Bumba, Bongandanga','Lingala, français et langues locales','Poisson, manioc et banane plantain','Agriculture, forêt et transport fluvial','Fleuve Congo et plantations de Bumba'],
+  ['Beni, Butembo','Swahili, français, kinande et autres langues locales','Banane plantain, haricots, manioc et pommes de terre','Agriculture, commerce et tourisme naturel','Virunga, lac Kivu et volcans Nyiragongo–Nyamulagira'],
+  ['Bosobolo, Yakoma','Lingala, français et langues de l’Ubangi','Manioc, arachides, poisson et produits agricoles','Agriculture, élevage et commerce transfrontalier','Rivière Ubangi et paysages de Gbadolite'],
+  ['Lodja, Kole','Tshiluba, lingala, français et langues locales','Manioc, maïs, poisson et produits forestiers','Agriculture, forêt et commerce','Rivière Sankuru et paysages du centre'],
+  ['Uvira, Baraka','Swahili, français, mashi et autres langues locales','Sambaza, banane plantain, haricots et manioc','Agriculture, pêche, commerce et élevage','Lac Kivu, lac Tanganyika et parc de Kahuzi-Biega'],
+  ['Zongo, Libenge','Lingala, français et langues de l’Ubangi','Manioc, maïs, poisson et arachides','Agriculture, commerce et transport fluvial','Rivière Ubangi et ville frontalière de Zongo'],
+  ['Kongolo, Moba','Swahili, français et langues locales','Poisson du Tanganyika, manioc et maïs','Pêche, agriculture, mines et transport lacustre','Lac Tanganyika et parc national de Kundelungu'],
+  ['Bafwasende, Banalia, Ubundu','Swahili, lingala, français et langues locales','Poisson, banane plantain, riz et manioc','Agriculture, forêt, commerce et transport fluvial','Chutes Boyoma et fleuve Congo'],
+  ['Ikela, Monkoto','Lingala, français et langues mongo','Manioc, poisson et produits forestiers','Agriculture, forêt, pêche et transport fluvial','Rivière Tshuapa et parc national de la Salonga']
+];
+
 const questions = [
   {topic:'GÉOGRAPHIE', q:'Quelle est la capitale de la RDC ?', a:['Kinshasa','Kisangani','Lubumbashi','Matadi'], correct:0, fact:'Kinshasa est la capitale et une ville-province.'},
   {topic:'PROVINCES', q:'Combien de provinces compte la RDC ?', a:['10','18','26','32'], correct:2, fact:'Depuis le découpage territorial appliqué en 2015, la RDC compte 26 provinces.'},
@@ -133,7 +163,12 @@ document.querySelector('#journeyGrid').addEventListener('click',e=>{
 });
 document.querySelector('#journeyGrid').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.journey!==undefined){e.preventDefault();e.target.click()}});
 function openProvinceProfile(index){
-  const p=provinces[index],d=provinceDetails[index];openLesson({icon:'⌖',title:p[0],color:'#f0bd5b',lead:`${p[1]} est le chef-lieu de la province ${p[0]}. ${d[2]}`,facts:[['Zone d’exploration',d[0]],['Chef-lieu',p[1]],['Repère à découvrir',d[1]]]},{label:'PROFIL PROVINCE',number:`PROVINCE ${String(index+1).padStart(2,'0')} SUR 26`});
+  const p=provinces[index],english=localStorage.getItem('mbokaLang')==='en';
+  const d=english&&window.enContent?window.enContent.provinces[index]:provinceDetails[index];
+  const x=english&&window.enContent?window.enContent.provinceProfiles[index]:provinceProfiles[index];
+  const labels=english?['Broad region','Capital','Major towns','Languages spoken','Food traditions','Economy and resources','Famous places']:['Zone d’exploration','Chef-lieu','Villes importantes','Langues parlées','Traditions culinaires','Économie et ressources','Lieux célèbres'];
+  const lead=english?`${p[1]} is the capital of ${p[0]} province. ${d[2]}`:`${p[1]} est le chef-lieu de la province ${p[0]}. ${d[2]}`;
+  openLesson({icon:'⌖',title:p[0],color:'#f0bd5b',lead,facts:[[labels[0],d[0]],[labels[1],p[1]],...x.map((value,i)=>[labels[i+2],value])]},{label:english?'PROVINCE PROFILE':'PROFIL PROVINCE',number:english?`PROVINCE ${String(index+1).padStart(2,'0')} OF 26`:`PROVINCE ${String(index+1).padStart(2,'0')} SUR 26`});
 }
 document.querySelector('#provinceList').addEventListener('click',e=>{
   const audio=e.target.closest('[data-speak-province]');if(audio){e.stopPropagation();const i=provinces.findIndex(p=>p[0]===audio.dataset.speakProvince),p=provinces[i];speakPhrase(`${p[0]}. ${localStorage.getItem('mbokaLang')==='en'?'Capital':'Chef-lieu'}: ${p[1]}.`,audio);return}
