@@ -17,9 +17,11 @@ assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
 assert(html.includes('id="printLessonPlan"'),'Printable lesson-plan button is missing');
+assert(html.includes('id="printProgress"'),'Printable progress-report button is missing');
 assert(!/<input[^>]+type=["'](?:email|password)["']/i.test(html),'Pilot must not request email or passwords');
 const app=fs.readFileSync('app.js','utf8');
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
+assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(!/\beval\s*\(|new\s+Function\s*\(/.test(app),'Unsafe dynamic code execution found');
 assert((app.match(/name:'/g)||[]).length>=4&&app.includes('achievementProfiles'),'Achievement profiles are incomplete');
 assert(app.includes('kingdomProfiles')&&['Kongo','Luba','Lunda','Kuba'].every(name=>app.includes(`name:'${name}'`)),'Traditional kingdom profiles are incomplete');
