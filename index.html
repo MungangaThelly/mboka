@@ -10,6 +10,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="lessons.css">
+  <link rel="stylesheet" href="lingala.css">
   <link rel="stylesheet" href="sprint.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="memory.css">
@@ -60,6 +61,11 @@
     <section class="section" id="explorer">
       <div class="section-heading"><div><span class="eyebrow">Choisis ta route</span><h2>Un pays, mille découvertes</h2></div><p>Chaque parcours contient des histoires courtes, des faits étonnants et des défis.</p></div>
       <div class="journey-grid" id="journeyGrid"></div>
+    </section>
+
+    <section class="lingala-section" id="lingalaGame">
+      <div class="lingala-intro"><span class="eyebrow light">Défi linguistique</span><h2>Mbote !<br>Pratique le lingala</h2><p>Choisis la bonne signification. Cinq manches rapides pour retenir les premiers mots.</p><div class="lingala-score"><span id="lingalaRound">1 / 5</span><strong><span id="lingalaScore">0</span> points</strong></div></div>
+      <div class="lingala-game-card"><small id="lingalaPrompt">QUE SIGNIFIE…</small><div class="spoken-title"><h3 id="lingalaWord">Mbote</h3><button class="speak-control" id="lingalaSpeak" aria-label="Écouter le mot">♪</button></div><div class="lingala-options" id="lingalaOptions"></div><p class="lingala-feedback" id="lingalaFeedback" aria-live="polite"></p><button class="button primary" id="lingalaNext" hidden>Continuer →</button><div class="lingala-result" id="lingalaResult" hidden><span>✦</span><h3 id="lingalaResultTitle">Malamu!</h3><p id="lingalaResultText"></p><button class="button primary" id="lingalaRestart">Rejouer</button></div></div>
     </section>
 
     <section class="memory-section" id="memory">
