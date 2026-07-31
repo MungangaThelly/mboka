@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','icon.svg'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','icon.svg'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -24,6 +24,7 @@ assert(app.includes('communityProfiles')&&app.includes('renderCommunities'),'Com
 assert(app.includes('foodProfiles')&&['Pondu','Fufu','Liboke','Chikwangue','Mikate'].every(name=>app.includes(`name:'${name}'`)),'Food culture profiles are incomplete');
 assert(app.includes('environmentProfiles')&&app.includes('renderEnvironment'),'Environment and science profiles are incomplete');
 assert(app.includes('resourceProfiles')&&app.includes('supplySteps')&&app.includes('renderResources'),'Natural-resource learning profiles are incomplete');
+assert(app.includes('creativityProfiles')&&app.includes('renderCreativity'),'Music, art and creativity profiles are incomplete');
 for(const [name,count] of [['provinces',26],['provinceDetails',26],['mapPositions',26]]){const match=app.match(new RegExp(`const ${name} =? ?\\[(.*?)\\];`,'s'));assert(match,`Could not find ${name}`);const actual=name==='mapPositions'?(match[1].match(/\[\d+,\d+\]/g)||[]).length:(match[1].match(/\['/g)||[]).length;assert(actual===count,`${name} has ${actual} entries; expected ${count}`)}
 for(const name of ['explorerQuestions','masterQuestions']){const match=app.match(new RegExp(`const ${name}=\\[(.*?)\\];`,'s'));assert(match&&((match[1].match(/\{topic:/g)||[]).length===10),`${name} must contain 10 questions`)}
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('content-en.js','utf8'),sandbox);const en=sandbox.window.enContent;
