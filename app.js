@@ -62,6 +62,14 @@ const provinceProfiles = [
   ['Ikela, Monkoto','Lingala, français et langues mongo','Manioc, poisson et produits forestiers','Agriculture, forêt, pêche et transport fluvial','Rivière Tshuapa et parc national de la Salonga']
 ];
 
+const achievementProfiles=[
+  {icon:'⚕',field:['SCIENCE ET SANTÉ','SCIENCE & HEALTH'],name:'Jean-Jacques Muyembe-Tamfum',text:['Virologue et professeur, il a participé à l’étude de la première flambée connue d’Ebola en 1976 et a renforcé la recherche biomédicale congolaise.','A virologist and professor, he helped investigate the first known Ebola outbreak in 1976 and strengthened biomedical research in the DRC.'],highlight:['Leadership mondial en santé publique','Global leadership in public health']},
+  {icon:'✦',field:['MÉDECINE ET PAIX','MEDICINE & PEACE'],name:'Denis Mukwege',text:['Médecin de Bukavu et fondateur de l’hôpital de Panzi, il a reçu le prix Nobel de la paix 2018 pour son combat contre les violences sexuelles en temps de guerre.','A physician from Bukavu and founder of Panzi Hospital, he received the 2018 Nobel Peace Prize for fighting wartime sexual violence.'],highlight:['Prix Nobel de la paix · 2018','Nobel Peace Prize · 2018']},
+  {icon:'●',field:['SPORT ET SOLIDARITÉ','SPORT & SERVICE'],name:'Dikembe Mutombo',text:['Né à Kinshasa, il est devenu une grande figure du basketball professionnel et a soutenu des projets de santé et d’éducation en RDC.','Born in Kinshasa, he became a major professional basketball figure and supported health and education projects in the DRC.'],highlight:['Basketball Hall of Fame · 2015','Basketball Hall of Fame · 2015']},
+  {icon:'◇',field:['DROITS ET PAIX','RIGHTS & PEACE'],name:'Julienne Lusenge',text:['Militante congolaise, elle défend les droits des femmes, accompagne les survivantes de violences et porte leur voix dans les espaces internationaux.','A Congolese activist, she champions women’s rights, supports survivors of violence and carries their voices into international forums.'],highlight:['Leadership communautaire','Community leadership']}
+];
+function renderAchievements(){const english=localStorage.getItem('mbokaLang')==='en',n=english?1:0;document.querySelector('#reussites .eyebrow').textContent=english?'Inspiring figures':'Figures inspirantes';document.querySelector('#reussites h2').innerHTML=english?'People who<br>move us forward.':'Des parcours<br>qui font avancer.';document.querySelector('#achievementIntro').textContent=english?'Meet Congolese people whose work has made an impact in science, peace, sport and society.':'Découvre des Congolaises et Congolais dont le travail rayonne dans la science, la paix, le sport et la société.';document.querySelector('#achievementGrid').innerHTML=achievementProfiles.map(person=>`<article class="achievement-card"><span class="achievement-icon">${person.icon}</span><div><small>${person.field[n]}</small><h3>${person.name}</h3><p>${person.text[n]}</p><strong>${person.highlight[n]}</strong></div></article>`).join('')}
+
 const questions = [
   {topic:'GÉOGRAPHIE', q:'Quelle est la capitale de la RDC ?', a:['Kinshasa','Kisangani','Lubumbashi','Matadi'], correct:0, fact:'Kinshasa est la capitale et une ville-province.'},
   {topic:'PROVINCES', q:'Combien de provinces compte la RDC ?', a:['10','18','26','32'], correct:2, fact:'Depuis le découpage territorial appliqué en 2015, la RDC compte 26 provinces.'},
@@ -127,6 +135,7 @@ function renderDaily(){
 document.querySelector('#completeDaily').addEventListener('click',()=>{const history=new Set(dailyHistory());history.add(localDateKey());localStorage.setItem('mbokaDailyHistory',JSON.stringify([...history].sort()));renderDaily();showAudioNotice(localStorage.getItem('mbokaLang')==='en'?'Daily discovery completed! +50 points':'Découverte du jour terminée ! +50 points')});
 
 const explored=safeJsonArray('mbokaExplored').filter(value=>Number.isInteger(value)&&value>=0&&value<journeys.length);
+renderAchievements();
 document.querySelector('#journeyGrid').innerHTML = journeys.map((j,i)=>`<article class="journey-card ${explored.includes(i)?'completed':''}" style="background:${j.color}" tabindex="0" role="button" data-journey="${i}"><span class="icon">${j.icon}</span><div><small>PARCOURS ${String(i+1).padStart(2,'0')}</small><h3>${j.title}</h3><p>${j.text}</p></div><span class="go">→</span></article>`).join('');
 
 const list = document.querySelector('#provinceList');
