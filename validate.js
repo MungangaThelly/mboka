@@ -12,6 +12,8 @@ const headerNames=new Set(globalHeaders.map(header=>header.key));
 const html=fs.readFileSync('index.html','utf8');
 assert(!/https?:\/\//.test(html),'index.html contains an external network dependency');
 assert(html.includes('privacy.html'),'Privacy link is missing');
+const privacy=fs.readFileSync('privacy.html','utf8');
+assert(privacy.includes('id="privacy-en"')&&privacy.includes('What Mboka stores')&&privacy.includes('Children and school environments'),'Complete English privacy information is missing');
 assert(html.includes('id="privacyLink"'),'Privacy link must have a stable translation target');
 assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
