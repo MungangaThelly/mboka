@@ -271,6 +271,19 @@ document.querySelector('#worksheetCount').addEventListener('change',generateWork
 document.querySelector('#worksheetAnswers').addEventListener('change',renderWorksheet);
 document.querySelector('#printWorksheet').addEventListener('click',()=>{renderWorksheet();window.print()});
 generateWorksheet();
+
+// Anonymous, local-only pilot feedback for classroom evaluation.
+function pilotFeedback(){return safeJsonArray('mbokaPilotFeedback').filter(item=>item&&typeof item==='object')}
+function renderFeedbackCount(){const count=pilotFeedback().length;document.querySelector('#feedbackCount').textContent=count;document.querySelector('#exportFeedback').disabled=count===0;document.querySelector('#clearFeedback').disabled=count===0}
+document.querySelector('#pilotForm').addEventListener('submit',event=>{
+  event.preventDefault();const ease=document.querySelector('#feedbackEase').value,fun=document.querySelector('#feedbackFun').value,learning=document.querySelector('#feedbackLearning').value,status=document.querySelector('#pilotStatus'),english=localStorage.getItem('mbokaLang')==='en';
+  if(!ease||!fun||!learning){status.textContent=english?'Please complete the three ratings.':'Merci de compléter les trois évaluations.';status.classList.add('error');return}
+  const responses=pilotFeedback();responses.push({timestamp:new Date().toISOString(),role:document.querySelector('#feedbackRole').value,ease:Number(ease),fun:Number(fun),learning:Number(learning),favorite:document.querySelector('#feedbackFavorite').value,comment:document.querySelector('#feedbackComment').value.trim(),language:english?'en':'fr'});localStorage.setItem('mbokaPilotFeedback',JSON.stringify(responses));event.currentTarget.reset();status.textContent=english?'Thank you! Your anonymous feedback was saved on this device.':'Merci ! Ton retour anonyme est enregistré sur cet appareil.';status.classList.remove('error');renderFeedbackCount();
+});
+function csvCell(value){let text=String(value??'').replace(/"/g,'""');if(/^[=+\-@]/.test(text))text=`'${text}`;return`"${text}"`}
+document.querySelector('#exportFeedback').addEventListener('click',()=>{const rows=pilotFeedback(),headers=['timestamp','role','ease','fun','learning','favorite','comment','language'],csv=[headers.map(csvCell).join(','),...rows.map(row=>headers.map(key=>csvCell(row[key])).join(','))].join('\r\n'),blob=new Blob(['\uFEFF',csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`mboka-pilot-${localDateKey()}.csv`;document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url)});
+document.querySelector('#clearFeedback').addEventListener('click',()=>{const english=localStorage.getItem('mbokaLang')==='en';if(confirm(english?'Delete all pilot responses stored on this device?':'Effacer tous les retours pilotes enregistrés sur cet appareil ?')){localStorage.removeItem('mbokaPilotFeedback');renderFeedbackCount();document.querySelector('#pilotStatus').textContent=english?'Local responses deleted.':'Retours locaux effacés.'}});
+renderFeedbackCount();
 let soundEnabled=localStorage.getItem('mbokaSound')!=='off';
 function updateSoundButton(){const button=document.querySelector('#soundToggle');button.textContent=soundEnabled?'♪':'×';button.title=soundEnabled?'Couper les sons':'Activer les sons';button.setAttribute('aria-pressed',String(soundEnabled))}
 function showAudioNotice(message){const old=document.querySelector('.audio-notice');if(old)old.remove();const notice=document.createElement('div');notice.className='audio-notice';notice.textContent=message;document.body.appendChild(notice)}

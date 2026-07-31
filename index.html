@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="daily.css">
   <link rel="stylesheet" href="pwa.css">
   <link rel="stylesheet" href="hardening.css">
+  <link rel="stylesheet" href="pilot.css">
 </head>
 <body>
   <header class="topbar">
@@ -108,6 +109,21 @@
         <div class="builder-actions"><button class="button secondary" id="generateWorksheet">↻ Nouvelle fiche</button><button class="button primary" id="printWorksheet">Imprimer la fiche</button></div>
         <p class="teacher-note">L’impression permet aussi d’enregistrer la fiche au format PDF.</p>
       </div>
+    </section>
+    <section class="pilot-section" id="pilot">
+      <div class="pilot-intro"><span class="eyebrow">PROGRAMME PILOTE</span><h2>Aide Mboka<br>à grandir.</h2><p>Un retour court et anonyme pour améliorer l’exactitude, la difficulté et le plaisir d’apprendre.</p><div class="pilot-privacy">◈ Aucun nom, courriel ou compte demandé. Les réponses restent sur cet appareil jusqu’à leur exportation.</div></div>
+      <form class="pilot-form" id="pilotForm">
+        <div class="pilot-form-head"><div><small>QUESTIONNAIRE · 2 MINUTES</small><h3>Ton expérience</h3></div><span><strong id="feedbackCount">0</strong> réponses locales</span></div>
+        <div class="pilot-grid">
+          <label><span>Je réponds comme</span><select id="feedbackRole" required><option value="student">Élève</option><option value="teacher">Enseignant·e</option><option value="parent">Parent ou responsable</option></select></label>
+          <label><span>Mboka est facile à utiliser</span><select id="feedbackEase" required><option value="">Choisir…</option><option value="1">1 — Pas du tout</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 — Tout à fait</option></select></label>
+          <label><span>Apprendre avec Mboka est amusant</span><select id="feedbackFun" required><option value="">Choisir…</option><option value="1">1 — Pas du tout</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 — Tout à fait</option></select></label>
+          <label><span>J’ai appris quelque chose sur la RDC</span><select id="feedbackLearning" required><option value="">Choisir…</option><option value="1">1 — Pas du tout</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 — Beaucoup</option></select></label>
+          <label><span>Mon activité préférée</span><select id="feedbackFavorite" required><option value="lessons">Parcours et leçons</option><option value="map">Carte et provinces</option><option value="memory">Jeu de mémoire</option><option value="sprint">Sprint des provinces</option><option value="quiz">Quiz</option><option value="daily">Découverte du jour</option></select></label>
+          <label class="pilot-comment"><span>Une suggestion ? <small>(facultatif)</small></span><textarea id="feedbackComment" maxlength="500" placeholder="Ce que tu as aimé ou ce qui devrait changer…"></textarea></label>
+        </div>
+        <div class="pilot-actions"><button class="button primary" type="submit">Enregistrer le retour</button><button class="button secondary" type="button" id="exportFeedback">Exporter en CSV</button><button class="clear-feedback" type="button" id="clearFeedback">Effacer</button></div><p class="pilot-status" id="pilotStatus" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
