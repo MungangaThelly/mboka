@@ -1,3 +1,5 @@
+function safeJsonArray(key){try{const value=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(value)?value:[]}catch{return[]}}
+
 const journeys = [
   {icon:'⌖', title:'Terres & provinces', text:'Cartes, villes, reliefs et frontières.', color:'#f0bd5b'},
   {icon:'≈', title:'Fleuves & forêts', text:'Le bassin du Congo et ses écosystèmes.', color:'#78aaa0'},
@@ -83,7 +85,7 @@ const dailyFacts=[
   {topic:['FORÊTS','FORESTS'],fact:['Une grande partie du bassin forestier du Congo se trouve en RDC.','A large part of the Congo forest basin lies in the DRC.'],explain:['Ces forêts abritent une biodiversité remarquable et jouent un rôle climatique majeur.','These forests shelter remarkable biodiversity and play a major climate role.']}
 ];
 function localDateKey(date=new Date()){return`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`}
-function dailyHistory(){return JSON.parse(localStorage.getItem('mbokaDailyHistory')||'[]')}
+function dailyHistory(){return safeJsonArray('mbokaDailyHistory').filter(value=>/^\d{4}-\d{2}-\d{2}$/.test(value))}
 function calculateDailyStreak(){const done=new Set(dailyHistory());let cursor=new Date(),streak=0;if(!done.has(localDateKey(cursor)))cursor.setDate(cursor.getDate()-1);while(done.has(localDateKey(cursor))){streak++;cursor.setDate(cursor.getDate()-1)}return streak}
 function renderDaily(){
   const english=localStorage.getItem('mbokaLang')==='en',today=new Date(),todayKey=localDateKey(today),history=dailyHistory(),done=new Set(history),dayNumber=Math.floor(new Date(today.getFullYear(),today.getMonth(),today.getDate()).getTime()/86400000),fact=dailyFacts[((dayNumber%dailyFacts.length)+dailyFacts.length)%dailyFacts.length],streak=calculateDailyStreak();
@@ -94,7 +96,7 @@ function renderDaily(){
 }
 document.querySelector('#completeDaily').addEventListener('click',()=>{const history=new Set(dailyHistory());history.add(localDateKey());localStorage.setItem('mbokaDailyHistory',JSON.stringify([...history].sort()));renderDaily();showAudioNotice(localStorage.getItem('mbokaLang')==='en'?'Daily discovery completed! +50 points':'Découverte du jour terminée ! +50 points')});
 
-const explored=JSON.parse(localStorage.getItem('mbokaExplored')||'[]');
+const explored=safeJsonArray('mbokaExplored').filter(value=>Number.isInteger(value)&&value>=0&&value<journeys.length);
 document.querySelector('#journeyGrid').innerHTML = journeys.map((j,i)=>`<article class="journey-card ${explored.includes(i)?'completed':''}" style="background:${j.color}" tabindex="0" role="button" data-journey="${i}"><span class="icon">${j.icon}</span><div><small>PARCOURS ${String(i+1).padStart(2,'0')}</small><h3>${j.title}</h3><p>${j.text}</p></div><span class="go">→</span></article>`).join('');
 
 const list = document.querySelector('#provinceList');
@@ -239,7 +241,7 @@ const badges=[
   {icon:'🔥',name:'Flamme du savoir',desc:'Apprendre pendant 3 jours',test:s=>s.dailyStreak>=3}
 ];
 const profileModal=document.querySelector('#profileModal');
-function getProfileStats(){return{journeys:JSON.parse(localStorage.getItem('mbokaExplored')||'[]').length,quiz:Number(localStorage.getItem('mbokaBest')||0),sprint:Number(localStorage.getItem('mbokaSprintBest')||0),memory:localStorage.getItem('mbokaMemoryComplete')==='1',dailyStreak:calculateDailyStreak()}}
+function getProfileStats(){return{journeys:safeJsonArray('mbokaExplored').filter(value=>Number.isInteger(value)&&value>=0&&value<journeys.length).length,quiz:Number(localStorage.getItem('mbokaBest')||0),sprint:Number(localStorage.getItem('mbokaSprintBest')||0),memory:localStorage.getItem('mbokaMemoryComplete')==='1',dailyStreak:calculateDailyStreak()}}
 function renderProfile(){
   const stats=getProfileStats(); const percent=Math.round((stats.journeys/8*.4+stats.quiz/10*.3+Math.min(stats.sprint/1200,1)*.3)*100); const unlocked=badges.filter(b=>b.test(stats)).length;
   document.querySelector('#profileQuiz').textContent=`${stats.quiz}/10`;document.querySelector('#profileSprint').textContent=stats.sprint;document.querySelector('#profileJourneys').textContent=`${stats.journeys}/8`;document.querySelector('#profilePercent').textContent=`${percent}%`;document.querySelector('#profileProgress').style.width=`${percent}%`;document.querySelector('#badgeCount').textContent=`${unlocked} / ${badges.length}`;

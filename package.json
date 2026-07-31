@@ -5,6 +5,7 @@
   "description": "Jeu éducatif bilingue pour explorer la République démocratique du Congo.",
   "scripts": {
     "build": "node build.js",
+    "test": "node validate.js",
     "start": "node server.js"
   }
 }
