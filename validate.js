@@ -12,6 +12,8 @@ const headerNames=new Set(globalHeaders.map(header=>header.key));
 const html=fs.readFileSync('index.html','utf8');
 assert(!/https?:\/\//.test(html),'index.html contains an external network dependency');
 assert(html.includes('privacy.html'),'Privacy link is missing');
+assert(html.includes('id="privacyLink"'),'Privacy link must have a stable translation target');
+assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 const app=fs.readFileSync('app.js','utf8');
 assert(!/\beval\s*\(|new\s+Function\s*\(/.test(app),'Unsafe dynamic code execution found');
 for(const [name,count] of [['provinces',26],['provinceDetails',26],['mapPositions',26]]){const match=app.match(new RegExp(`const ${name} =? ?\\[(.*?)\\];`,'s'));assert(match,`Could not find ${name}`);const actual=name==='mapPositions'?(match[1].match(/\[\d+,\d+\]/g)||[]).length:(match[1].match(/\['/g)||[]).length;assert(actual===count,`${name} has ${actual} entries; expected ${count}`)}
