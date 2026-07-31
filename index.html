@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071f1a">
+  <meta name="description" content="Mboka — jeu éducatif bilingue pour explorer la République démocratique du Congo.">
+  <title>Mboka — Explore la RDC</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lessons.css">
+  <link rel="stylesheet" href="sprint.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="memory.css">
+  <link rel="stylesheet" href="i18n.css">
+  <link rel="stylesheet" href="teacher.css">
+  <link rel="stylesheet" href="provinces.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="levels.css">
+  <link rel="stylesheet" href="audio.css">
+  <link rel="stylesheet" href="daily.css">
+  <link rel="stylesheet" href="pwa.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#accueil" aria-label="Mboka, accueil"><span class="brand-mark">M</span><span>Mboka</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#explorer">Explorer</a><a href="#memory">Mémoire</a><a href="#provinces">Provinces</a><a href="#sprint">Sprint</a><a href="#quiz">Quiz</a><a href="#enseignants">Classe</a>
+    </nav>
+    <div class="header-actions"><button class="install-button" id="installApp" hidden>Installer</button><label class="language-picker" aria-label="Langue"><span>◎</span><select id="languageSelect"><option value="fr">FR</option><option value="en">EN</option></select></label><button class="icon-button" id="soundToggle" title="Activer ou couper les sons" aria-label="Activer ou couper les sons">♪</button><button class="profile" id="profileButton" aria-label="Ouvrir mon profil">KM</button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <span class="eyebrow">L'aventure commence ici</span>
+        <h1>La RDC comme tu ne l'as <em>jamais explorée.</em></h1>
+        <p>Des rives du fleuve Congo aux sommets des Virunga, pars à la découverte d'un pays aux mille histoires.</p>
+        <div class="hero-actions"><a class="button primary" href="#quiz">Commencer l'aventure <span>→</span></a><a class="button secondary" href="#explorer"><span>◎</span> Explorer les thèmes</a></div>
+        <div class="trust"><div class="avatars"><span>AM</span><span>JK</span><span>NL</span><span>+</span></div><p><strong>1 200+ explorateurs</strong><br>apprennent chaque semaine</p></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration d'une exploration de la République démocratique du Congo">
+        <div class="sun"></div><div class="mountain back"></div><div class="mountain front"></div>
+        <div class="river"></div><div class="tree t1">♠</div><div class="tree t2">♠</div><div class="tree t3">♠</div>
+        <div class="okapi"><span class="okapi-head">●</span><span class="okapi-body"></span><i></i><i></i><i></i><i></i></div>
+        <div class="fact-card"><span>LE SAVAIS-TU ?</span><strong>Le fleuve Congo est le plus profond du monde.</strong></div>
+      </div>
+      <div class="scroll-cue">DÉFILE POUR EXPLORER <span>↓</span></div>
+    </section>
+
+    <section class="daily-section" id="daily">
+      <div class="daily-streak"><span class="streak-flame">🔥</span><div><small>SÉRIE ACTUELLE</small><strong><span id="dailyStreak">0</span> jour<span id="streakPlural">s</span></strong><p id="streakMessage">Apprends un fait aujourd’hui pour commencer ta série.</p></div></div>
+      <div class="daily-card"><div class="daily-label"><span>✦ DÉCOUVERTE DU JOUR</span><small id="dailyTopic">NATURE</small></div><h2 id="dailyFact"></h2><p id="dailyExplanation"></p><button class="button primary" id="completeDaily">J’ai appris ce fait ✓</button></div>
+      <div class="week-card"><div class="week-heading"><div><small>MES 7 DERNIERS JOURS</small><strong id="weekProgress">0 / 7</strong></div><span>Objectif : 7 jours</span></div><div class="week-days" id="weekDays"></div><div class="reward-track"><i id="rewardProgress"></i></div><p>Prochaine récompense : <strong id="nextReward">Badge Flamme · 3 jours</strong></p></div>
+    </section>
+
+    <section class="section" id="explorer">
+      <div class="section-heading"><div><span class="eyebrow">Choisis ta route</span><h2>Un pays, mille découvertes</h2></div><p>Chaque parcours contient des histoires courtes, des faits étonnants et des défis.</p></div>
+      <div class="journey-grid" id="journeyGrid"></div>
+    </section>
+
+    <section class="memory-section" id="memory">
+      <div class="memory-top"><div><span class="eyebrow">Jeu de mémoire</span><h2>Les trésors<br>du Congo</h2></div><div class="memory-copy"><p>Retourne les cartes et associe chaque trésor à sa signification. Trouve les six paires avec le moins de coups possible.</p><div class="memory-meters"><span>COUPS <strong id="memoryMoves">0</strong></span><span>PAIRES <strong id="memoryPairs">0/6</strong></span><span>RECORD <strong id="memoryBest">—</strong></span></div></div></div>
+      <div class="memory-board" id="memoryBoard" aria-label="Jeu de mémoire"></div>
+      <div class="memory-complete" id="memoryComplete" hidden><span>✦</span><div><strong id="memoryTitle">Mémoire remarquable !</strong><p id="memoryMessage"></p></div><button class="button primary" id="memoryRestart">Mélanger et rejouer</button></div>
+    </section>
+
+    <section class="province-section" id="provinces">
+      <div class="province-copy"><span class="eyebrow light">Carte d'exploration</span><h2>26 provinces.<br>26 identités.</h2><p>Découvre les chefs-lieux, paysages et repères de chaque province.</p><label class="search"><span>⌕</span><input id="provinceSearch" type="search" placeholder="Chercher une province…" autocomplete="off"></label><div class="region-filters" id="regionFilters"><button class="active" data-region="Toutes">Toutes</button><button data-region="Ouest">Ouest</button><button data-region="Centre">Centre</button><button data-region="Nord">Nord</button><button data-region="Est">Est</button><button data-region="Sud">Sud</button></div><p class="result-count" id="provinceCount"></p></div>
+      <div class="province-panel"><div class="province-list" id="provinceList"></div></div>
+      <div class="province-map-block">
+        <div class="map-header"><div><span>CARTE INTERACTIVE</span><h3>Voyage à travers la RDC</h3></div><small>CARTE SCHÉMATIQUE · NON DESTINÉE À LA NAVIGATION</small></div>
+        <div class="map-layout">
+          <div class="map-stage" id="mapStage" aria-label="Carte schématique interactive des provinces de la RDC">
+            <svg viewBox="0 0 800 560" role="img" aria-label="Silhouette schématique de la République démocratique du Congo"><path d="M85 176L142 116 224 111 275 69 362 92 408 70 467 104 542 89 596 125 579 173 647 175 705 213 674 255 735 289 686 321 676 389 614 401 577 463 516 442 469 496 406 474 353 513 291 477 237 487 204 443 145 430 121 371 75 335 99 278 62 235Z"></path><path class="river-line" d="M180 125C217 201 346 174 377 250S295 355 395 430 531 442 612 381"></path></svg>
+            <div id="mapMarkers"></div>
+          </div>
+          <aside class="map-preview" id="mapPreview"><span class="map-zone" id="mapZone">COMMENCE ICI</span><div class="spoken-title"><h3 id="mapProvince">Choisis une province</h3><button class="speak-control" id="mapSpeak" aria-label="Écouter la province" disabled>♪</button></div><p id="mapDescription">Sélectionne un point sur la carte pour découvrir son chef-lieu et un repère important.</p><div class="map-meta"><div><small>CHEF-LIEU</small><strong id="mapCapital">—</strong></div><div><small>REPÈRE</small><strong id="mapLandmark">—</strong></div></div><button class="button primary" id="openMapProfile" disabled>Ouvrir le profil →</button></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sprint-section" id="sprint">
+      <div class="sprint-heading"><div><span class="eyebrow light">Nouveau jeu</span><h2>Le Sprint<br>des provinces</h2><p>Associe chaque province à son chef-lieu. Dix manches, trois vies et un nouveau défi à chaque partie.</p></div><div class="sprint-best"><span>MEILLEUR SCORE</span><strong id="sprintBest">0</strong><small>points</small></div></div>
+      <div class="sprint-game">
+        <div class="sprint-status"><div><small>MANCHE</small><strong id="sprintRound">1 / 10</strong></div><div><small>SÉRIE</small><strong id="sprintStreak">0 🔥</strong></div><div><small>VIES</small><strong id="sprintLives">♥ ♥ ♥</strong></div><div><small>SCORE</small><strong id="sprintScore">0</strong></div></div>
+        <div class="sprint-play" id="sprintPlay"><span class="map-pin">⌖</span><small>QUEL EST LE CHEF-LIEU DE…</small><h3 id="sprintProvince"></h3><div class="sprint-options" id="sprintOptions"></div><p class="sprint-feedback" id="sprintFeedback" aria-live="polite"></p><button class="button sprint-next" id="sprintNext">Continuer →</button></div>
+        <div class="sprint-result" id="sprintResult" hidden><span>🏆</span><h3 id="sprintResultTitle">Beau parcours !</h3><strong id="sprintFinalScore">0 points</strong><p id="sprintResultText"></p><button class="button primary" id="sprintRestart">Nouveau sprint</button></div>
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="quiz-intro"><span class="eyebrow">Défi du jour</span><h2>Prêt à tester tes connaissances ?</h2><p>Dix questions adaptées à ton niveau pour voyager à travers la RDC.</p><div class="level-picker" id="levelPicker"><button data-level="explorer"><strong>Explorateur</strong><small>7–10 ANS</small></button><button class="active" data-level="adventurer"><strong>Aventurier</strong><small>11–14 ANS</small></button><button data-level="master"><strong>Maître</strong><small>15+ ANS</small></button></div><div class="score-preview"><span>✦</span><div><strong id="bestScore">0/10</strong><small>MEILLEUR SCORE</small></div></div></div>
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-top"><span id="questionNumber">QUESTION 1 SUR 10</span><span class="points">+100 POINTS</span></div>
+        <div class="progress"><i id="progressBar"></i></div>
+        <div id="questionView"><span class="question-topic" id="questionTopic"></span><h3 id="questionText"></h3><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="button primary next" id="nextButton">Question suivante →</button></div>
+        <div class="result" id="resultView" hidden><span class="result-icon">★</span><h3 id="resultTitle">Belle exploration !</h3><p id="resultMessage"></p><strong id="finalScore"></strong><button class="button primary" id="restartButton">Rejouer</button></div>
+      </div>
+    </section>
+    <section class="teacher-section" id="enseignants">
+      <div class="teacher-intro"><span class="eyebrow">Espace enseignants</span><h2>Mboka entre<br>en classe.</h2><p>Crée une fiche d’activité prête à imprimer à partir des questions du jeu.</p><div class="teacher-benefits"><span>✓ Sans compte</span><span>✓ Réponses facultatives</span><span>✓ Nouvelle fiche en un clic</span></div></div>
+      <div class="worksheet-builder">
+        <div class="builder-top"><div><small>GÉNÉRATEUR DE FICHE</small><h3>Préparer une activité</h3></div><span class="teacher-mark">M</span></div>
+        <div class="builder-controls"><label>Nombre de questions<select id="worksheetCount"><option value="5">5 questions</option><option value="10">10 questions</option></select></label><label class="check-control"><input type="checkbox" id="worksheetAnswers"><span>Ajouter le corrigé</span></label></div>
+        <div class="builder-actions"><button class="button secondary" id="generateWorksheet">↻ Nouvelle fiche</button><button class="button primary" id="printWorksheet">Imprimer la fiche</button></div>
+        <p class="teacher-note">L’impression permet aussi d’enregistrer la fiche au format PDF.</p>
+      </div>
+    </section>
+  </main>
+
+  <section class="print-sheet" id="printSheet" aria-hidden="true"><header><div><strong>MBOKA</strong><span>EXPLORER LA RÉPUBLIQUE DÉMOCRATIQUE DU CONGO</span></div><div class="print-fields">Nom : ____________________ &nbsp;&nbsp; Date : ______________</div></header><h1>Fiche de connaissances</h1><p>Entoure la bonne réponse pour chaque question.</p><ol id="worksheetQuestions"></ol><div class="answer-key" id="worksheetKey"></div><footer>Mboka · Apprendre, explorer, transmettre</footer></section>
+
+  <footer><a class="brand" href="#accueil"><span class="brand-mark">M</span><span>Mboka</span></a><p>Apprendre. Explorer. Transmettre.</p><p>Prototype éducatif · RDC</p></footer>
+  <div class="modal" id="learningModal" hidden>
+    <button class="modal-backdrop" data-close-modal aria-label="Fermer"></button>
+    <section class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="lessonTitle">
+      <button class="modal-close" data-close-modal aria-label="Fermer la leçon">×</button>
+      <div class="lesson-visual" id="lessonVisual"><span id="lessonIcon"></span><small id="lessonNumber"></small></div>
+      <div class="lesson-content">
+        <span class="eyebrow" id="lessonLabel">PARCOURS</span><div class="spoken-title"><h2 id="lessonTitle"></h2><button class="speak-control" id="lessonSpeak" aria-label="Écouter le titre">♪</button></div>
+        <p class="lesson-lead" id="lessonLead"></p><div class="lesson-facts" id="lessonFacts"></div>
+        <div class="lesson-actions"><button class="button secondary" data-close-modal>Retour</button><a class="button primary" href="#quiz" id="lessonQuiz">Faire le quiz →</a></div>
+      </div>
+    </section>
+  </div>
+  <div class="modal" id="profileModal" hidden>
+    <button class="modal-backdrop" data-close-profile aria-label="Fermer"></button>
+    <section class="profile-sheet" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <button class="modal-close" data-close-profile aria-label="Fermer le profil">×</button>
+      <div class="profile-cover"><span>MON CARNET D’EXPLORATEUR</span><div class="profile-avatar">KM</div><h2 id="profileTitle">Kimi</h2><p id="profileRank">Explorateur débutant</p></div>
+      <div class="profile-body">
+        <div class="level-row"><div><small>PROGRESSION GLOBALE</small><strong id="profilePercent">0%</strong></div><div class="level-track"><i id="profileProgress"></i></div></div>
+        <div class="profile-stats"><div><span>✦</span><strong id="profileQuiz">0/10</strong><small>MEILLEUR QUIZ</small></div><div><span>⌖</span><strong id="profileSprint">0</strong><small>RECORD SPRINT</small></div><div><span>◈</span><strong id="profileJourneys">0/8</strong><small>PARCOURS</small></div></div>
+        <div class="badge-heading"><div><small>MA COLLECTION</small><h3>Badges à débloquer</h3></div><span id="badgeCount">0 / 6</span></div>
+        <div class="badge-grid" id="badgeGrid"></div>
+        <button class="button secondary profile-reset" id="resetProgress">Réinitialiser ma progression</button>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+  <script src="content-en.js"></script>
+  <script src="i18n.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>
