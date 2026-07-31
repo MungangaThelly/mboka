@@ -44,7 +44,7 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 - **Profils bilingues des 26 provinces**
 - **Carte interactive** reliée aux profils provinciaux
 - **Quiz par âge** : Explorateur (7–10 ans), Aventurier (11–14 ans) et Maître (15 ans et plus)
-- **Sprint des provinces** pour associer provinces et chefs-lieux
+- **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
 - **Découverte quotidienne**, calendrier et série d’apprentissage
 - **Audio** pour écouter les provinces, chefs-lieux et introductions
@@ -59,6 +59,8 @@ L’espace enseignant permet de :
 - Mélanger automatiquement les questions
 - Ajouter ou masquer le corrigé
 - Imprimer la fiche ou l’enregistrer en PDF
+- Générer et imprimer un plan de leçon de 45 minutes
+- Imprimer un rapport individuel de progression enregistré sur l’appareil
 - Organiser une activité sans créer de compte
 
 Le **Programme pilote** recueille des évaluations anonymes sur la facilité d’utilisation, le plaisir, l’apprentissage et l’activité préférée. Les réponses restent sur l’appareil et peuvent être exportées au format CSV.
@@ -76,7 +78,7 @@ Mboka applique une approche de minimisation des données :
 - Protections contre l’intégration dans une page tierce et la détection incorrecte des fichiers
 - Dépendances externes supprimées de l’interface principale
 
-La politique complète est disponible sur la [page de confidentialité](https://mboka.nuhar.se/privacy.html).
+La politique complète, disponible en français et en anglais, se trouve sur la [page de confidentialité](https://mboka.nuhar.se/privacy.html).
 
 ### Installation et fonctionnement hors connexion
 
@@ -117,6 +119,7 @@ La commande `npm test` contrôle notamment :
 
 - Les principaux en-têtes de sécurité
 - La présence de la politique de confidentialité
+- La présence de la politique de confidentialité complète en anglais
 - L’absence de dépendance réseau dans la page principale
 - Les 26 provinces et leurs données associées
 - Les banques de questions françaises et anglaises
@@ -136,7 +139,7 @@ Les contenus doivent continuer à être relus par des éducateurs, historiens, l
 3. Faire relire les contenus par des éducateurs congolais.
 4. Ajouter des sources visibles aux leçons.
 5. Développer Lingala, Swahili, Kikongo et Tshiluba avec des locuteurs qualifiés.
-6. Enrichir progressivement les 26 provinces.
+6. Faire relire et approfondir progressivement les profils déjà disponibles pour les 26 provinces.
 7. Améliorer l’accessibilité et tester davantage d’appareils.
 
 ---
@@ -179,7 +182,7 @@ The regional groupings and built-in map are learning aids. The map is explicitly
 - **Bilingual profiles for all 26 provinces**
 - **Interactive map** connected to provincial profiles
 - **Age-based quizzes**: Explorer (ages 7–10), Adventurer (ages 11–14), and Master (ages 15+)
-- **Province Sprint** matching provinces with their capitals
+- **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
 - **Daily discovery**, calendar, and learning streak
 - **Audio** for province names, capitals, and lesson introductions
@@ -194,6 +197,8 @@ The teacher area can:
 - Shuffle questions automatically
 - Include or hide the answer key
 - Print the worksheet or save it as a PDF
+- Generate and print a 45-minute lesson plan
+- Print an individual progress report stored on the device
 - Run activities without creating accounts
 
 The **Pilot Program** collects anonymous ratings for usability, enjoyment, learning, and favourite activities. Responses remain on the device and can be exported as CSV.
@@ -211,7 +216,7 @@ Mboka follows a data-minimisation approach:
 - Protection against third-party framing and MIME sniffing
 - External interface dependencies removed
 
-The complete notice is available on the [privacy page](https://mboka.nuhar.se/privacy.html).
+The complete notice is available in French and English on the [privacy page](https://mboka.nuhar.se/privacy.html).
 
 ### Installation and offline use
 
@@ -252,6 +257,7 @@ The `npm test` command checks:
 
 - Principal security headers
 - Presence of the privacy notice
+- Presence of the complete English privacy information
 - Absence of external network dependencies in the main page
 - All 26 provinces and their associated data
 - French and English question banks
@@ -271,7 +277,7 @@ Congolese educators, historians, linguists, and subject specialists should conti
 3. Review the content with Congolese educators.
 4. Add visible sources to lessons.
 5. Develop Lingala, Swahili, Kikongo, and Tshiluba with qualified speakers.
-6. Enrich all 26 provinces progressively.
+6. Continue reviewing and deepening the profiles already available for all 26 provinces.
 7. Improve accessibility and test more devices.
 
 ---
@@ -281,4 +287,3 @@ Congolese educators, historians, linguists, and subject specialists should conti
 - Live application: [https://mboka.nuhar.se](https://mboka.nuhar.se)
 - Privacy: [https://mboka.nuhar.se/privacy.html](https://mboka.nuhar.se/privacy.html)
 - GitHub: [https://github.com/MungangaThelly/mboka](https://github.com/MungangaThelly/mboka)
-

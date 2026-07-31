@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','icon.svg'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','icon.svg','README.md','PRESENTATION.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -14,6 +14,9 @@ assert(!/https?:\/\//.test(html),'index.html contains an external network depend
 assert(html.includes('privacy.html'),'Privacy link is missing');
 const privacy=fs.readFileSync('privacy.html','utf8');
 assert(privacy.includes('id="privacy-en"')&&privacy.includes('What Mboka stores')&&privacy.includes('Children and school environments'),'Complete English privacy information is missing');
+const readme=fs.readFileSync('README.md','utf8'),presentation=fs.readFileSync('PRESENTATION.md','utf8');
+for(const phrase of ['two-team mode','lesson plans','progress reports'])assert(readme.includes(phrase),`README is missing current feature: ${phrase}`);
+for(const phrase of ['deux équipes','plan de leçon','rapport individuel de progression','two-team classroom mode','lesson plan','individual progress report'])assert(presentation.includes(phrase),`Presentation is missing current feature: ${phrase}`);
 assert(html.includes('id="privacyLink"'),'Privacy link must have a stable translation target');
 assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
