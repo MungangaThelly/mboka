@@ -125,9 +125,9 @@
       <div class="teacher-intro"><span class="eyebrow">Espace enseignants</span><h2>Salisa Mboka Ekota<br>Kelasi</h2><p>Crée une fiche d’activité prête à imprimer à partir des questions du jeu.</p><div class="teacher-benefits"><span>✓ Sans compte</span><span>✓ Réponses facultatives</span><span>✓ Nouvelle fiche en un clic</span></div></div>
       <div class="worksheet-builder">
         <div class="builder-top"><div><small>GÉNÉRATEUR DE FICHE</small><h3>Préparer une activité</h3></div><span class="teacher-mark">M</span></div>
-        <div class="builder-controls"><label>Nombre de questions<select id="worksheetCount"><option value="5">5 questions</option><option value="10">10 questions</option></select></label><label class="check-control"><input type="checkbox" id="worksheetAnswers"><span>Ajouter le corrigé</span></label></div>
+        <div class="builder-controls"><label id="worksheetLevelLabel">Niveau d’âge<select id="worksheetLevel"><option value="explorer">Explorateur · 7–10 ans</option><option value="adventurer" selected>Aventurier · 11–14 ans</option><option value="master">Maître · 15+ ans</option></select></label><label id="worksheetTopicLabel">Thème prioritaire<select id="worksheetTopic"><option value="all">Tous les thèmes</option><option value="geography">Géographie et provinces</option><option value="nature">Nature et sciences</option><option value="culture">Culture et histoire</option></select></label><label id="worksheetCountLabel">Nombre de questions<select id="worksheetCount"><option value="5">5 questions</option><option value="10">10 questions</option></select></label><label class="check-control"><input type="checkbox" id="worksheetAnswers"><span>Ajouter le corrigé</span></label></div>
         <div class="builder-actions"><button class="button secondary" id="generateWorksheet">↻ Nouvelle fiche</button><button class="button primary" id="printWorksheet">Imprimer la fiche</button></div>
-        <p class="teacher-note">L’impression permet aussi d’enregistrer la fiche au format PDF.</p>
+        <p class="teacher-note" id="worksheetNote">Le thème choisi est prioritaire; la fiche utilise les autres thèmes du même niveau pour atteindre 5 ou 10 questions. L’impression permet aussi d’enregistrer en PDF.</p>
       </div>
     </section>
     <section class="pilot-section" id="pilot">
