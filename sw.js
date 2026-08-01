@@ -1,4 +1,4 @@
-const CACHE='mboka-v13';
+const CACHE='mboka-v14';
 const APP_FILES=['./','./index.html','./privacy.html','./styles.css','./lessons.css','./lingala.css','./achievements.css','./kingdoms.css','./presidency.css','./heroes.css','./communities.css','./food.css','./environment.css','./resources.css','./creativity.css','./sprint.css','./profile.css','./memory.css','./i18n.css','./teacher.css','./provinces.css','./map.css','./levels.css','./audio.css','./daily.css','./pwa.css','./hardening.css','./pilot.css','./app.js','./content-en.js','./i18n.js','./pwa.js','./manifest.webmanifest','./icon.svg','./okapi.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
