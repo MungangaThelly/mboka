@@ -264,7 +264,7 @@ document.querySelector('#openMapProfile').addEventListener('click',()=>{if(selec
 
 // Memory game: pair a Congolese treasure with its meaning.
 const memoryPairs=[
-  {id:'okapi',a:['🦓','Okapi','ANIMAL'],b:['🌿','Forêts du nord-est','SON HABITAT']},
+  {id:'okapi',a:['<img src="./okapi.jpg" alt="">','Okapi','ANIMAL'],b:['🌿','Forêts du nord-est','SON HABITAT']},
   {id:'rumba',a:['🎸','Rumba congolaise','MUSIQUE'],b:['♫','Danse et patrimoine','SON UNIVERS']},
   {id:'pondu',a:['🥬','Pondu','CUISINE'],b:['🍲','Feuilles de manioc','INGRÉDIENT']},
   {id:'congo',a:['≈','Fleuve Congo','GÉOGRAPHIE'],b:['🚤','Grande voie d’eau','SON RÔLE']},

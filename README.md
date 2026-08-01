@@ -79,6 +79,8 @@ The static production build is generated in `dist/` and deployed through Vercel.
 
 Production: [mboka.nuhar.se](https://mboka.nuhar.se)
 
+Photo de l’okapi : [Grace Tshiyonga, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Okapi_2.jpg), sous [licence CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
 ## Project status
 
 Mboka is production-ready as a privacy-first, device-local educational PWA. Content should continue to be reviewed and expanded with Congolese educators, historians, linguists, and subject specialists. Online accounts or classroom data storage are not currently implemented.
