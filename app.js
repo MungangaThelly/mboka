@@ -223,7 +223,7 @@ const count = document.querySelector('#provinceCount');
 let currentProvinceRegion='Toutes';
 function renderProvinces(query=''){
   const filtered=provinces.filter((p,i)=>p.join(' ').toLowerCase().includes(query.toLowerCase().trim())&&(currentProvinceRegion==='Toutes'||provinceDetails[i][0]===currentProvinceRegion));
-  list.innerHTML=filtered.map(p=>{const d=provinceDetails[provinces.indexOf(p)];return`<div class="province" tabindex="0" role="button" data-province="${p[0]}"><div class="province-info"><strong>${p[0]}</strong><span class="province-region">${d[0]}</span></div><span class="province-capital">${p[1]}</span><button class="province-speak" data-speak-province="${p[0]}" aria-label="Écouter ${p[0]} et ${p[1]}">♪</button></div>`}).join('') || '<p>Aucune province trouvée.</p>';
+  list.innerHTML=filtered.map(p=>{const d=provinceDetails[provinces.indexOf(p)];return`<div class="province" tabindex="0" role="button" data-province="${p[0]}"><div class="province-info"><strong>${p[0]}</strong><span class="province-region">${d[0]}</span></div><span class="province-capital">${p[1]}</span><button class="province-speak" data-speak-province="${p[0]}" aria-label="Écouter ${p[0]} et ${p[1]}">🔊</button></div>`}).join('') || '<p>Aucune province trouvée.</p>';
   count.textContent=`${filtered.length} province${filtered.length>1?'s':''} affichée${filtered.length>1?'s':''}`;
 }
 renderProvinces();

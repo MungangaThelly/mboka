@@ -41,6 +41,7 @@ const chess=fs.readFileSync('chess-game.js','utf8');
 assert(chess.includes('const chessSections=')&&((chess.match(/title:\[/g)||[]).length===7),'Chess learning must contain 7 sections');
 assert(chess.includes('mbokaChessProgress')&&chess.includes('saveChessSection'),'Chess learning must save measurable local progress');
 assert(chess.includes("querySelector('#chessSpeak')")&&chess.includes('speakPhrase'),'Chess instructions must support spoken playback');
+assert(chess.includes("control.textContent='🔊'"),'Spoken-text controls must use the speaker symbol');
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
