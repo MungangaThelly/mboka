@@ -13,6 +13,18 @@ const uiCopy={
   'footer>p:nth-of-type(1)':['Apprendre. Explorer. Transmettre.','Learn. Explore. Share.'],'#privacyLink':['Confidentialité','Privacy'],
   '#profileTitle':['Kimi','Kimi'],'.profile-cover>span':['MON CARNET D’EXPLORATEUR','MY EXPLORER NOTEBOOK'],'.level-row small':['PROGRESSION GLOBALE','OVERALL PROGRESS'],'.profile-stats>div:nth-child(1) small':['MEILLEUR QUIZ','BEST QUIZ'],'.profile-stats>div:nth-child(2) small':['RECORD SPRINT','SPRINT RECORD'],'.profile-stats>div:nth-child(3) small':['PARCOURS','JOURNEYS'],'.badge-heading small':['MA COLLECTION','MY COLLECTION'],'.badge-heading h3':['Badges à débloquer','Badges to unlock'],'#printProgress':['Imprimer le rapport','Print report'],'#resetProgress':['Réinitialiser ma progression','Reset my progress']
 };
+Object.assign(uiCopy,{
+  'nav:not(.module-nav) a:nth-child(7)':['Maths','Maths'],
+  'nav:not(.module-nav) a:nth-child(8)':['Musique','Music'],
+  'nav:not(.module-nav) a:nth-child(9)':['Échecs','Chess'],
+  '.module-nav a:nth-child(1)':['Découvrir','Discover'],
+  '.module-nav a:nth-child(2)':['Maths','Maths'],
+  '.module-nav a:nth-child(3)':['Musique','Music'],
+  '.module-nav a:nth-child(4)':['Échecs','Chess'],
+  '.module-nav a:nth-child(5)':['Quiz','Quiz'],
+  '.module-nav a:nth-child(6)':['Classe','Classroom'],
+  '.skip-link':['Aller au contenu principal','Skip to main content']
+});
 const htmlSelectors=new Set(['.hero h1','#memory h2','#provinces h2','#sprint h2','#enseignants h2','#pilot h2']);
 function applyLanguage(lang){
   document.documentElement.lang=lang;localStorage.setItem('mbokaLang',lang);

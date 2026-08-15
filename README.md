@@ -25,6 +25,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
 - Programme pilote anonyme avec export CSV local
 - Installation PWA et fonctionnement hors connexion
+- Navigation rapide entre les modules, mise en page adaptative, focus clavier visible et prise en charge de la réduction des animations
 
 ### Démarrage local
 
@@ -62,6 +63,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Printable worksheets, lesson plans, and progress reports
 - Anonymous pilot feedback with local CSV export
 - PWA installation and offline use
+- Quick module navigation, responsive layout, visible keyboard focus, and reduced-motion support
 
 ### Local development
 
