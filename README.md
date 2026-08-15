@@ -19,6 +19,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Jeu de mémoire, défi de lingala et découverte quotidienne
 - Mathématiques du quotidien avec 10 unités et trois niveaux d’âge
 - Parcours musical interactif : notes, portée, touches blanches et touches noires
+- Laboratoire d’échecs interactif en sept sections : règles, tactiques, finales et jeu positionnel
 - Audio par synthèse vocale disponible sur l’appareil
 - Badges, scores et progression conservés localement
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
@@ -55,6 +56,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Memory game, Lingala challenge, and daily discovery
 - Everyday mathematics with 10 units and three age levels
 - Interactive music journey covering notes, staff reading, white keys, and black keys
+- Seven-section interactive chess laboratory covering rules, tactics, endings, and positional play
 - Device-provided speech synthesis
 - Badges, scores, and progress stored locally
 - Printable worksheets, lesson plans, and progress reports
