@@ -23,8 +23,11 @@ Internal offline-cache numbers are not used as public versions. This document re
 ### Accessibilité et interface / Accessibility and interface
 
 - Harmonisation des contrôles : `🔊` pour activer ou écouter la parole, `🔇` pour le son coupé, `♪` et `♫` uniquement pour la musique.
+- Ajout d’une navigation rapide vers les modules, de liens directs vers Musique et Échecs, d’un lien d’évitement clavier et de protections contre les débordements mobiles.
+- Amélioration des zones tactiles, des indicateurs de focus et de la prise en charge de la réduction des animations.
 - Extension des validations automatiques aux parcours d’échecs, au lecteur WAV iPhone, aux contrôles vocaux et aux ressources hors ligne.
-- Standardized spoken-audio symbols and extended automated validation to chess, iPhone WAV playback, spoken controls, and offline assets.
+- Standardized spoken-audio symbols; added quick module navigation, direct Music and Chess links, keyboard skip navigation, mobile overflow protection, larger touch targets, visible focus, and reduced-motion support.
+- Extended automated validation to chess, iPhone WAV playback, spoken controls, and offline assets.
 
 ### Parcours éducatifs / Educational pathways
 
