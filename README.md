@@ -3,7 +3,7 @@
 > Plateforme éducative bilingue, interactive, installable et utilisable hors connexion.  
 > A bilingual educational platform that is interactive, installable, and available offline.
 
-[Application en production / Live application](https://mboka.nuhar.se) · [Présentation complète / Full presentation](PRESENTATION.md) · [Confidentialité / Privacy](https://mboka.nuhar.se/privacy.html)
+[Application en production / Live application](https://mboka.nuhar.se) · [Présentation complète / Full presentation](PRESENTATION.md) · [Historique / Changelog](CHANGELOG.md) · [Confidentialité / Privacy](https://mboka.nuhar.se/privacy.html)
 
 ## Français
 
@@ -18,9 +18,9 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Sprint des provinces en solo ou à deux équipes
 - Jeu de mémoire, défi de lingala et découverte quotidienne
 - Mathématiques du quotidien avec 10 unités et trois niveaux d’âge
-- Parcours musical interactif : notes, portée, touches blanches et touches noires
-- Laboratoire d’échecs interactif en sept sections : règles, tactiques, finales et jeu positionnel
-- Audio par synthèse vocale disponible sur l’appareil
+- Parcours musical interactif : notes, portée, touches blanches et touches noires, avec fichiers WAV de secours sur iPhone
+- Laboratoire d’échecs interactif en sept sections : règles, tactiques, finales, jeu positionnel et consignes vocales
+- Audio par synthèse vocale disponible sur l’appareil, avec `🔊`/`🔇` pour la parole et `♪`/`♫` réservés à la musique
 - Badges, scores et progression conservés localement
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
 - Programme pilote anonyme avec export CSV local
@@ -55,9 +55,9 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Province Sprint in solo or two-team mode
 - Memory game, Lingala challenge, and daily discovery
 - Everyday mathematics with 10 units and three age levels
-- Interactive music journey covering notes, staff reading, white keys, and black keys
-- Seven-section interactive chess laboratory covering rules, tactics, endings, and positional play
-- Device-provided speech synthesis
+- Interactive music journey covering notes, staff reading, white keys, and black keys, with WAV fallback on iPhone
+- Seven-section interactive chess laboratory covering rules, tactics, endings, positional play, and spoken instructions
+- Device-provided speech synthesis, using `🔊`/`🔇` for spoken audio and reserving `♪`/`♫` for music
 - Badges, scores, and progress stored locally
 - Printable worksheets, lesson plans, and progress reports
 - Anonymous pilot feedback with local CSV export
@@ -81,7 +81,7 @@ Mboka requires no account, name, email address, or password. Progress and option
 
 ## Production and validation
 
-The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks, all 26 provinces, teacher tools, team mode, and offline asset coverage.
+The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks, all 26 provinces, teacher tools, team mode, mathematics and music content, the seven chess sections, iPhone audio fallback, spoken controls, and offline asset coverage.
 
 Production: [mboka.nuhar.se](https://mboka.nuhar.se)
 

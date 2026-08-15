@@ -47,10 +47,10 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
 - **Mathématiques du quotidien** avec 10 unités contextualisées et trois niveaux d’âge
-- **Parcours musical interactif** pour écouter, lire une portée et jouer sur les touches blanches et noires
-- **Laboratoire d’échecs interactif** en sept sections, des règles fondamentales au calcul positionnel
+- **Parcours musical interactif** pour écouter, lire une portée et jouer sur les touches blanches et noires, avec lecture WAV compatible iPhone
+- **Laboratoire d’échecs interactif** en sept sections, des règles fondamentales au calcul positionnel, avec consignes vocales
 - **Découverte quotidienne**, calendrier et série d’apprentissage
-- **Audio** pour écouter les provinces, chefs-lieux et introductions
+- **Audio accessible** pour écouter les provinces, chefs-lieux, introductions et consignes ; `🔊`/`🔇` identifient la parole, tandis que `♪`/`♫` restent associés à la musique
 - **Badges, scores et progression** enregistrés sur l’appareil
 - **Français et anglais** pour l’interface et les contenus principaux
 
@@ -188,8 +188,8 @@ The regional groupings and built-in map are learning aids. The map is explicitly
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
 - **Everyday mathematics** with 10 contextualised units and three age levels
-- **Interactive music journey** for listening, staff reading, and playing white and black keys
-- **Seven-section interactive chess laboratory**, from fundamental rules to positional calculation
+- **Interactive music journey** for listening, staff reading, and playing white and black keys, with iPhone-compatible WAV playback
+- **Seven-section interactive chess laboratory**, from fundamental rules to positional calculation, with spoken instructions
 - **Daily discovery**, calendar, and learning streak
 - **Audio** for province names, capitals, and lesson introductions
 - **Badges, scores, and progress** stored on the device
@@ -240,7 +240,7 @@ Each device must load and install Mboka once while connected.
 - Native HTML, CSS, and JavaScript
 - No runtime framework or dependencies
 - Browser local storage for progress
-- Web Speech API for audio
+- Web Speech API for spoken content, Web Audio for generated notes, and WAV fallback for reliable iPhone playback
 - PWA manifest and service worker for offline caching
 - In-browser worksheet generation and CSV export
 - Zero-dependency static build
