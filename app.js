@@ -432,7 +432,7 @@ document.querySelector('#exportFeedback').addEventListener('click',()=>{const ro
 document.querySelector('#clearFeedback').addEventListener('click',()=>{const english=localStorage.getItem('mbokaLang')==='en';if(confirm(english?'Delete all pilot responses stored on this device?':'Effacer tous les retours pilotes enregistrés sur cet appareil ?')){localStorage.removeItem('mbokaPilotFeedback');renderFeedbackCount();document.querySelector('#pilotStatus').textContent=english?'Local responses deleted.':'Retours locaux effacés.'}});
 renderFeedbackCount();
 let soundEnabled=localStorage.getItem('mbokaSound')!=='off';
-function updateSoundButton(){const button=document.querySelector('#soundToggle');button.textContent=soundEnabled?'♪':'×';button.title=soundEnabled?'Couper les sons':'Activer les sons';button.setAttribute('aria-pressed',String(soundEnabled))}
+function updateSoundButton(){const button=document.querySelector('#soundToggle');button.textContent=soundEnabled?'🔊':'🔇';button.title=soundEnabled?'Couper les sons':'Activer les sons';button.setAttribute('aria-pressed',String(soundEnabled))}
 function showAudioNotice(message){const old=document.querySelector('.audio-notice');if(old)old.remove();const notice=document.createElement('div');notice.className='audio-notice';notice.textContent=message;document.body.appendChild(notice)}
 function speakPhrase(text,control){
   if(!soundEnabled)return showAudioNotice(localStorage.getItem('mbokaLang')==='en'?'Audio is turned off.':'Le son est désactivé.');if(!('speechSynthesis'in window))return showAudioNotice(localStorage.getItem('mbokaLang')==='en'?'Speech is not supported by this browser.':'La lecture audio n’est pas disponible dans ce navigateur.');
