@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','icon.svg','README.md','PRESENTATION.md'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -22,6 +22,7 @@ assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"'),'Interactive music-learning interface is missing');
+assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),'Interactive chess-learning interface is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
 assert(html.includes('id="printLessonPlan"'),'Printable lesson-plan button is missing');
 assert(html.includes('id="printProgress"'),'Printable progress-report button is missing');
@@ -35,6 +36,9 @@ assert(music.includes('const musicSections=')&&((music.match(/title:\[/g)||[]).l
 assert(music.includes('musicIsiOS')&&music.includes('playMusicFile'),'Music learning must include the iOS audio-file fallback');
 assert(music.includes('highlightMusicKey(note)'),'Music playback must visually highlight each note');
 for(const note of ['C','Cs','D','Ds','E','F','Fs','G','Gs','A','As','B'])assert(fs.existsSync(`music-${note}.wav`),`Missing iOS music note: ${note}`);
+const chess=fs.readFileSync('chess-game.js','utf8');
+assert(chess.includes('const chessSections=')&&((chess.match(/title:\[/g)||[]).length===7),'Chess learning must contain 7 sections');
+assert(chess.includes('mbokaChessProgress')&&chess.includes('saveChessSection'),'Chess learning must save measurable local progress');
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
