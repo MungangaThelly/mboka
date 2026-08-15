@@ -47,6 +47,7 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
 - **Mathématiques du quotidien** avec 10 unités contextualisées et trois niveaux d’âge
+- **Parcours musical interactif** pour écouter, lire une portée et jouer sur les touches blanches et noires
 - **Découverte quotidienne**, calendrier et série d’apprentissage
 - **Audio** pour écouter les provinces, chefs-lieux et introductions
 - **Badges, scores et progression** enregistrés sur l’appareil
@@ -186,6 +187,7 @@ The regional groupings and built-in map are learning aids. The map is explicitly
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
 - **Everyday mathematics** with 10 contextualised units and three age levels
+- **Interactive music journey** for listening, staff reading, and playing white and black keys
 - **Daily discovery**, calendar, and learning streak
 - **Audio** for province names, capitals, and lesson introductions
 - **Badges, scores, and progress** stored on the device
