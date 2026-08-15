@@ -32,6 +32,8 @@ const math=fs.readFileSync('math.js','utf8');
 assert(math.includes('const mathUnits=')&&((math.match(/title:\[/g)||[]).length===10),'Everyday mathematics must contain 10 units');
 const music=fs.readFileSync('music-game.js','utf8');
 assert(music.includes('const musicSections=')&&((music.match(/title:\[/g)||[]).length===4),'Music learning must contain 4 sections');
+assert(music.includes('musicIsiOS')&&music.includes('playMusicFile'),'Music learning must include the iOS audio-file fallback');
+for(const note of ['C','Cs','D','Ds','E','F','Fs','G','Gs','A','As','B'])assert(fs.existsSync(`music-${note}.wav`),`Missing iOS music note: ${note}`);
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
