@@ -46,6 +46,7 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 - **Quiz par âge** : Explorateur (7–10 ans), Aventurier (11–14 ans) et Maître (15 ans et plus)
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
+- **Mathématiques du quotidien** avec 10 unités contextualisées et trois niveaux d’âge
 - **Découverte quotidienne**, calendrier et série d’apprentissage
 - **Audio** pour écouter les provinces, chefs-lieux et introductions
 - **Badges, scores et progression** enregistrés sur l’appareil
@@ -184,6 +185,7 @@ The regional groupings and built-in map are learning aids. The map is explicitly
 - **Age-based quizzes**: Explorer (ages 7–10), Adventurer (ages 11–14), and Master (ages 15+)
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
+- **Everyday mathematics** with 10 contextualised units and three age levels
 - **Daily discovery**, calendar, and learning streak
 - **Audio** for province names, capitals, and lesson introductions
 - **Badges, scores, and progress** stored on the device
