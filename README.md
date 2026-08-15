@@ -18,6 +18,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Sprint des provinces en solo ou à deux équipes
 - Jeu de mémoire, défi de lingala et découverte quotidienne
 - Mathématiques du quotidien avec 10 unités et trois niveaux d’âge
+- Parcours musical interactif : notes, portée, touches blanches et touches noires
 - Audio par synthèse vocale disponible sur l’appareil
 - Badges, scores et progression conservés localement
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
@@ -53,6 +54,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Province Sprint in solo or two-team mode
 - Memory game, Lingala challenge, and daily discovery
 - Everyday mathematics with 10 units and three age levels
+- Interactive music journey covering notes, staff reading, white keys, and black keys
 - Device-provided speech synthesis
 - Badges, scores, and progress stored locally
 - Printable worksheets, lesson plans, and progress reports

@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="hardening.css">
   <link rel="stylesheet" href="pilot.css">
   <link rel="stylesheet" href="math.css">
+  <link rel="stylesheet" href="music-game.css">
 </head>
 <body>
   <header class="topbar">
@@ -84,6 +85,23 @@
         <div class="math-challenge-top"><div><small id="mathUnitNumber">UNITÉ 01</small><h3 id="mathUnitTitle"></h3></div><button type="button" id="mathClose" aria-label="Fermer">×</button></div>
         <p class="math-context" id="mathContext"></p><strong class="math-question" id="mathQuestion"></strong><div class="math-options" id="mathOptions"></div><p class="math-feedback" id="mathFeedback" aria-live="polite"></p><button class="button primary" id="mathNext" hidden>Nouvel exercice →</button>
       </div>
+    </section>
+
+    <section class="music-game-section" id="musicLab">
+      <div class="music-game-heading"><div><span class="eyebrow light">Laboratoire musical</span><h2>Écouter, lire,<br>puis jouer.</h2></div><div><p id="musicGameIntro">Quatre étapes pour découvrir les notes, lire une portée et jouer de courtes mélodies originales.</p><div class="music-game-progress"><span id="musicGameProgress">0 / 4 sections maîtrisées</span><i><b id="musicGameProgressBar"></b></i></div></div></div>
+      <div class="music-game-layout">
+        <div class="music-section-list" id="musicSectionList"></div>
+        <div class="music-player" id="musicPlayer">
+          <div class="music-player-head"><div><small id="musicSectionNumber">SECTION 1</small><h3 id="musicSectionTitle"></h3></div><span id="musicStepScore">0 / 5</span></div>
+          <p id="musicInstruction"></p>
+          <div class="music-staff" id="musicStaff" hidden><span></span><span></span><span></span><span></span><span></span><div id="staffNotes"></div></div>
+          <div class="music-sequence" id="musicSequence" aria-label="Suite de notes"></div>
+          <div class="piano" id="musicKeyboard" aria-label="Clavier musical interactif"></div>
+          <p class="music-game-feedback" id="musicGameFeedback" aria-live="polite"></p>
+          <div class="music-player-actions"><button class="button secondary" id="musicListen">Écouter</button><button class="button primary" id="musicRestart">Recommencer</button></div>
+        </div>
+      </div>
+      <p class="music-game-note" id="musicGameNote">Les mélodies de cet exercice sont originales. Le son est produit sur l’appareil et aucune donnée audio n’est enregistrée.</p>
     </section>
 
     <section class="lingala-section" id="lingalaGame">
@@ -198,6 +216,7 @@
   <script src="content-en.js"></script>
   <script src="i18n.js"></script>
   <script src="math.js"></script>
+  <script src="music-game.js"></script>
   <script src="pwa.js"></script>
 </body>
 </html>
