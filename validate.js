@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','icon.svg','README.md','PRESENTATION.md'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','icon.svg','README.md','PRESENTATION.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -20,12 +20,15 @@ for(const phrase of ['deux équipes','plan de leçon','rapport individuel de pro
 assert(html.includes('id="privacyLink"'),'Privacy link must have a stable translation target');
 assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
+assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
 assert(html.includes('id="printLessonPlan"'),'Printable lesson-plan button is missing');
 assert(html.includes('id="printProgress"'),'Printable progress-report button is missing');
 assert(html.includes('id="sprintMode"'),'Province Sprint team-mode control is missing');
 assert(!/<input[^>]+type=["'](?:email|password)["']/i.test(html),'Pilot must not request email or passwords');
 const app=fs.readFileSync('app.js','utf8');
+const math=fs.readFileSync('math.js','utf8');
+assert(math.includes('const mathUnits=')&&((math.match(/title:\[/g)||[]).length===10),'Everyday mathematics must contain 10 units');
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');

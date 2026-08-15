@@ -33,12 +33,13 @@
   <link rel="stylesheet" href="pwa.css">
   <link rel="stylesheet" href="hardening.css">
   <link rel="stylesheet" href="pilot.css">
+  <link rel="stylesheet" href="math.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#accueil" aria-label="Mboka, accueil"><span class="brand-mark">M</span><span>Mboka</span></a>
     <nav aria-label="Navigation principale">
-      <a href="#explorer">Explorer</a><a href="#memory">Mémoire</a><a href="#provinces">Provinces</a><a href="#sprint">Sprint</a><a href="#quiz">Quiz</a><a href="#enseignants">Classe</a>
+      <a href="#explorer">Explorer</a><a href="#memory">Mémoire</a><a href="#provinces">Provinces</a><a href="#sprint">Sprint</a><a href="#quiz">Quiz</a><a href="#enseignants">Classe</a><a href="#math">Maths</a>
     </nav>
     <div class="header-actions"><button class="install-button" id="installApp" hidden>Installer</button><label class="language-picker" aria-label="Langue"><span>◎</span><select id="languageSelect"><option value="fr">FR</option><option value="en">EN</option></select></label><button class="icon-button" id="soundToggle" title="Activer ou couper les sons" aria-label="Activer ou couper les sons">♪</button><button class="profile" id="profileButton" aria-label="Ouvrir mon profil">KM</button></div>
   </header>
@@ -70,6 +71,19 @@
     <section class="section" id="explorer">
       <div class="section-heading"><div><span class="eyebrow">Choisis ta route</span><h2>Un pays, mille découvertes</h2></div><p>Chaque parcours contient des histoires courtes, des faits étonnants et des défis.</p></div>
       <div class="journey-grid" id="journeyGrid"></div>
+    </section>
+
+    <section class="math-section" id="math">
+      <div class="math-heading">
+        <div><span class="eyebrow">Mathématiques du quotidien</span><h2>Calculer pour<br>comprendre le monde.</h2></div>
+        <div class="math-intro"><p id="mathIntro">Dix unités courtes avec des situations inspirées de la vie quotidienne en RDC.</p><div class="level-picker" id="mathLevelPicker"><button data-math-level="explorer"><strong>Explorateur</strong><small>7–10 ANS</small></button><button class="active" data-math-level="adventurer"><strong>Aventurier</strong><small>11–14 ANS</small></button><button data-math-level="master"><strong>Maître</strong><small>15+ ANS</small></button></div></div>
+      </div>
+      <div class="math-progress"><div><small id="mathProgressLabel">UNITÉS MAÎTRISÉES</small><strong id="mathProgressText">0 / 10</strong></div><div class="math-progress-track"><i id="mathProgressBar"></i></div></div>
+      <div class="math-unit-grid" id="mathUnitGrid"></div>
+      <div class="math-challenge" id="mathChallenge" hidden>
+        <div class="math-challenge-top"><div><small id="mathUnitNumber">UNITÉ 01</small><h3 id="mathUnitTitle"></h3></div><button type="button" id="mathClose" aria-label="Fermer">×</button></div>
+        <p class="math-context" id="mathContext"></p><strong class="math-question" id="mathQuestion"></strong><div class="math-options" id="mathOptions"></div><p class="math-feedback" id="mathFeedback" aria-live="polite"></p><button class="button primary" id="mathNext" hidden>Nouvel exercice →</button>
+      </div>
     </section>
 
     <section class="lingala-section" id="lingalaGame">
@@ -183,6 +197,7 @@
   <script src="app.js"></script>
   <script src="content-en.js"></script>
   <script src="i18n.js"></script>
+  <script src="math.js"></script>
   <script src="pwa.js"></script>
 </body>
 </html>
