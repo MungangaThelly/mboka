@@ -23,6 +23,7 @@ assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"'),'Interactive music-learning interface is missing');
 assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),'Interactive chess-learning interface is missing');
+assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
 assert(html.includes('id="printLessonPlan"'),'Printable lesson-plan button is missing');
 assert(html.includes('id="printProgress"'),'Printable progress-report button is missing');
@@ -39,6 +40,7 @@ for(const note of ['C','Cs','D','Ds','E','F','Fs','G','Gs','A','As','B'])assert(
 const chess=fs.readFileSync('chess-game.js','utf8');
 assert(chess.includes('const chessSections=')&&((chess.match(/title:\[/g)||[]).length===7),'Chess learning must contain 7 sections');
 assert(chess.includes('mbokaChessProgress')&&chess.includes('saveChessSection'),'Chess learning must save measurable local progress');
+assert(chess.includes("querySelector('#chessSpeak')")&&chess.includes('speakPhrase'),'Chess instructions must support spoken playback');
 assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is missing');
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
