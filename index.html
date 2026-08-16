@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="provinces.css">
   <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href="real-map.css">
+  <link rel="stylesheet" href="territories.css">
   <link rel="stylesheet" href="levels.css">
   <link rel="stylesheet" href="audio.css">
   <link rel="stylesheet" href="daily.css">
@@ -135,14 +136,14 @@
       <div class="province-copy"><span class="eyebrow light">Carte d'exploration</span><h2>26 provinces.<br>26 identités.</h2><p>Découvre les chefs-lieux, paysages et repères de chaque province.</p><label class="search"><span>⌕</span><input id="provinceSearch" type="search" placeholder="Chercher une province…" autocomplete="off"></label><div class="region-filters" id="regionFilters"><button class="active" data-region="Toutes">Toutes</button><button data-region="Ouest">Ouest</button><button data-region="Centre">Centre</button><button data-region="Nord">Nord</button><button data-region="Est">Est</button><button data-region="Sud">Sud</button></div><p class="result-count" id="provinceCount"></p></div>
       <div class="province-panel"><div class="province-list" id="provinceList"></div></div>
       <div class="province-map-block">
-        <div class="map-header"><div><span>CARTE INTERACTIVE</span><h3>Voyage à travers la RDC</h3></div><small>LIMITES DES 26 PROVINCES · CARTE PÉDAGOGIQUE</small></div>
+        <div class="map-header"><div><span>CARTE INTERACTIVE</span><h3>Voyage à travers la RDC</h3></div><div class="map-level-switch" role="group" aria-label="Niveau administratif"><button class="active" id="showProvinces" aria-pressed="true">26 provinces</button><button id="showTerritories" aria-pressed="false">145 territoires</button></div></div>
         <div class="map-layout">
-          <div class="map-stage has-real-map" id="mapStage" aria-label="Carte interactive des 26 provinces de la RDC">
-            <svg id="drcProvinceMap" viewBox="0 0 800 560" role="img" aria-label="Carte des 26 provinces de la République démocratique du Congo"><g id="provinceBoundaryLayer"></g></svg>
+          <div class="map-stage has-real-map" id="mapStage" aria-label="Carte administrative interactive de la RDC">
+            <svg id="drcProvinceMap" viewBox="0 0 800 560" role="img" aria-label="Carte administrative pédagogique de la République démocratique du Congo"><g id="provinceBoundaryLayer"></g><g id="territoryBoundaryLayer" hidden></g></svg>
             <div id="mapMarkers"></div>
           </div>
-          <aside class="map-preview" id="mapPreview"><span class="map-zone" id="mapZone">COMMENCE ICI</span><div class="spoken-title"><h3 id="mapProvince">Choisis une province</h3><button class="speak-control" id="mapSpeak" aria-label="Écouter la province" disabled>♪</button></div><p id="mapDescription">Sélectionne un point sur la carte pour découvrir son chef-lieu et un repère important.</p><div class="map-meta"><div><small>CHEF-LIEU</small><strong id="mapCapital">—</strong></div><div><small>REPÈRE</small><strong id="mapLandmark">—</strong></div></div><button class="button primary" id="openMapProfile" disabled>Ouvrir le profil →</button></aside>
-        </div><p class="map-source" id="mapSource"><strong>Source cartographique :</strong> geoBoundaries COD ADM1, données OpenStreetMap/Wambacher, licence ODbL 1.0. Limites indicatives à vocation pédagogique.</p>
+          <aside class="map-preview" id="mapPreview"><label class="territory-picker" id="territoryPicker" hidden><span>Choisir un territoire</span><select id="territorySelect"><option value="">Les 145 territoires…</option></select></label><span class="map-zone" id="mapZone">COMMENCE ICI</span><div class="spoken-title"><h3 id="mapProvince">Choisis une province</h3><button class="speak-control" id="mapSpeak" aria-label="Écouter le lieu" disabled>♪</button></div><p id="mapDescription">Sélectionne un point sur la carte pour découvrir son chef-lieu et un repère important.</p><div class="map-meta"><div><small id="mapCapitalLabel">CHEF-LIEU</small><strong id="mapCapital">—</strong></div><div><small id="mapLandmarkLabel">REPÈRE</small><strong id="mapLandmark">—</strong></div></div><button class="button primary" id="openMapProfile" disabled>Ouvrir le profil →</button></aside>
+        </div><p class="map-source" id="mapSource"><strong>Sources cartographiques :</strong> provinces — geoBoundaries COD ADM1, OpenStreetMap/Wambacher, ODbL 1.0; territoires — geoBoundaries COD ADM2, Référentiel Géographique Commun/OCHA RDC, CC BY 3.0 IGO. Catalogue recoupé avec la CAID et le PDL-145T. Limites indicatives à vocation pédagogique.</p>
       </div>
     </section>
 
@@ -229,6 +230,7 @@
     </section>
   </div>
   <script src="province-boundaries.js"></script>
+  <script src="territory-boundaries.js"></script>
   <script src="app.js"></script>
   <script src="content-en.js"></script>
   <script src="i18n.js"></script>

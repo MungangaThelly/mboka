@@ -6,6 +6,13 @@ Internal offline-cache numbers are not used as public versions. This document re
 
 ## 2026-08-16
 
+### Carte des 145 territoires / 145-territory map
+
+- Ajout d’un second niveau interactif à la carte pour explorer exactement 145 territoires, regroupés par province.
+- Ajout d’un sélecteur adapté au mobile, de limites cliquables, de la lecture vocale et d’un retour vers la fiche de la province.
+- Géométries issues de geoBoundaries ADM2 (Référentiel Géographique Commun/OCHA RDC); catalogue recoupé avec la CAID et le PDL-145T.
+- Added an interactive 145-territory layer with province grouping, mobile selection, spoken names, and documented open-data attribution.
+
 ### Navigation des parcours / Learning-path navigation
 
 - « Classe » devient « Enseignants » afin de rendre l’espace pédagogique immédiatement identifiable.

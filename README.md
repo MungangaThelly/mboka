@@ -11,7 +11,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 
 ### Fonctionnalités
 
-- Carte vectorielle interactive des limites des 26 provinces et profils bilingues avec chefs-lieux, villes, langues, aliments, économie et lieux célèbres
+- Carte vectorielle interactive à deux niveaux : limites des 26 provinces, couche des 145 territoires regroupés par province et profils provinciaux bilingues
 - Histoire des royaumes Kongo, Luba, Lunda et Kuba
 - Communautés, langues, environnement, ressources, cuisine, musique, arts et personnalités
 - Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus
@@ -49,7 +49,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 
 ### Features
 
-- Interactive vector boundary map and bilingual profiles for all 26 provinces, including capitals, towns, languages, food, economy, and notable places
+- Two-level interactive vector map covering all 26 provinces and exactly 145 territories grouped by province, plus bilingual provincial profiles
 - History of the Kongo, Luba, Lunda, and Kuba kingdoms
 - Communities, languages, environment, resources, food, music, arts, and notable people
 - Age-based quizzes for ages 7–10, 11–14, and 15+
@@ -83,13 +83,15 @@ Mboka requires no account, name, email address, or password. Progress and option
 
 ## Production and validation
 
-The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks, all 26 provinces, teacher tools, team mode, mathematics and music content, the seven chess sections, iPhone audio fallback, spoken controls, and offline asset coverage.
+The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks, all 26 provinces, exactly 145 territories, teacher tools, team mode, mathematics and music content, the seven chess sections, iPhone audio fallback, spoken controls, and offline asset coverage.
 
 Production: [mboka.nuhar.se](https://mboka.nuhar.se)
 
 Photo de l’okapi : [Grace Tshiyonga, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Okapi_2.jpg), sous [licence CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 Limites provinciales : [geoBoundaries COD ADM1](https://www.geoboundaries.org/api/current/gbOpen/COD/ADM1/), données OpenStreetMap/Wambacher sous licence ODbL 1.0. Les limites sont indicatives et utilisées à des fins pédagogiques.
+
+Limites territoriales : [geoBoundaries COD ADM2](https://www.geoboundaries.org/api/current/gbOpen/COD/ADM2/), source Référentiel Géographique Commun/OCHA RDC sous licence CC BY 3.0 IGO. Le catalogue des 145 territoires est recoupé avec la CAID et les publications gouvernementales du PDL-145T.
 
 ## Project status
 
