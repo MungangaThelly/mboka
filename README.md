@@ -11,7 +11,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 
 ### Fonctionnalités
 
-- Profils bilingues des 26 provinces avec chefs-lieux, villes, langues, aliments, économie et lieux célèbres
+- Carte vectorielle interactive des limites des 26 provinces et profils bilingues avec chefs-lieux, villes, langues, aliments, économie et lieux célèbres
 - Histoire des royaumes Kongo, Luba, Lunda et Kuba
 - Communautés, langues, environnement, ressources, cuisine, musique, arts et personnalités
 - Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus
@@ -49,7 +49,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 
 ### Features
 
-- Bilingual profiles for all 26 provinces, including capitals, towns, languages, food, economy, and notable places
+- Interactive vector boundary map and bilingual profiles for all 26 provinces, including capitals, towns, languages, food, economy, and notable places
 - History of the Kongo, Luba, Lunda, and Kuba kingdoms
 - Communities, languages, environment, resources, food, music, arts, and notable people
 - Age-based quizzes for ages 7–10, 11–14, and 15+
@@ -88,6 +88,8 @@ The static production build is generated in `dist/` and deployed through Vercel.
 Production: [mboka.nuhar.se](https://mboka.nuhar.se)
 
 Photo de l’okapi : [Grace Tshiyonga, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Okapi_2.jpg), sous [licence CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+Limites provinciales : [geoBoundaries COD ADM1](https://www.geoboundaries.org/api/current/gbOpen/COD/ADM1/), données OpenStreetMap/Wambacher sous licence ODbL 1.0. Les limites sont indicatives et utilisées à des fins pédagogiques.
 
 ## Project status
 

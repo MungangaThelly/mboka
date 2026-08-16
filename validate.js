@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','province-boundaries.js','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -26,6 +26,7 @@ assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),
 assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is missing');
 assert(html.includes('class="skip-link"')&&html.includes('class="module-nav"'),'Accessible quick navigation is missing');
 assert(html.includes('href="#musicLab">Musique</a>')&&html.includes('href="#chessLab">Échecs</a>'),'Music and chess navigation links are missing');
+assert(html.includes('id="provinceBoundaryLayer"')&&html.includes('geoBoundaries COD ADM1'),'Real 26-province map or attribution is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
 assert(html.includes('id="printLessonPlan"'),'Printable lesson-plan button is missing');
 assert(html.includes('id="printProgress"'),'Printable progress-report button is missing');
@@ -61,6 +62,7 @@ assert(app.includes('creativityProfiles')&&app.includes('renderCreativity'),'Mus
 for(const [name,count] of [['provinces',26],['provinceDetails',26],['mapPositions',26]]){const match=app.match(new RegExp(`const ${name} =? ?\\[(.*?)\\];`,'s'));assert(match,`Could not find ${name}`);const actual=name==='mapPositions'?(match[1].match(/\[\d+,\d+\]/g)||[]).length:(match[1].match(/\['/g)||[]).length;assert(actual===count,`${name} has ${actual} entries; expected ${count}`)}
 for(const name of ['explorerQuestions','masterQuestions']){const match=app.match(new RegExp(`const ${name}=\\[(.*?)\\];`,'s'));assert(match&&((match[1].match(/\{topic:/g)||[]).length===10),`${name} must contain 10 questions`)}
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('content-en.js','utf8'),sandbox);const en=sandbox.window.enContent;
+const mapSandbox={window:{}};vm.runInNewContext(fs.readFileSync('province-boundaries.js','utf8'),mapSandbox);assert(mapSandbox.window.drcProvinceBoundaries.length===26,'Real province boundary map must contain 26 provinces');
 assert(en.provinces.length===26,'English province profiles must contain 26 entries');assert(en.questions.length===10&&en.levelQuestions.explorer.length===10&&en.levelQuestions.master.length===10,'English quiz banks must contain 10 questions each');
 assert(en.provinceProfiles.length===26&&en.provinceProfiles.every(profile=>profile.length===5),'English cultural province profiles must contain 26 complete entries');
 const profileMatch=app.match(/const provinceProfiles = \[(.*?)\];/s);assert(profileMatch&&((profileMatch[1].match(/^  \[/gm)||[]).length===26),'French cultural province profiles must contain 26 entries');

@@ -23,7 +23,9 @@ Object.assign(uiCopy,{
   '.module-nav a:nth-child(4)':['Échecs','Chess'],
   '.module-nav a:nth-child(5)':['Quiz','Quiz'],
   '.module-nav a:nth-child(6)':['Classe','Classroom'],
-  '.skip-link':['Aller au contenu principal','Skip to main content']
+  '.skip-link':['Aller au contenu principal','Skip to main content'],
+  '.map-header>small':['LIMITES DES 26 PROVINCES · CARTE PÉDAGOGIQUE','26 PROVINCE BOUNDARIES · EDUCATIONAL MAP'],
+  '#mapSource':['Source cartographique : geoBoundaries COD ADM1, données OpenStreetMap/Wambacher, licence ODbL 1.0. Limites indicatives à vocation pédagogique.','Map source: geoBoundaries COD ADM1, OpenStreetMap/Wambacher data, ODbL 1.0 licence. Indicative boundaries for educational use.']
 });
 const htmlSelectors=new Set(['.hero h1','#memory h2','#provinces h2','#sprint h2','#enseignants h2','#pilot h2']);
 function applyLanguage(lang){

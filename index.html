@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="teacher.css">
   <link rel="stylesheet" href="provinces.css">
   <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="real-map.css">
   <link rel="stylesheet" href="levels.css">
   <link rel="stylesheet" href="audio.css">
   <link rel="stylesheet" href="daily.css">
@@ -133,14 +134,14 @@
       <div class="province-copy"><span class="eyebrow light">Carte d'exploration</span><h2>26 provinces.<br>26 identités.</h2><p>Découvre les chefs-lieux, paysages et repères de chaque province.</p><label class="search"><span>⌕</span><input id="provinceSearch" type="search" placeholder="Chercher une province…" autocomplete="off"></label><div class="region-filters" id="regionFilters"><button class="active" data-region="Toutes">Toutes</button><button data-region="Ouest">Ouest</button><button data-region="Centre">Centre</button><button data-region="Nord">Nord</button><button data-region="Est">Est</button><button data-region="Sud">Sud</button></div><p class="result-count" id="provinceCount"></p></div>
       <div class="province-panel"><div class="province-list" id="provinceList"></div></div>
       <div class="province-map-block">
-        <div class="map-header"><div><span>CARTE INTERACTIVE</span><h3>Voyage à travers la RDC</h3></div><small>CARTE SCHÉMATIQUE · NON DESTINÉE À LA NAVIGATION</small></div>
+        <div class="map-header"><div><span>CARTE INTERACTIVE</span><h3>Voyage à travers la RDC</h3></div><small>LIMITES DES 26 PROVINCES · CARTE PÉDAGOGIQUE</small></div>
         <div class="map-layout">
-          <div class="map-stage" id="mapStage" aria-label="Carte schématique interactive des provinces de la RDC">
-            <svg viewBox="0 0 800 560" role="img" aria-label="Silhouette schématique de la République démocratique du Congo"><path d="M85 176L142 116 224 111 275 69 362 92 408 70 467 104 542 89 596 125 579 173 647 175 705 213 674 255 735 289 686 321 676 389 614 401 577 463 516 442 469 496 406 474 353 513 291 477 237 487 204 443 145 430 121 371 75 335 99 278 62 235Z"></path><path class="river-line" d="M180 125C217 201 346 174 377 250S295 355 395 430 531 442 612 381"></path></svg>
+          <div class="map-stage has-real-map" id="mapStage" aria-label="Carte interactive des 26 provinces de la RDC">
+            <svg id="drcProvinceMap" viewBox="0 0 800 560" role="img" aria-label="Carte des 26 provinces de la République démocratique du Congo"><g id="provinceBoundaryLayer"></g></svg>
             <div id="mapMarkers"></div>
           </div>
           <aside class="map-preview" id="mapPreview"><span class="map-zone" id="mapZone">COMMENCE ICI</span><div class="spoken-title"><h3 id="mapProvince">Choisis une province</h3><button class="speak-control" id="mapSpeak" aria-label="Écouter la province" disabled>♪</button></div><p id="mapDescription">Sélectionne un point sur la carte pour découvrir son chef-lieu et un repère important.</p><div class="map-meta"><div><small>CHEF-LIEU</small><strong id="mapCapital">—</strong></div><div><small>REPÈRE</small><strong id="mapLandmark">—</strong></div></div><button class="button primary" id="openMapProfile" disabled>Ouvrir le profil →</button></aside>
-        </div>
+        </div><p class="map-source" id="mapSource"><strong>Source cartographique :</strong> geoBoundaries COD ADM1, données OpenStreetMap/Wambacher, licence ODbL 1.0. Limites indicatives à vocation pédagogique.</p>
       </div>
     </section>
 
@@ -226,6 +227,7 @@
       </div>
     </section>
   </div>
+  <script src="province-boundaries.js"></script>
   <script src="app.js"></script>
   <script src="content-en.js"></script>
   <script src="i18n.js"></script>

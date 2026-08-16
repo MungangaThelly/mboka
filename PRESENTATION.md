@@ -42,7 +42,7 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 
 - **Parcours thématiques** avec faits et explications
 - **Profils bilingues des 26 provinces**
-- **Carte interactive** reliée aux profils provinciaux
+- **Carte vectorielle interactive** montrant les limites des 26 provinces et reliée aux profils provinciaux
 - **Quiz par âge** : Explorateur (7–10 ans), Aventurier (11–14 ans) et Maître (15 ans et plus)
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
@@ -183,7 +183,7 @@ The regional groupings and built-in map are learning aids. The map is explicitly
 
 - **Thematic journeys** with facts and explanations
 - **Bilingual profiles for all 26 provinces**
-- **Interactive map** connected to provincial profiles
+- **Interactive vector map** showing all 26 provincial boundaries and connected to provincial profiles
 - **Age-based quizzes**: Explorer (ages 7–10), Adventurer (ages 11–14), and Master (ages 15+)
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
