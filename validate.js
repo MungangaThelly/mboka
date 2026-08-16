@@ -25,6 +25,7 @@ assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"
 assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),'Interactive chess-learning interface is missing');
 assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is missing');
 assert(html.includes('class="skip-link"')&&html.includes('class="module-nav"'),'Accessible quick navigation is missing');
+assert(html.includes('class="pathway-menu"')&&html.includes('href="#enseignants">Enseignants</a>'),'Teacher and learning-path navigation is missing');
 assert(html.includes('href="#musicLab">Musique</a>')&&html.includes('href="#chessLab">Échecs</a>'),'Music and chess navigation links are missing');
 assert(html.includes('id="provinceBoundaryLayer"')&&html.includes('geoBoundaries COD ADM1'),'Real 26-province map or attribution is missing');
 assert(html.includes('id="worksheetLevel"')&&html.includes('id="worksheetTopic"'),'Teacher worksheet filters are missing');
