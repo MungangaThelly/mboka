@@ -274,12 +274,16 @@ document.querySelector('#provinceList').addEventListener('click',e=>{
 });
 document.querySelector('#provinceList').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.province){e.preventDefault();e.target.click()}});
 
-const mapMarkers=document.querySelector('#mapMarkers');let selectedMapProvince=-1;
-mapMarkers.innerHTML=provinces.map((p,i)=>`<button class="map-marker" style="left:${mapPositions[i][0]}%;top:${mapPositions[i][1]}%" data-map-index="${i}" data-short="${p[0]}" aria-label="${p[0]}, chef-lieu ${p[1]}"></button>`).join('');
+const mapMarkers=document.querySelector('#mapMarkers'),provinceBoundaryLayer=document.querySelector('#provinceBoundaryLayer');let selectedMapProvince=-1;
+const drcBoundaryByName=Object.fromEntries((window.drcProvinceBoundaries||[]).map(boundary=>[boundary.name,boundary]));
+provinceBoundaryLayer.innerHTML=provinces.map((province,index)=>{const boundary=drcBoundaryByName[province[0]],region=provinceDetails[index][0].toLowerCase();return boundary?`<path class="province-shape region-${region}" d="${boundary.d}" data-map-index="${index}" tabindex="0" role="button" aria-label="${province[0]}, chef-lieu ${province[1]}"><title>${province[0]} · ${province[1]}</title></path>`:''}).join('');
+mapMarkers.innerHTML=provinces.map((province,index)=>{const boundary=drcBoundaryByName[province[0]],position=boundary?[4+boundary.x/800*92,4+boundary.y/560*92]:mapPositions[index];return`<button class="map-marker" style="left:${position[0].toFixed(2)}%;top:${position[1].toFixed(2)}%" data-map-index="${index}" data-short="${province[0]}" aria-label="${province[0]}, chef-lieu ${province[1]}"></button>`}).join('');
 function selectMapProvince(index){
-  selectedMapProvince=index;const p=provinces[index],d=provinceDetails[index];document.querySelectorAll('.map-marker').forEach((m,i)=>m.classList.toggle('active',i===index));document.querySelector('#mapZone').textContent=d[0];document.querySelector('#mapProvince').textContent=p[0];document.querySelector('#mapDescription').textContent=d[2];document.querySelector('#mapCapital').textContent=p[1];document.querySelector('#mapLandmark').textContent=d[1];document.querySelector('#openMapProfile').disabled=false;document.querySelector('#mapSpeak').disabled=false;window.refreshLanguage?.();
+  selectedMapProvince=index;const p=provinces[index],d=provinceDetails[index];document.querySelectorAll('.map-marker').forEach((m,i)=>m.classList.toggle('active',i===index));document.querySelectorAll('.province-shape').forEach(shape=>shape.classList.toggle('active',Number(shape.dataset.mapIndex)===index));document.querySelector('#mapZone').textContent=d[0];document.querySelector('#mapProvince').textContent=p[0];document.querySelector('#mapDescription').textContent=d[2];document.querySelector('#mapCapital').textContent=p[1];document.querySelector('#mapLandmark').textContent=d[1];document.querySelector('#openMapProfile').disabled=false;document.querySelector('#mapSpeak').disabled=false;window.refreshLanguage?.();
 }
 mapMarkers.addEventListener('click',e=>{const marker=e.target.closest('[data-map-index]');if(marker)selectMapProvince(Number(marker.dataset.mapIndex))});
+provinceBoundaryLayer.addEventListener('click',event=>{const province=event.target.closest('[data-map-index]');if(province)selectMapProvince(Number(province.dataset.mapIndex))});
+provinceBoundaryLayer.addEventListener('keydown',event=>{if(event.key!=='Enter'&&event.key!==' ')return;const province=event.target.closest('[data-map-index]');if(!province)return;event.preventDefault();selectMapProvince(Number(province.dataset.mapIndex))});
 document.querySelector('#openMapProfile').addEventListener('click',()=>{if(selectedMapProvince>=0)openProvinceProfile(selectedMapProvince)});
 
 // Memory game: pair a Congolese treasure with its meaning.

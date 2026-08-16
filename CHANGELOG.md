@@ -31,6 +31,8 @@ Internal offline-cache numbers are not used as public versions. This document re
 
 ### Parcours éducatifs / Educational pathways
 
+- Remplacement du croquis de la RDC par une carte vectorielle interactive des 26 limites provinciales, issue de geoBoundaries COD ADM1 sous licence ODbL 1.0.
+- Replaced the schematic DRC outline with an interactive vector map of all 26 provincial boundaries from geoBoundaries COD ADM1 under ODbL 1.0.
 - Ajout des mathématiques du quotidien avec dix unités et trois niveaux d’âge.
 - Renforcement des outils pilotes : objectifs mesurables, activités imprimables et rapports de progression.
 - Added everyday mathematics with ten units and three age levels, plus measurable pilot and teacher tools.
