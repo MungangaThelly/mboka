@@ -4,6 +4,15 @@ Les numéros internes du cache hors ligne ne sont pas utilisés comme versions p
 
 Internal offline-cache numbers are not used as public versions. This document records meaningful product changes.
 
+## 2026-08-16
+
+### Navigation des parcours / Learning-path navigation
+
+- « Classe » devient « Enseignants » afin de rendre l’espace pédagogique immédiatement identifiable.
+- Le nouveau menu « Parcours » donne un accès direct à la citoyenneté, à l’environnement et aux ressources responsables.
+- La navigation mobile propose les mêmes accès sous forme de raccourcis tactiles défilants.
+- “Classroom” becomes “Teachers”, with direct desktop and mobile access to citizenship, environment, and responsible-resources learning paths.
+
 ## 2026-08-15
 
 ### Laboratoire d’échecs / Chess laboratory

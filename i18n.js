@@ -1,6 +1,6 @@
 // Stage-one interface localization. Educational question packs remain authored in French.
 const uiCopy={
-  'nav a:nth-child(1)':['Explorer','Explore'],'nav a:nth-child(2)':['Mémoire','Memory'],'nav a:nth-child(3)':['Provinces','Provinces'],'nav a:nth-child(4)':['Sprint','Sprint'],'nav a:nth-child(5)':['Quiz','Quiz'],'nav a:nth-child(6)':['Classe','Classroom'],
+  '.primary-nav>a:nth-of-type(1)':['Explorer','Explore'],'.primary-nav>a:nth-of-type(2)':['Provinces','Provinces'],'.primary-nav>a:nth-of-type(3)':['Maths','Maths'],'.primary-nav>a:nth-of-type(4)':['Musique','Music'],'.primary-nav>a:nth-of-type(5)':['Échecs','Chess'],'.primary-nav>a:nth-of-type(6)':['Enseignants','Teachers'],'.pathway-menu summary':['Parcours','Learning paths'],'.pathway-menu a:nth-child(1)':['Citoyenneté','Citizenship'],'.pathway-menu a:nth-child(2)':['Environnement','Environment'],'.pathway-menu a:nth-child(3)':['Ressources responsables','Responsible resources'],
   '.hero .eyebrow':['L’aventure commence ici','The adventure starts here'],'.hero h1':['La RDC comme tu ne l’as <em>jamais explorée.</em>','The DRC as you have <em>never explored it.</em>'],'.hero-copy>p':['Des rives du fleuve Congo aux sommets des Virunga, pars à la découverte d’un pays aux mille histoires.','From the Congo River to the Virunga peaks, discover a country with a thousand stories.'],'.hero-actions .primary':['Commencer l’aventure →','Start the adventure →'],'.hero-actions .secondary':['◎ Explorer les thèmes','◎ Explore topics'],'.scroll-cue':['DÉFILE POUR EXPLORER ↓','SCROLL TO EXPLORE ↓'],
   '.daily-streak small':['SÉRIE ACTUELLE','CURRENT STREAK'],'.daily-label span':['✦ DÉCOUVERTE DU JOUR','✦ DAILY DISCOVERY'],'.week-heading small':['MES 7 DERNIERS JOURS','MY LAST 7 DAYS'],'.week-heading>span':['Objectif : 7 jours','Goal: 7 days'],
   '#explorer .section-heading .eyebrow':['Choisis ta route','Choose your path'],'#explorer h2':['Un pays, mille découvertes','One country, a thousand discoveries'],'#explorer .section-heading>p':['Chaque parcours contient des histoires courtes, des faits étonnants et des défis.','Every journey contains short stories, surprising facts and challenges.'],
@@ -14,15 +14,15 @@ const uiCopy={
   '#profileTitle':['Kimi','Kimi'],'.profile-cover>span':['MON CARNET D’EXPLORATEUR','MY EXPLORER NOTEBOOK'],'.level-row small':['PROGRESSION GLOBALE','OVERALL PROGRESS'],'.profile-stats>div:nth-child(1) small':['MEILLEUR QUIZ','BEST QUIZ'],'.profile-stats>div:nth-child(2) small':['RECORD SPRINT','SPRINT RECORD'],'.profile-stats>div:nth-child(3) small':['PARCOURS','JOURNEYS'],'.badge-heading small':['MA COLLECTION','MY COLLECTION'],'.badge-heading h3':['Badges à débloquer','Badges to unlock'],'#printProgress':['Imprimer le rapport','Print report'],'#resetProgress':['Réinitialiser ma progression','Reset my progress']
 };
 Object.assign(uiCopy,{
-  'nav:not(.module-nav) a:nth-child(7)':['Maths','Maths'],
-  'nav:not(.module-nav) a:nth-child(8)':['Musique','Music'],
-  'nav:not(.module-nav) a:nth-child(9)':['Échecs','Chess'],
   '.module-nav a:nth-child(1)':['Découvrir','Discover'],
   '.module-nav a:nth-child(2)':['Maths','Maths'],
   '.module-nav a:nth-child(3)':['Musique','Music'],
   '.module-nav a:nth-child(4)':['Échecs','Chess'],
   '.module-nav a:nth-child(5)':['Quiz','Quiz'],
-  '.module-nav a:nth-child(6)':['Classe','Classroom'],
+  '.module-nav a:nth-child(6)':['Enseignants','Teachers'],
+  '.module-nav a:nth-child(7)':['Citoyenneté','Citizenship'],
+  '.module-nav a:nth-child(8)':['Environnement','Environment'],
+  '.module-nav a:nth-child(9)':['Ressources','Resources'],
   '.skip-link':['Aller au contenu principal','Skip to main content'],
   '.map-header>small':['LIMITES DES 26 PROVINCES · CARTE PÉDAGOGIQUE','26 PROVINCE BOUNDARIES · EDUCATIONAL MAP'],
   '#mapSource':['Source cartographique : geoBoundaries COD ADM1, données OpenStreetMap/Wambacher, licence ODbL 1.0. Limites indicatives à vocation pédagogique.','Map source: geoBoundaries COD ADM1, OpenStreetMap/Wambacher data, ODbL 1.0 licence. Indicative boundaries for educational use.']
