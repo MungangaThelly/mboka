@@ -36,13 +36,13 @@ Mboka introduit notamment :
 - Les aliments, plats et traditions culinaires
 - Les minerais, les savoir-faire et l’exploitation responsable
 
-Les regroupements régionaux et la carte intégrée servent à l’apprentissage. La carte est explicitement présentée comme schématique et ne remplace pas une carte administrative officielle.
+Les regroupements régionaux et la carte intégrée servent à l’apprentissage. Les limites ouvertes des 26 provinces et des 145 territoires sont indicatives et ne remplacent pas une carte administrative officielle.
 
 ### Expérience d’apprentissage
 
 - **Parcours thématiques** avec faits et explications
 - **Profils bilingues des 26 provinces**
-- **Carte vectorielle interactive** montrant les limites des 26 provinces et reliée aux profils provinciaux
+- **Carte vectorielle interactive à deux niveaux** montrant les 26 provinces et exactement 145 territoires regroupés par province
 - **Quiz par âge** : Explorateur (7–10 ans), Aventurier (11–14 ans) et Maître (15 ans et plus)
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
 - **Jeu de mémoire** autour des trésors du Congo
@@ -133,7 +133,7 @@ La commande `npm test` contrôle notamment :
 
 Mboka constitue une fondation éducative fonctionnelle, mais ne prétend pas encore contenir tout le savoir sur la RDC.
 
-Les contenus doivent continuer à être relus par des éducateurs, historiens, linguistes et spécialistes congolais. Les futurs développements pourront approfondir les territoires, les villes, les personnalités, les langues, les climats, les recettes, les œuvres, les périodes historiques et les réalités propres à chaque province.
+Les contenus doivent continuer à être relus par des éducateurs, historiens, linguistes et spécialistes congolais. Les futurs développements pourront approfondir les fiches des territoires, les villes, les personnalités, les langues, les climats, les recettes, les œuvres, les périodes historiques et les réalités propres à chaque province.
 
 ### Feuille de route proposée
 
@@ -177,13 +177,13 @@ Mboka introduces:
 - Food and culinary traditions
 - Minerals, skills, and responsible use of resources
 
-The regional groupings and built-in map are learning aids. The map is explicitly identified as schematic and does not replace an official administrative map.
+The regional groupings and built-in map are learning aids. Its open-data boundaries for the 26 provinces and 145 territories are indicative and do not replace an official administrative map.
 
 ### Learning experience
 
 - **Thematic journeys** with facts and explanations
 - **Bilingual profiles for all 26 provinces**
-- **Interactive vector map** showing all 26 provincial boundaries and connected to provincial profiles
+- **Two-level interactive vector map** showing all 26 provinces and exactly 145 territories grouped by province
 - **Age-based quizzes**: Explorer (ages 7–10), Adventurer (ages 11–14), and Master (ages 15+)
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
 - **Memory game** featuring treasures of the Congo
