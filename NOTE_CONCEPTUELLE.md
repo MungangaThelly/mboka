@@ -1,6 +1,6 @@
 # Note conceptuelle — Projet pilote Mboka en République démocratique du Congo
 
-**Version de travail — août 2026**
+**Version de discussion partenariale — août 2026**
 
 ## 1. Informations générales
 
@@ -16,7 +16,9 @@
 
 **Durée indicative :** 6 mois, dont 3 à 4 mois d’utilisation dans les écoles
 
-**Bénéficiaires indicatifs :** 100 à 300 élèves, 10 à 20 enseignants et 2 à 5 écoles
+**Scénario de référence pour le budget :** 120 élèves, 12 enseignants et 3 écoles
+
+**Fourchette adaptable :** 100 à 300 élèves, 10 à 20 enseignants et 2 à 5 écoles
 
 ## 2. Résumé du projet
 
@@ -41,7 +43,7 @@ Mboka propose actuellement :
 - des profils bilingues des 26 provinces ;
 - des contenus sur la géographie, l’histoire, les langues, la culture, l’environnement et les ressources ;
 - des quiz adaptés à plusieurs groupes d’âge ;
-- une carte interactive et des jeux éducatifs ;
+- une carte interactive couvrant les 26 provinces et les 145 territoires, ainsi que des jeux éducatifs ;
 - des badges, scores et parcours de progression enregistrés sur l’appareil ;
 - des fiches d’activités, plans de leçon et rapports imprimables ;
 - une installation en tant que Progressive Web App et un fonctionnement hors connexion ;
@@ -173,9 +175,15 @@ La durabilité reposera également sur :
 | Dépendance envers IT-Weor | Documentation, transfert de compétences et accord clair sur la maintenance |
 | Conflit d’intérêts dans la sélection du prestataire | Déclaration des liens, justification des coûts et procédure d’achat transparente |
 
-## 13. Budget indicatif à construire
+## 13. Budget indicatif de référence
 
-Le budget sera établi avec les partenaires à partir des coûts réels. Il comportera au minimum :
+Pour rendre le projet immédiatement discutable avec des partenaires, un scénario de référence a été établi pour 3 écoles, 120 élèves, 12 enseignants et 6 mois :
+
+- **financement externe indicatif recherché : 490 000 SEK** ;
+- **contribution en nature indicative d’IT-Weor AB : 80 000 SEK** ;
+- **valeur totale indicative du pilote : 570 000 SEK**.
+
+Le budget détaillé figure dans le document [Budget indicatif du pilote](BUDGET_PILOTE.md). Il sera recalculé avec les partenaires à partir des coûts réels et comportera notamment :
 
 - coordination du projet ;
 - adaptation et développement de la plateforme ;
@@ -224,3 +232,5 @@ Cet alignement devra être précisé avec le partenaire porteur. Le projet ne do
 
 - [Protocole du pilote éducatif](PILOTE_Mboka.md)
 - [Outil d’évaluation avant/après et fiches de suivi](EVALUATION_PILOTE.md)
+- [Budget indicatif du pilote](BUDGET_PILOTE.md)
+- [Dossier et message d’envoi](DOSSIER_ENVOI.md)
