@@ -11,7 +11,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 
 ### Fonctionnalités
 
-- Carte vectorielle interactive à deux niveaux : limites des 26 provinces, couche des 145 territoires regroupés par province et profils provinciaux bilingues
+- Carte vectorielle interactive à deux niveaux : limites des 26 provinces, couche des 145 territoires regroupés par province et fiches encyclopédiques bilingues structurées
 - Histoire des royaumes Kongo, Luba, Lunda et Kuba
 - Communautés, langues, environnement, ressources, cuisine, musique, arts et personnalités
 - Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus
@@ -49,7 +49,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 
 ### Features
 
-- Two-level interactive vector map covering all 26 provinces and exactly 145 territories grouped by province, plus bilingual provincial profiles
+- Two-level interactive vector map covering all 26 provinces and exactly 145 territories grouped by province, plus structured bilingual province encyclopedia entries
 - History of the Kongo, Luba, Lunda, and Kuba kingdoms
 - Communities, languages, environment, resources, food, music, arts, and notable people
 - Age-based quizzes for ages 7–10, 11–14, and 15+

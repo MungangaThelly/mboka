@@ -238,7 +238,9 @@ function openLesson(data, options={}){
   document.querySelector('#lessonLabel').textContent=options.label||'PARCOURS';
   document.querySelector('#lessonTitle').textContent=data.title;
   document.querySelector('#lessonLead').textContent=data.lead;
-  document.querySelector('#lessonFacts').innerHTML=data.facts.map((f,i)=>`<div class="lesson-fact"><span>${i+1}</span><div><strong>${f[0]}</strong><p>${f[1]}</p></div></div>`).join('');
+  const facts=document.querySelector('#lessonFacts');
+  facts.dataset.encyclopedia=data.sections?'true':'false';
+  facts.innerHTML=data.sections?data.sections.map(section=>`<section class="encyclopedia-section"><div class="encyclopedia-heading"><span>${section.icon}</span><h3>${section.title}</h3></div>${section.items.map(item=>`<div class="encyclopedia-entry"><strong>${item[0]}</strong><p>${item[1]}</p></div>`).join('')}</section>`).join(''):data.facts.map((f,i)=>`<div class="lesson-fact"><span>${i+1}</span><div><strong>${f[0]}</strong><p>${f[1]}</p></div></div>`).join('');
   modal.hidden=false; document.body.style.overflow='hidden'; document.querySelector('.modal-close').focus();
 }
 function closeLesson(){modal.hidden=true;document.body.style.overflow=''}
@@ -264,9 +266,17 @@ function openProvinceProfile(index){
   const p=provinces[index],english=localStorage.getItem('mbokaLang')==='en';
   const d=english&&window.enContent?window.enContent.provinces[index]:provinceDetails[index];
   const x=english&&window.enContent?window.enContent.provinceProfiles[index]:provinceProfiles[index];
-  const labels=english?['Broad region','Capital','Major towns','Languages spoken','Food traditions','Economy and resources','Famous places']:['Zone d’exploration','Chef-lieu','Villes importantes','Langues parlées','Traditions culinaires','Économie et ressources','Lieux célèbres'];
+  const labels=english?['Broad region','Capital','Geographic landmark','Major towns','Languages spoken','Food traditions','Economy and resources','Environment and heritage','Administrative territories']:['Zone d’exploration','Chef-lieu','Repère géographique','Villes importantes','Langues parlées','Traditions culinaires','Économie et ressources','Environnement et patrimoine','Territoires administratifs'];
   const lead=english?`${p[1]} is the capital of ${p[0]} province. ${d[2]}`:`${p[1]} est le chef-lieu de la province ${p[0]}. ${d[2]}`;
-  openLesson({icon:'⌖',title:p[0],color:'#f0bd5b',lead,facts:[[labels[0],d[0]],[labels[1],p[1]],...x.map((value,i)=>[labels[i+2],value])]},{label:english?'PROVINCE PROFILE':'PROFIL PROVINCE',number:english?`PROVINCE ${String(index+1).padStart(2,'0')} OF 26`:`PROVINCE ${String(index+1).padStart(2,'0')} SUR 26`});
+  const territories=(window.drcTerritoryBoundaries||[]).filter(territory=>territory.province===p[0]).map(territory=>territory.name).sort((a,b)=>a.localeCompare(b));
+  const territorySummary=territories.length?`${territories.length} · ${territories.join(', ')}`:(english?'Kinshasa is a city-province and is not included among the 145 territories.':'Kinshasa est une ville-province et ne figure pas parmi les 145 territoires.');
+  const sections=[
+    {icon:'01',title:english?'Essential facts':'Repères essentiels',items:[[labels[0],d[0]],[labels[1],p[1]],[labels[2],d[1]]]},
+    {icon:'02',title:english?'People and culture':'Société et culture',items:[[labels[3],x[0]],[labels[4],x[1]],[labels[5],x[2]]]},
+    {icon:'03',title:english?'Economy and environment':'Économie et environnement',items:[[labels[6],x[3]],[labels[7],x[4]]]},
+    {icon:'04',title:english?'Territories':'Territoires',items:[[labels[8],territorySummary]]}
+  ];
+  openLesson({icon:'⌖',title:p[0],color:'#f0bd5b',lead,sections},{label:english?'ENCYCLOPEDIA · PROVINCE':'ENCYCLOPÉDIE · PROVINCE',number:english?`PROVINCE ${String(index+1).padStart(2,'0')} OF 26`:`PROVINCE ${String(index+1).padStart(2,'0')} SUR 26`});
 }
 document.querySelector('#provinceList').addEventListener('click',e=>{
   const audio=e.target.closest('[data-speak-province]');if(audio){e.stopPropagation();const i=provinces.findIndex(p=>p[0]===audio.dataset.speakProvince),p=provinces[i];speakPhrase(`${p[0]}. ${localStorage.getItem('mbokaLang')==='en'?'Capital':'Chef-lieu'}: ${p[1]}.`,audio);return}

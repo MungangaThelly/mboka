@@ -13,6 +13,12 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Ajout du parcours bilingue, adaptatif et disponible hors connexion.
 - Added reusable anonymous learner codes, comparable pre/post tests, learning-gain CSV export, bilingual support, responsive layout, and offline availability.
 
+### Encyclopédie des provinces / Province encyclopedia
+
+- Restructuration des 26 profils en quatre chapitres : repères essentiels, société et culture, économie et environnement, territoires.
+- Intégration automatique des 145 territoires dans la fiche de leur province, avec une présentation adaptée au mobile.
+- Restructured all 26 profiles into four chapters and connected each province entry to its administrative territories.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

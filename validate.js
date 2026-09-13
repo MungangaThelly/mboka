@@ -74,6 +74,7 @@ const mapSandbox={window:{}};vm.runInNewContext(fs.readFileSync('province-bounda
 const territorySandbox={window:{}};vm.runInNewContext(fs.readFileSync('territory-boundaries.js','utf8'),territorySandbox);assert(territorySandbox.window.drcTerritoryBoundaries.length===145,'Real territory boundary map must contain 145 territories');assert(new Set(territorySandbox.window.drcTerritoryBoundaries.map(item=>item.province)).size===25,'Territories must be grouped across 25 provinces');
 assert(en.provinces.length===26,'English province profiles must contain 26 entries');assert(en.questions.length===10&&en.levelQuestions.explorer.length===10&&en.levelQuestions.master.length===10,'English quiz banks must contain 10 questions each');
 assert(en.provinceProfiles.length===26&&en.provinceProfiles.every(profile=>profile.length===5),'English cultural province profiles must contain 26 complete entries');
+assert(app.includes("title:english?'Essential facts':'Repères essentiels'")&&app.includes("title:english?'Territories':'Territoires'")&&app.includes('territorySummary'),'Structured province encyclopedia is missing');
 const profileMatch=app.match(/const provinceProfiles = \[(.*?)\];/s);assert(profileMatch&&((profileMatch[1].match(/^  \[/gm)||[]).length===26),'French cultural province profiles must contain 26 entries');
 const build=fs.readFileSync('build.js','utf8'),worker=fs.readFileSync('sw.js','utf8');
 const buildFiles=[...build.matchAll(/'([^']+)'/g)].map(match=>match[1]).filter(file=>fs.existsSync(file)&&fs.statSync(file).isFile());
