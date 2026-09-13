@@ -66,7 +66,7 @@ L’espace enseignant permet de :
 - Imprimer un rapport individuel de progression enregistré sur l’appareil
 - Organiser une activité sans créer de compte
 
-Le **Programme pilote** recueille des évaluations anonymes sur la facilité d’utilisation, le plaisir, l’apprentissage et l’activité préférée. Les réponses restent sur l’appareil et peuvent être exportées au format CSV.
+Le **Programme pilote** recueille des évaluations anonymes sur la facilité d’utilisation, le plaisir, l’apprentissage et l’activité préférée. Un parcours mesurable ajoute un code élève anonyme réutilisable, un pré-test, un post-test comparable après au moins trois séances et un export CSV calculant le gain d’apprentissage. Les réponses restent sur l’appareil.
 
 ### Confidentialité et sécurité
 
@@ -137,7 +137,7 @@ Les contenus doivent continuer à être relus par des éducateurs, historiens, l
 
 ### Feuille de route proposée
 
-1. Organiser un pilote avec 5 à 10 élèves et un enseignant.
+1. Organiser un pilote avec 5 à 10 élèves et un enseignant, puis comparer les scores pré-test/post-test anonymes.
 2. Analyser les réponses anonymes exportées.
 3. Faire relire les contenus par des éducateurs congolais.
 4. Ajouter des sources visibles aux leçons.
@@ -278,7 +278,7 @@ Congolese educators, historians, linguists, and subject specialists should conti
 
 ### Proposed roadmap
 
-1. Run a pilot with 5–10 students and one teacher.
+1. Run a pilot with 5–10 students and one teacher, then compare anonymous pre-test/post-test scores.
 2. Analyse the exported anonymous feedback.
 3. Review the content with Congolese educators.
 4. Add visible sources to lessons.

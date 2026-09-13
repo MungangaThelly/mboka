@@ -1,7 +1,7 @@
 const fs=require('fs');
 const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
-const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
+const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','pilot-measure.js','pilot-measure.css','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -20,6 +20,10 @@ for(const phrase of ['deux équipes','plan de leçon','rapport individuel de pro
 assert(html.includes('id="privacyLink"'),'Privacy link must have a stable translation target');
 assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
+assert(html.includes('id="pilotMeasure"')&&html.includes('id="exportPilotResults"'),'Measurable pre/post pilot flow is missing');
+const pilotMeasure=fs.readFileSync('pilot-measure.js','utf8');
+assert(html.includes('id="pilotExistingCode"')&&pilotMeasure.includes("phase==='pre'")&&pilotMeasure.includes("phase==='post'"),'Reusable anonymous pre/post learner codes are missing');
+assert(pilotMeasure.includes("'pre_score','post_score','gain'")&&pilotMeasure.includes('mbokaPilotTests'),'Pilot learning-gain export is missing');
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"'),'Interactive music-learning interface is missing');
 assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),'Interactive chess-learning interface is missing');

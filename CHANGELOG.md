@@ -4,6 +4,15 @@ Les numéros internes du cache hors ligne ne sont pas utilisés comme versions p
 
 Internal offline-cache numbers are not used as public versions. This document records meaningful product changes.
 
+## 2026-09-13
+
+### Mesure du pilote / Pilot measurement
+
+- Ajout d’un code élève anonyme réutilisable, de pré-tests et post-tests comparables pour trois niveaux d’âge.
+- Ajout d’un export CSV local incluant les scores avant/après et le gain d’apprentissage, sans nom ni courriel.
+- Ajout du parcours bilingue, adaptatif et disponible hors connexion.
+- Added reusable anonymous learner codes, comparable pre/post tests, learning-gain CSV export, bilingual support, responsive layout, and offline availability.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

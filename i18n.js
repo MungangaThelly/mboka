@@ -14,6 +14,7 @@ const uiCopy={
   '#profileTitle':['Kimi','Kimi'],'.profile-cover>span':['MON CARNET D’EXPLORATEUR','MY EXPLORER NOTEBOOK'],'.level-row small':['PROGRESSION GLOBALE','OVERALL PROGRESS'],'.profile-stats>div:nth-child(1) small':['MEILLEUR QUIZ','BEST QUIZ'],'.profile-stats>div:nth-child(2) small':['RECORD SPRINT','SPRINT RECORD'],'.profile-stats>div:nth-child(3) small':['PARCOURS','JOURNEYS'],'.badge-heading small':['MA COLLECTION','MY COLLECTION'],'.badge-heading h3':['Badges à débloquer','Badges to unlock'],'#printProgress':['Imprimer le rapport','Print report'],'#resetProgress':['Réinitialiser ma progression','Reset my progress']
 };
 Object.assign(uiCopy,{
+  '#pilotMeasureEyebrow':['MESURE DU PILOTE','PILOT MEASUREMENT'],'#pilotMeasureTitle':['Pré-test et post-test','Pre-test and post-test'],'#pilotMeasureIntro':['Compare les apprentissages avec un code anonyme, sans nom ni courriel.','Compare learning outcomes with an anonymous code, without names or email addresses.'],'#pilotSchoolLabel':['Code de l’école','School code'],'#pilotLevelLabel':['Niveau','Level'],'#createPilotCode':['Créer un code anonyme','Create an anonymous code'],'#pilotExistingLabel':['Déjà inscrit ? Entre ton code pour le post-test','Already registered? Enter your code for the post-test'],'#usePilotCode':['Utiliser ce code','Use this code'],'#pilotCodeLabel':['Code à conserver :','Code to keep:'],'[data-pilot-phase="pre"]':['Pré-test','Pre-test'],'[data-pilot-phase="post"]':['Post-test','Post-test'],'#pilotResultLabel':['évaluations locales','local assessments'],'#exportPilotResults':['Exporter les résultats CSV','Export CSV results'],
   '.module-nav a:nth-child(1)':['Découvrir','Discover'],
   '.module-nav a:nth-child(2)':['Maths','Maths'],
   '.module-nav a:nth-child(3)':['Musique','Music'],
@@ -34,6 +35,8 @@ function applyLanguage(lang){
   Object.entries(uiCopy).forEach(([selector,copy])=>{const el=document.querySelector(selector);if(!el)return;if(htmlSelectors.has(selector))el.innerHTML=copy[lang==='en'?1:0];else el.textContent=copy[lang==='en'?1:0]});
   const search=document.querySelector('#provinceSearch');search.placeholder=lang==='en'?'Search for a province…':'Chercher une province…';
   const comment=document.querySelector('#feedbackComment');if(comment)comment.placeholder=lang==='en'?'What you liked or what should change…':'Ce que tu as aimé ou ce qui devrait changer…';
+  const school=document.querySelector('#pilotSchool');if(school)school.placeholder=lang==='en'?'E.g. SCHOOL-01':'Ex. ECOLE-01';
+  const existingCode=document.querySelector('#pilotExistingCode');if(existingCode)existingCode.placeholder=lang==='en'?'E.g. SCHOOL-01-ABC':'Ex. ECOLE-01-ABC';
   document.querySelector('#profileButton').setAttribute('aria-label',lang==='en'?'Open my profile':'Ouvrir mon profil');
   localizeDynamic(lang);
 }

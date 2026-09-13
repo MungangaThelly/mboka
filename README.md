@@ -23,7 +23,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Audio par synthèse vocale disponible sur l’appareil, avec `🔊`/`🔇` pour la parole et `♪`/`♫` réservés à la musique
 - Badges, scores et progression conservés localement
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
-- Programme pilote anonyme avec export CSV local
+- Pilote éducatif mesurable : code élève anonyme réutilisable, pré-test/post-test et export CSV local du gain d’apprentissage
 - Installation PWA et fonctionnement hors connexion
 - Navigation rapide entre les modules, mise en page adaptative, focus clavier visible et prise en charge de la réduction des animations
 
@@ -61,7 +61,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Device-provided speech synthesis, using `🔊`/`🔇` for spoken audio and reserving `♪`/`♫` for music
 - Badges, scores, and progress stored locally
 - Printable worksheets, lesson plans, and progress reports
-- Anonymous pilot feedback with local CSV export
+- Measurable educational pilot with reusable anonymous learner codes, pre/post tests, and local learning-gain CSV export
 - PWA installation and offline use
 - Quick module navigation, responsive layout, visible keyboard focus, and reduced-motion support
 

@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="pwa.css">
   <link rel="stylesheet" href="hardening.css">
   <link rel="stylesheet" href="pilot.css">
+  <link rel="stylesheet" href="pilot-measure.css">
   <link rel="stylesheet" href="math.css">
   <link rel="stylesheet" href="music-game.css">
   <link rel="stylesheet" href="chess-game.css">
@@ -183,6 +184,7 @@
         <p class="teacher-note" id="worksheetNote">Le thème choisi est prioritaire; la fiche utilise les autres thèmes du même niveau pour atteindre 5 ou 10 questions. L’impression permet aussi d’enregistrer en PDF.</p>
       </div>
     </section>
+    <section class="pilot-measure" id="pilotMeasure"><div><span class="eyebrow" id="pilotMeasureEyebrow">MESURE DU PILOTE</span><h2 id="pilotMeasureTitle">Pré-test et post-test</h2><p id="pilotMeasureIntro">Compare les apprentissages avec un code anonyme, sans nom ni courriel.</p></div><div class="pilot-setup"><label><span id="pilotSchoolLabel">Code de l’école</span><input id="pilotSchool" maxlength="20" placeholder="Ex. ECOLE-01"></label><label><span id="pilotLevelLabel">Niveau</span><select id="pilotLevel"><option value="explorer">7–10 ans</option><option value="adventurer">11–14 ans</option><option value="master">15+ ans</option></select></label><button class="button primary" id="createPilotCode">Créer un code anonyme</button></div><div class="pilot-return"><label><span id="pilotExistingLabel">Déjà inscrit ? Entre ton code pour le post-test</span><input id="pilotExistingCode" maxlength="24" autocomplete="off" placeholder="Ex. ECOLE-01-ABC"></label><button class="button secondary" id="usePilotCode">Utiliser ce code</button></div><p class="pilot-message" id="pilotCodeStatus" aria-live="polite"></p><div class="pilot-code" id="pilotCodeBox" hidden><span id="pilotCodeLabel">Code à conserver :</span> <strong id="pilotLearnerCode"></strong></div><div class="pilot-test" id="pilotTest" hidden><div class="pilot-test-tabs"><button class="active" data-pilot-phase="pre">Pré-test</button><button data-pilot-phase="post">Post-test</button></div><p id="pilotTestProgress"></p><h3 id="pilotTestQuestion"></h3><div id="pilotTestAnswers" class="answers"></div><p id="pilotTestStatus" aria-live="polite"></p></div><div class="pilot-results"><strong><span id="pilotResultCount">0</span> <span id="pilotResultLabel">évaluations locales</span></strong><button class="button secondary" id="exportPilotResults" disabled>Exporter les résultats CSV</button></div></section>
     <section class="pilot-section" id="pilot">
       <div class="pilot-intro"><span class="eyebrow">PROGRAMME PILOTE</span><h2>Salisa Mboka<br>Ekende Liboso</h2><p>Un retour court et anonyme pour améliorer l’exactitude, la difficulté et le plaisir d’apprendre.</p><div class="pilot-privacy">◈ Aucun nom, courriel ou compte demandé. Les réponses restent sur cet appareil jusqu’à leur exportation.</div></div>
       <form class="pilot-form" id="pilotForm">
@@ -237,6 +239,7 @@
   <script src="math.js"></script>
   <script src="music-game.js"></script>
   <script src="chess-game.js"></script>
+  <script src="pilot-measure.js"></script>
   <script src="pwa.js"></script>
 </body>
 </html>
