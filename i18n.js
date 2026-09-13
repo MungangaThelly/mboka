@@ -14,6 +14,7 @@ const uiCopy={
   '#profileTitle':['Kimi','Kimi'],'.profile-cover>span':['MON CARNET D’EXPLORATEUR','MY EXPLORER NOTEBOOK'],'.level-row small':['PROGRESSION GLOBALE','OVERALL PROGRESS'],'.profile-stats>div:nth-child(1) small':['MEILLEUR QUIZ','BEST QUIZ'],'.profile-stats>div:nth-child(2) small':['RECORD SPRINT','SPRINT RECORD'],'.profile-stats>div:nth-child(3) small':['PARCOURS','JOURNEYS'],'.badge-heading small':['MA COLLECTION','MY COLLECTION'],'.badge-heading h3':['Badges à débloquer','Badges to unlock'],'#printProgress':['Imprimer le rapport','Print report'],'#resetProgress':['Réinitialiser ma progression','Reset my progress']
 };
 Object.assign(uiCopy,{
+  '#quizModeLabel':['Mode','Mode'],'#quizTopicLabel':['Thème','Topic'],'#quizProvinceLabel':['Province','Province'],
   '.primary-nav>a:nth-of-type(7)':['Histoire','History'],
   '.module-nav a:nth-child(10)':['Histoire','History'],
   '#pilotMeasureEyebrow':['MESURE DU PILOTE','PILOT MEASUREMENT'],'#pilotMeasureTitle':['Pré-test et post-test','Pre-test and post-test'],'#pilotMeasureIntro':['Compare les apprentissages avec un code anonyme, sans nom ni courriel.','Compare learning outcomes with an anonymous code, without names or email addresses.'],'#pilotSchoolLabel':['Code de l’école','School code'],'#pilotLevelLabel':['Niveau','Level'],'#createPilotCode':['Créer un code anonyme','Create an anonymous code'],'#pilotExistingLabel':['Déjà inscrit ? Entre ton code pour le post-test','Already registered? Enter your code for the post-test'],'#usePilotCode':['Utiliser ce code','Use this code'],'#pilotCodeLabel':['Code à conserver :','Code to keep:'],'[data-pilot-phase="pre"]':['Pré-test','Pre-test'],'[data-pilot-phase="post"]':['Post-test','Post-test'],'#pilotResultLabel':['évaluations locales','local assessments'],'#exportPilotResults':['Exporter les résultats CSV','Export CSV results'],
@@ -39,6 +40,8 @@ function applyLanguage(lang){
   const comment=document.querySelector('#feedbackComment');if(comment)comment.placeholder=lang==='en'?'What you liked or what should change…':'Ce que tu as aimé ou ce qui devrait changer…';
   const school=document.querySelector('#pilotSchool');if(school)school.placeholder=lang==='en'?'E.g. SCHOOL-01':'Ex. ECOLE-01';
   const existingCode=document.querySelector('#pilotExistingCode');if(existingCode)existingCode.placeholder=lang==='en'?'E.g. SCHOOL-01-ABC':'Ex. ECOLE-01-ABC';
+  const quizModeSelect=document.querySelector('#quizMode');if(quizModeSelect){quizModeSelect.options[0].textContent=lang==='en'?'General quiz':'Quiz général';quizModeSelect.options[1].textContent=lang==='en'?'Province quiz':'Quiz par province'}
+  const quizTopicSelect=document.querySelector('#quizTopic');if(quizTopicSelect){const labels=lang==='en'?['All topics','Geography and provinces','Nature and science','Culture and history']:['Tous les thèmes','Géographie et provinces','Nature et sciences','Culture et histoire'];[...quizTopicSelect.options].forEach((option,index)=>option.textContent=labels[index])}
   document.querySelector('#profileButton').setAttribute('aria-label',lang==='en'?'Open my profile':'Ouvrir mon profil');
   localizeDynamic(lang);
 }
@@ -47,7 +50,7 @@ const languageSelect=document.querySelector('#languageSelect');languageSelect.va
 
 function setText(el,value){if(el&&el.textContent!==String(value))el.textContent=value}
 function localizeDynamic(lang){
-  if(lang!=='en'||localizationBusy)return;localizationBusy=true;const en=window.enContent;
+  if(lang!=='en'||localizationBusy)return;localizationBusy=true;const en=window.enContent,quizView=document.querySelector('#questionView'),customResultView=document.querySelector('#resultView'),customQuiz=typeof quizMode!=='undefined'&&(quizMode!=='general'||quizTopic!=='all'),hideCustomQuiz=customQuiz&&quizView&&!quizView.hidden,hideCustomResult=customQuiz&&customResultView&&!customResultView.hidden;if(hideCustomQuiz)quizView.hidden=true;if(hideCustomResult)customResultView.hidden=true;
   document.querySelectorAll('[data-journey]').forEach((card,i)=>{setText(card.querySelector('h3'),en.journeys[i].title);setText(card.querySelector('p'),en.journeys[i].text);setText(card.querySelector('small'),`JOURNEY ${String(i+1).padStart(2,'0')}`)});
   const regionNames={Toutes:'All',Ouest:'West',Centre:'Centre',Nord:'North',Est:'East',Sud:'South'};document.querySelectorAll('#regionFilters [data-region]').forEach(b=>setText(b,regionNames[b.dataset.region]));document.querySelectorAll('#provinceList [data-province]').forEach(card=>{const i=provinces.findIndex(p=>p[0]===card.dataset.province);if(i>=0)setText(card.querySelector('.province-region'),en.provinces[i][0])});
   if(typeof selectedMapProvince!=='undefined'&&selectedMapProvince>=0&&(typeof mapMode==='undefined'||mapMode!=='territories')){const p=provinces[selectedMapProvince],d=en.provinces[selectedMapProvince];setText(document.querySelector('#mapZone'),d[0]);setText(document.querySelector('#mapProvince'),p[0]);setText(document.querySelector('#mapDescription'),d[2]);setText(document.querySelector('#mapCapital'),p[1]);setText(document.querySelector('#mapLandmark'),d[1])}
@@ -63,7 +66,7 @@ function localizeDynamic(lang){
   document.querySelectorAll('#badgeGrid .badge').forEach((badge,i)=>{if(!en.badges[i])return;setText(badge.querySelector('strong'),en.badges[i][0]);setText(badge.querySelector('p'),en.badges[i][1])});
   const rank=document.querySelector('#profileRank');if(rank){const p=Number(document.querySelector('#profilePercent').textContent.replace('%',''))||0;setText(rank,p>=90?'Master of the land':p>=60?'Great explorer':p>=25?'Curious explorer':'New explorer')}
   if(typeof renderWorksheet==='function')renderWorksheet();
-  localizationBusy=false;
+  if(hideCustomQuiz)quizView.hidden=false;if(hideCustomResult)customResultView.hidden=false;localizationBusy=false;
 }
 window.refreshLanguage=()=>applyLanguage(languageSelect.value);
 let lastDynamicSignature='';

@@ -25,6 +25,13 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Ajout de sources documentaires, d’une navigation directe et d’une présentation bilingue adaptée au mobile.
 - Added eight sourced historical landmarks with period filters, direct navigation, bilingual content, and responsive presentation.
 
+### Quiz enrichi / Expanded quiz
+
+- Ajout des modes général et par province, avec sélection parmi les 26 provinces.
+- Ajout de filtres thématiques et de questionnaires de 3, 5 ou 7 questions selon le niveau d’âge.
+- Séparation des meilleurs scores par mode, thème, province et difficulté.
+- Added general, topic, and province modes with age-adapted question counts and separate progress records.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

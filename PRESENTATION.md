@@ -58,6 +58,8 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 
 La chronologie historique interactive relie huit repères, des sociétés anciennes à la Constitution de 2006. Elle peut être filtrée par période et chaque événement renvoie vers une source documentaire.
 
+Le quiz propose trois niveaux d’âge, des thèmes ciblés et un mode consacré à chacune des 26 provinces. Les questionnaires provinciaux utilisent les chefs-lieux, repères, cultures, économies et territoires déjà documentés dans l’encyclopédie.
+
 L’espace enseignant permet de :
 
 - Générer une fiche de 5 ou 10 questions
@@ -200,6 +202,8 @@ The regional groupings and built-in map are learning aids. Its open-data boundar
 ### Teacher tools
 
 The interactive history timeline connects eight landmarks, from early societies to the 2006 Constitution. It can be filtered by period and every event links to a documentary source.
+
+The quiz offers three age levels, focused topics, and a dedicated mode for each of the 26 provinces. Province quizzes reuse the capitals, landmarks, cultures, economies, and territories documented in the encyclopedia.
 
 The teacher area can:
 

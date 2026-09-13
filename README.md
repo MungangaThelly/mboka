@@ -15,7 +15,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Histoire des royaumes Kongo, Luba, Lunda et Kuba
 - Chronologie interactive en huit repères, filtrable par période et reliée à des sources documentaires
 - Communautés, langues, environnement, ressources, cuisine, musique, arts et personnalités
-- Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus
+- Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus, avec modes général, thématique et par province
 - Sprint des provinces en solo ou à deux équipes
 - Jeu de mémoire, défi de lingala et découverte quotidienne
 - Mathématiques du quotidien avec 10 unités et trois niveaux d’âge
@@ -54,7 +54,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - History of the Kongo, Luba, Lunda, and Kuba kingdoms
 - Interactive eight-event history timeline with period filters and documentary sources
 - Communities, languages, environment, resources, food, music, arts, and notable people
-- Age-based quizzes for ages 7–10, 11–14, and 15+
+- Age-based quizzes for ages 7–10, 11–14, and 15+, with general, topic, and province modes
 - Province Sprint in solo or two-team mode
 - Memory game, Lingala challenge, and daily discovery
 - Everyday mathematics with 10 units and three age levels
