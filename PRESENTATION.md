@@ -62,6 +62,8 @@ Le quiz propose trois niveaux d’âge, des thèmes ciblés et un mode consacré
 
 Le jeu de mémoire propose quatre collections — trésors, provinces, nature et histoire — et trois grilles progressives de 4, 6 ou 8 paires, avec un record distinct pour chaque configuration.
 
+La bibliothèque documentaire réunit les principales sources institutionnelles et affiche une distinction explicite entre données documentées et aperçus culturels nécessitant une relecture locale.
+
 L’espace enseignant permet de :
 
 - Générer une fiche de 5 ou 10 questions
@@ -209,6 +211,8 @@ The interactive history timeline connects eight landmarks, from early societies 
 The quiz offers three age levels, focused topics, and a dedicated mode for each of the 26 provinces. Province quizzes reuse the capitals, landmarks, cultures, economies, and territories documented in the encyclopedia.
 
 The memory game offers four collections—treasures, provinces, nature, and history—and three progressive boards of 4, 6, or 8 pairs, with a separate record for each configuration.
+
+The documentary library gathers the main institutional references and clearly distinguishes documented data from cultural overviews requiring local review.
 
 The teacher area can:
 

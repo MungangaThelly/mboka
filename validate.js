@@ -3,7 +3,7 @@ const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
 const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','pilot-measure.js','pilot-measure.css','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
-['history-timeline.js','history-timeline.css','content-review.js','content-review.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
+['history-timeline.js','history-timeline.css','content-review.js','content-review.css','sources.js','sources.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
 assert(manifest.start_url==='./index.html','Manifest start URL is incorrect');
@@ -36,6 +36,7 @@ assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is mis
 assert(html.includes('class="skip-link"')&&html.includes('class="module-nav"'),'Accessible quick navigation is missing');
 assert(html.includes('class="pathway-menu"')&&html.includes('href="#enseignants">Enseignants</a>'),'Teacher and learning-path navigation is missing');
 assert(html.includes('id="histoire"')&&html.includes('id="historyTimeline"')&&html.includes('href="#histoire">Histoire</a>'),'Interactive history timeline or navigation is missing');
+assert(html.includes('id="sources"')&&html.includes('id="sourceGrid"')&&html.includes('href="#sources">Sources</a>'),'Source library or navigation is missing');
 assert(html.includes('href="#musicLab">Musique</a>')&&html.includes('href="#chessLab">Échecs</a>'),'Music and chess navigation links are missing');
 assert(html.includes('id="provinceBoundaryLayer"')&&html.includes('geoBoundaries COD ADM1'),'Real 26-province map or attribution is missing');
 assert(html.includes('id="territoryBoundaryLayer"')&&html.includes('geoBoundaries COD ADM2'),'145-territory map or attribution is missing');
@@ -48,6 +49,7 @@ assert(html.includes('id="sprintMode"'),'Province Sprint team-mode control is mi
 assert(!/<input[^>]+type=["'](?:email|password)["']/i.test(html),'Pilot must not request email or passwords');
 const app=fs.readFileSync('app.js','utf8');
 const history=fs.readFileSync('history-timeline.js','utf8');
+const sources=fs.readFileSync('sources.js','utf8');assert((sources.match(/url:'https:\/\//g)||[]).length===6&&sources.includes('local review recommended'),'Documentary source library is incomplete');
 assert((history.match(/period:'/g)||[]).length===8&&['early','colonial','independence','contemporary'].every(period=>history.includes(`${period}:`)),'History timeline must contain eight events and four filters');
 const math=fs.readFileSync('math.js','utf8');
 assert(math.includes('const mathUnits=')&&((math.match(/title:\[/g)||[]).length===10),'Everyday mathematics must contain 10 units');
@@ -86,6 +88,7 @@ const territorySandbox={window:{}};vm.runInNewContext(fs.readFileSync('territory
 assert(en.provinces.length===26,'English province profiles must contain 26 entries');assert(en.questions.length===10&&en.levelQuestions.explorer.length===10&&en.levelQuestions.master.length===10,'English quiz banks must contain 10 questions each');
 assert(en.provinceProfiles.length===26&&en.provinceProfiles.every(profile=>profile.length===5),'English cultural province profiles must contain 26 complete entries');
 assert(app.includes("title:english?'Essential facts':'Repères essentiels'")&&app.includes("title:english?'Territories':'Territoires'")&&app.includes('territorySummary'),'Structured province encyclopedia is missing');
+assert(app.includes("title:english?'Editorial status':'Statut éditorial'"),'Province editorial-review status is missing');
 const profileMatch=app.match(/const provinceProfiles = \[(.*?)\];/s);assert(profileMatch&&((profileMatch[1].match(/^  \[/gm)||[]).length===26),'French cultural province profiles must contain 26 entries');
 const build=fs.readFileSync('build.js','utf8'),worker=fs.readFileSync('sw.js','utf8');
 const buildFiles=[...build.matchAll(/'([^']+)'/g)].map(match=>match[1]).filter(file=>fs.existsSync(file)&&fs.statSync(file).isFile());

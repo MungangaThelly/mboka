@@ -18,6 +18,7 @@ Object.assign(uiCopy,{
   '#quizModeLabel':['Mode','Mode'],'#quizTopicLabel':['Thème','Topic'],'#quizProvinceLabel':['Province','Province'],
   '.primary-nav>a:nth-of-type(7)':['Histoire','History'],
   '.module-nav a:nth-child(10)':['Histoire','History'],
+  '.module-nav a:nth-child(11)':['Sources','Sources'],
   '#pilotMeasureEyebrow':['MESURE DU PILOTE','PILOT MEASUREMENT'],'#pilotMeasureTitle':['Pré-test et post-test','Pre-test and post-test'],'#pilotMeasureIntro':['Compare les apprentissages avec un code anonyme, sans nom ni courriel.','Compare learning outcomes with an anonymous code, without names or email addresses.'],'#pilotSchoolLabel':['Code de l’école','School code'],'#pilotLevelLabel':['Niveau','Level'],'#createPilotCode':['Créer un code anonyme','Create an anonymous code'],'#pilotExistingLabel':['Déjà inscrit ? Entre ton code pour le post-test','Already registered? Enter your code for the post-test'],'#usePilotCode':['Utiliser ce code','Use this code'],'#pilotCodeLabel':['Code à conserver :','Code to keep:'],'[data-pilot-phase="pre"]':['Pré-test','Pre-test'],'[data-pilot-phase="post"]':['Post-test','Post-test'],'#pilotResultLabel':['évaluations locales','local assessments'],'#exportPilotResults':['Exporter les résultats CSV','Export CSV results'],
   '.module-nav a:nth-child(1)':['Découvrir','Discover'],
   '.module-nav a:nth-child(2)':['Maths','Maths'],

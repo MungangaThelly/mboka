@@ -46,6 +46,12 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Conservation locale et export CSV pour constituer une trace vérifiable des relectures.
 - Added an anonymous educator-review workflow with local storage and evidence-ready CSV export.
 
+### Sources et statut éditorial / Sources and editorial status
+
+- Ajout d’une bibliothèque de six ressources institutionnelles et documentaires accessibles depuis la plateforme.
+- Ajout d’un statut éditorial aux fiches provinciales pour distinguer données administratives documentées et aperçus culturels à relire.
+- Added a six-resource documentary library and explicit editorial status to province encyclopedia entries.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

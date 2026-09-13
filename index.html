@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="i18n.css">
   <link rel="stylesheet" href="teacher.css">
   <link rel="stylesheet" href="content-review.css">
+  <link rel="stylesheet" href="sources.css">
   <link rel="stylesheet" href="provinces.css">
   <link rel="stylesheet" href="map.css">
   <link rel="stylesheet" href="real-map.css">
@@ -55,7 +56,7 @@
     <div class="header-actions"><button class="install-button" id="installApp" hidden>Installer</button><label class="language-picker" aria-label="Langue"><span>◎</span><select id="languageSelect"><option value="fr">FR</option><option value="en">EN</option></select></label><button class="icon-button" id="soundToggle" title="Activer ou couper les sons" aria-label="Activer ou couper les sons">🔊</button><button class="profile" id="profileButton" aria-label="Ouvrir mon profil">KM</button></div>
   </header>
 
-  <nav class="module-nav" aria-label="Accès rapide aux modules"><a href="#explorer">Découvrir</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#quiz">Quiz</a><a href="#enseignants">Enseignants</a><a href="#presidence">Citoyenneté</a><a href="#environnement">Environnement</a><a href="#ressources">Ressources</a><a href="#histoire">Histoire</a></nav>
+  <nav class="module-nav" aria-label="Accès rapide aux modules"><a href="#explorer">Découvrir</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#quiz">Quiz</a><a href="#enseignants">Enseignants</a><a href="#presidence">Citoyenneté</a><a href="#environnement">Environnement</a><a href="#ressources">Ressources</a><a href="#histoire">Histoire</a><a href="#sources">Sources</a></nav>
 
   <main id="mainContent">
     <section class="hero" id="accueil">
@@ -179,6 +180,7 @@
     <section class="environment-section" id="environnement"><div class="environment-heading"><div><span class="eyebrow">Nature et science</span><h2>Un pays de<br>grands écosystèmes.</h2></div><p id="environmentIntro">Observe comment climat, eau, relief et êtres vivants forment des systèmes liés.</p></div><div class="environment-grid" id="environmentGrid"></div><div class="environment-action" id="environmentAction"><strong>Défi scientifique :</strong> choisis un écosystème près de chez toi et note pendant une semaine la pluie, les plantes, les animaux et les activités humaines observés—sans déranger la nature.</div></section>
     <section class="resource-section" id="ressources"><div class="resource-heading"><div><span class="eyebrow">Minéraux et responsabilité</span><h2>De la roche<br>à nos objets.</h2></div><p id="resourceIntro">Comprends où se trouvent quelques ressources, à quoi elles servent et pourquoi leur gestion concerne les personnes comme la nature.</p></div><div class="resource-grid" id="resourceGrid"></div><div class="supply-chain" id="supplyChain"></div><p class="resource-principle" id="resourcePrinciple"></p></section>
     <section class="creativity-section" id="creativite"><div class="creativity-heading"><span class="eyebrow light">Arts vivants</span><h2>Créer, raconter,<br>faire danser.</h2><p id="creativityIntro">Explore des pratiques anciennes et contemporaines qui transforment sons, mouvements, matières et récits.</p></div><div class="creativity-grid" id="creativityGrid"></div><div class="creative-challenge" id="creativeChallenge"></div></section>
+    <section class="sources-section" id="sources"><div class="sources-heading"><div><span class="eyebrow" id="sourcesEyebrow">SOURCES ET MÉTHODE</span><h2 id="sourcesTitle">Comprendre d’où viennent les informations.</h2></div><p id="sourcesIntro">Mboka distingue les données institutionnelles, les ressources documentaires et les contenus qui doivent encore être relus localement.</p></div><div class="source-status" id="sourceStatus"></div><div class="source-grid" id="sourceGrid"></div><p class="source-note" id="sourceNote"></p></section>
     <section class="teacher-section" id="enseignants">
       <div class="teacher-intro"><span class="eyebrow">Espace enseignants</span><h2>Salisa Mboka Ekota<br>Kelasi</h2><p>Crée une fiche d’activité prête à imprimer à partir des questions du jeu.</p><div class="teacher-benefits"><span>✓ Sans compte</span><span>✓ Réponses facultatives</span><span>✓ Nouvelle fiche en un clic</span></div></div>
       <div class="worksheet-builder">
@@ -247,6 +249,7 @@
   <script src="chess-game.js"></script>
   <script src="pilot-measure.js"></script>
   <script src="content-review.js"></script>
+  <script src="sources.js"></script>
   <script src="pwa.js"></script>
 </body>
 </html>

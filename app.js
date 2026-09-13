@@ -274,7 +274,8 @@ function openProvinceProfile(index){
     {icon:'01',title:english?'Essential facts':'Repères essentiels',items:[[labels[0],d[0]],[labels[1],p[1]],[labels[2],d[1]]]},
     {icon:'02',title:english?'People and culture':'Société et culture',items:[[labels[3],x[0]],[labels[4],x[1]],[labels[5],x[2]]]},
     {icon:'03',title:english?'Economy and environment':'Économie et environnement',items:[[labels[6],x[3]],[labels[7],x[4]]]},
-    {icon:'04',title:english?'Territories':'Territoires',items:[[labels[8],territorySummary]]}
+    {icon:'04',title:english?'Territories':'Territoires',items:[[labels[8],territorySummary]]},
+    {icon:'05',title:english?'Editorial status':'Statut éditorial',items:[[english?'Administrative data':'Données administratives',english?'Documented through the map sources.':'Documentées par les sources cartographiques.'],[english?'Cultural overview':'Aperçu culturel',english?'Introductory content; review by educators from the province is recommended.':'Contenu introductif; une relecture par des éducateurs de la province est recommandée.']]}
   ];
   openLesson({icon:'⌖',title:p[0],color:'#f0bd5b',lead,sections},{label:english?'ENCYCLOPEDIA · PROVINCE':'ENCYCLOPÉDIE · PROVINCE',number:english?`PROVINCE ${String(index+1).padStart(2,'0')} OF 26`:`PROVINCE ${String(index+1).padStart(2,'0')} SUR 26`});
 }
