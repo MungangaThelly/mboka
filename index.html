@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="sprint.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="memory.css">
+  <link rel="stylesheet" href="memory-levels.css">
   <link rel="stylesheet" href="i18n.css">
   <link rel="stylesheet" href="teacher.css">
   <link rel="stylesheet" href="provinces.css">
@@ -129,7 +130,7 @@
     </section>
 
     <section class="memory-section" id="memory">
-      <div class="memory-top"><div><span class="eyebrow">Jeu de mémoire</span><h2>Les trésors<br>du Congo</h2></div><div class="memory-copy"><p>Retourne les cartes et associe chaque trésor à sa signification. Trouve les six paires avec le moins de coups possible.</p><div class="memory-meters"><span>COUPS <strong id="memoryMoves">0</strong></span><span>PAIRES <strong id="memoryPairs">0/6</strong></span><span>RECORD <strong id="memoryBest">—</strong></span></div></div></div>
+      <div class="memory-top"><div><span class="eyebrow">Jeu de mémoire</span><h2>Les trésors<br>du Congo</h2></div><div class="memory-copy"><p>Retourne les cartes et associe chaque trésor à sa signification.</p><div class="memory-controls"><label><span id="memoryCollectionLabel">Collection</span><select id="memoryCollection"><option value="treasures">Trésors du Congo</option><option value="provinces">Provinces et chefs-lieux</option><option value="nature">Nature et biodiversité</option><option value="history">Histoire et dates</option></select></label><label><span id="memoryDifficultyLabel">Difficulté</span><select id="memoryDifficulty"><option value="4">Débutant · 4 paires</option><option value="6" selected>Intermédiaire · 6 paires</option><option value="8">Avancé · 8 paires</option></select></label></div><div class="memory-meters"><span>COUPS <strong id="memoryMoves">0</strong></span><span>PAIRES <strong id="memoryPairs">0/6</strong></span><span>RECORD <strong id="memoryBest">—</strong></span></div></div></div>
       <div class="memory-board" id="memoryBoard" aria-label="Jeu de mémoire"></div>
       <div class="memory-complete" id="memoryComplete" hidden><span>✦</span><div><strong id="memoryTitle">Mémoire remarquable !</strong><p id="memoryMessage"></p></div><button class="button primary" id="memoryRestart">Mélanger et rejouer</button></div>
     </section>

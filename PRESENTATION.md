@@ -60,6 +60,8 @@ La chronologie historique interactive relie huit repères, des sociétés ancien
 
 Le quiz propose trois niveaux d’âge, des thèmes ciblés et un mode consacré à chacune des 26 provinces. Les questionnaires provinciaux utilisent les chefs-lieux, repères, cultures, économies et territoires déjà documentés dans l’encyclopédie.
 
+Le jeu de mémoire propose quatre collections — trésors, provinces, nature et histoire — et trois grilles progressives de 4, 6 ou 8 paires, avec un record distinct pour chaque configuration.
+
 L’espace enseignant permet de :
 
 - Générer une fiche de 5 ou 10 questions
@@ -204,6 +206,8 @@ The regional groupings and built-in map are learning aids. Its open-data boundar
 The interactive history timeline connects eight landmarks, from early societies to the 2006 Constitution. It can be filtered by period and every event links to a documentary source.
 
 The quiz offers three age levels, focused topics, and a dedicated mode for each of the 26 provinces. Province quizzes reuse the capitals, landmarks, cultures, economies, and territories documented in the encyclopedia.
+
+The memory game offers four collections—treasures, provinces, nature, and history—and three progressive boards of 4, 6, or 8 pairs, with a separate record for each configuration.
 
 The teacher area can:
 

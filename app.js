@@ -319,25 +319,33 @@ const memoryPairs=[
   {id:'virunga',a:['🌋','Virunga','NATURE'],b:['🦍','Volcans et gorilles','À DÉCOUVRIR']},
   {id:'kinshasa',a:['🏙️','Kinshasa','VILLE'],b:['★','Capitale de la RDC','SON STATUT']}
 ];
-let memoryFirst=null,memorySecond=null,memoryMoves=0,memoryMatches=0,memoryLocked=false;
+const memoryCollections={treasures:memoryPairs,provinces:provinces.map((province,index)=>({id:`province-${index}`,a:['⌖',province[0],['PROVINCE','PROVINCE']],b:['🏙️',province[1],['CHEF-LIEU','CAPITAL']]})),nature:[
+  ['okapi','🦓',['Okapi','Okapi'],['Forêts du nord-est','North-eastern forests']],['bonobo','🐒',['Bonobo','Bonobo'],['Sud du fleuve Congo','South of the Congo River']],['gorille','🦍',['Gorille de Grauer','Grauer’s gorilla'],['Forêts de l’Est','Eastern forests']],['fleuve','≈',['Fleuve Congo','Congo River'],['Grand réseau d’eau','Major water network']],['virunga','🌋',['Virunga','Virunga'],['Volcans et montagnes','Volcanoes and mountains']],['salonga','🌳',['Salonga','Salonga'],['Forêt tropicale','Tropical forest']],['tanganyika','🌊',['Lac Tanganyika','Lake Tanganyika'],['Est de la RDC','Eastern DRC']],['garamba','🦒',['Garamba','Garamba'],['Savanes du nord-est','North-eastern savannas']]
+].map(item=>({id:`nature-${item[0]}`,a:[item[1],item[2],['NATURE','NATURE']],b:['◆',item[3],['MILIEU','HABITAT']]})),history:[
+  ['kongo',['XIVe siècle','14th century'],['Essor du royaume Kongo','Rise of the Kongo Kingdom']],['eic','1885',['État indépendant du Congo','Congo Free State']],['belge','1908',['Début du Congo belge','Belgian Congo begins']],['mobilisation','4 janvier 1959',['Mobilisation à Léopoldville','Mobilisation in Léopoldville']],['independance','30 juin 1960',['Indépendance','Independence']],['mobutu','novembre 1965',['Prise de pouvoir de Mobutu','Mobutu takes power']],['zaire','1971',['Le pays devient le Zaïre','The country becomes Zaire']],['rdc','17 mai 1997',['Retour du nom RDC','DRC name restored']]
+].map(item=>({id:`history-${item[0]}`,a:['⌛',item[1],['DATE','DATE']],b:['◆',item[2],['ÉVÉNEMENT','EVENT']]}))};
+let memoryFirst=null,memorySecond=null,memoryMoves=0,memoryMatches=0,memoryLocked=false,memoryPairTarget=6;
 const memoryBoard=document.querySelector('#memoryBoard'),memoryMovesEl=document.querySelector('#memoryMoves'),memoryPairsEl=document.querySelector('#memoryPairs'),memoryBestEl=document.querySelector('#memoryBest');
+function memoryText(value){return Array.isArray(value)?value[localStorage.getItem('mbokaLang')==='en'?1:0]:value}
+function memoryRecordKey(){return`mbokaMemoryBest-${document.querySelector('#memoryCollection').value}-${memoryPairTarget}`}
 function startMemory(){
-  memoryFirst=null;memorySecond=null;memoryMoves=0;memoryMatches=0;memoryLocked=false;document.querySelector('#memoryComplete').hidden=true;memoryMovesEl.textContent=0;memoryPairsEl.textContent='0/6';
-  const cards=shuffled(memoryPairs.flatMap(pair=>[pair.a,pair.b].map((side,index)=>({pair:pair.id,side,index}))));
-  memoryBoard.innerHTML=cards.map((card,i)=>`<button class="memory-card" data-pair="${card.pair}" aria-label="Carte cachée ${i+1}"><span class="memory-card-inner"><span class="memory-face memory-back"><small>MBOKA</small></span><span class="memory-face memory-front"><span class="memory-icon">${card.side[0]}</span><strong>${card.side[1]}</strong><small>${card.side[2]}</small></span></span></button>`).join('');
-  memoryBestEl.textContent=localStorage.getItem('mbokaMemoryBest')||'—';
+  const collection=document.querySelector('#memoryCollection').value;memoryPairTarget=Number(document.querySelector('#memoryDifficulty').value);memoryFirst=null;memorySecond=null;memoryMoves=0;memoryMatches=0;memoryLocked=false;document.querySelector('#memoryComplete').hidden=true;memoryMovesEl.textContent=0;memoryPairsEl.textContent=`0/${memoryPairTarget}`;memoryBoard.dataset.pairs=memoryPairTarget;
+  const selectedPairs=shuffled(memoryCollections[collection]).slice(0,memoryPairTarget),cards=shuffled(selectedPairs.flatMap(pair=>[pair.a,pair.b].map((side,index)=>({pair:pair.id,side,index}))));
+  memoryBoard.innerHTML=cards.map((card,i)=>`<button class="memory-card" data-pair="${card.pair}" aria-label="${localStorage.getItem('mbokaLang')==='en'?'Hidden card':'Carte cachée'} ${i+1}"><span class="memory-card-inner"><span class="memory-face memory-back"><small>MBOKA</small></span><span class="memory-face memory-front"><span class="memory-icon">${card.side[0]}</span><strong>${memoryText(card.side[1])}</strong><small>${memoryText(card.side[2])}</small></span></span></button>`).join('');
+  memoryBestEl.textContent=localStorage.getItem(memoryRecordKey())||'—';
 }
 function flipMemory(card){
   if(memoryLocked||card===memoryFirst||card.classList.contains('matched'))return;card.classList.add('flipped');card.setAttribute('aria-label',`Carte ${card.querySelector('strong').textContent}`);
   if(!memoryFirst){memoryFirst=card;return}memorySecond=card;memoryMoves++;memoryMovesEl.textContent=memoryMoves;
-  if(memoryFirst.dataset.pair===memorySecond.dataset.pair){memoryFirst.classList.add('matched');memorySecond.classList.add('matched');memoryFirst=null;memorySecond=null;memoryMatches++;memoryPairsEl.textContent=`${memoryMatches}/6`;if(memoryMatches===6)finishMemory();return}
+  if(memoryFirst.dataset.pair===memorySecond.dataset.pair){memoryFirst.classList.add('matched');memorySecond.classList.add('matched');memoryFirst=null;memorySecond=null;memoryMatches++;memoryPairsEl.textContent=`${memoryMatches}/${memoryPairTarget}`;if(memoryMatches===memoryPairTarget)finishMemory();return}
   memoryLocked=true;setTimeout(()=>{memoryFirst.classList.remove('flipped');memorySecond.classList.remove('flipped');memoryFirst=null;memorySecond=null;memoryLocked=false},750);
 }
 function finishMemory(){
-  const previous=Number(localStorage.getItem('mbokaMemoryBest')||0);const best=previous?Math.min(previous,memoryMoves):memoryMoves;localStorage.setItem('mbokaMemoryBest',best);localStorage.setItem('mbokaMemoryComplete','1');memoryBestEl.textContent=best;document.querySelector('#memoryComplete').hidden=false;document.querySelector('#memoryTitle').textContent=memoryMoves<=9?'Mémoire exceptionnelle !':'Les six trésors sont réunis !';document.querySelector('#memoryMessage').textContent=`Partie terminée en ${memoryMoves} coups. Ton record est de ${best}.`;
+  const english=localStorage.getItem('mbokaLang')==='en',key=memoryRecordKey(),previous=Number(localStorage.getItem(key)||0),best=previous?Math.min(previous,memoryMoves):memoryMoves;localStorage.setItem(key,best);localStorage.setItem('mbokaMemoryBest',best);localStorage.setItem('mbokaMemoryComplete','1');memoryBestEl.textContent=best;document.querySelector('#memoryComplete').hidden=false;document.querySelector('#memoryTitle').textContent=memoryMoves<=memoryPairTarget+3?(english?'Exceptional memory!':'Mémoire exceptionnelle !'):(english?'All pairs found!':'Toutes les paires sont réunies !');document.querySelector('#memoryMessage').textContent=english?`Game completed in ${memoryMoves} moves. Your record is ${best}.`:`Partie terminée en ${memoryMoves} coups. Ton record est de ${best}.`;
 }
 memoryBoard.addEventListener('click',e=>{const card=e.target.closest('.memory-card');if(!card)return;if(card.classList.contains('matched')){speakPhrase(`${card.querySelector('strong').textContent}. ${card.querySelector('small').textContent}.`,card);return}flipMemory(card)});
 document.querySelector('#memoryRestart').addEventListener('click',startMemory);
+document.querySelector('#memoryCollection').addEventListener('change',startMemory);document.querySelector('#memoryDifficulty').addEventListener('change',startMemory);
 
 // Province Sprint: a replayable capital-matching challenge.
 let sprintDeck=[], sprintIndex=0, sprintScore=0, sprintStreak=0, sprintLives=3, sprintAnswered=false,sprintMode='solo',sprintTeamScores=[0,0];

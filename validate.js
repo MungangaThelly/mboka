@@ -28,6 +28,7 @@ assert(pilotMeasure.includes("'pre_score','post_score','gain'")&&pilotMeasure.in
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="quizMode"')&&html.includes('id="quizTopic"')&&html.includes('id="quizProvince"'),'Quiz mode, topic, or province controls are missing');
 assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"'),'Interactive music-learning interface is missing');
+assert(html.includes('id="memoryCollection"')&&html.includes('id="memoryDifficulty"'),'Memory collections or difficulty controls are missing');
 assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),'Interactive chess-learning interface is missing');
 assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is missing');
 assert(html.includes('class="skip-link"')&&html.includes('class="module-nav"'),'Accessible quick navigation is missing');
@@ -65,6 +66,7 @@ assert(app.includes('renderLessonPlan'),'Printable lesson-plan generator is miss
 assert(app.includes('renderProgressReport'),'Printable progress-report generator is missing');
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
 assert(app.includes('buildProvinceQuiz')&&app.includes('quizTopicGroups')&&app.includes('quizStorageKey'),'Expanded province, topic, and difficulty quiz modes are missing');
+assert(app.includes('memoryCollections')&&app.includes('memoryPairTarget')&&app.includes('memoryRecordKey'),'Expanded memory collections and levels are missing');
 assert(!/\beval\s*\(|new\s+Function\s*\(/.test(app),'Unsafe dynamic code execution found');
 assert((app.match(/name:'/g)||[]).length>=4&&app.includes('achievementProfiles'),'Achievement profiles are incomplete');
 assert(app.includes('kingdomProfiles')&&['Kongo','Luba','Lunda','Kuba'].every(name=>app.includes(`name:'${name}'`)),'Traditional kingdom profiles are incomplete');

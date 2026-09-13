@@ -32,6 +32,12 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Séparation des meilleurs scores par mode, thème, province et difficulté.
 - Added general, topic, and province modes with age-adapted question counts and separate progress records.
 
+### Jeu de mémoire enrichi / Expanded memory game
+
+- Ajout de quatre collections : trésors du Congo, provinces et chefs-lieux, nature et biodiversité, histoire et dates.
+- Ajout de trois difficultés de 4, 6 ou 8 paires et de records séparés pour chaque configuration.
+- Added four memory collections, three progressive board sizes, responsive layouts, and configuration-specific records.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

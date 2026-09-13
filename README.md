@@ -17,7 +17,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Communautés, langues, environnement, ressources, cuisine, musique, arts et personnalités
 - Quiz adaptés aux âges de 7–10 ans, 11–14 ans et 15 ans et plus, avec modes général, thématique et par province
 - Sprint des provinces en solo ou à deux équipes
-- Jeu de mémoire, défi de lingala et découverte quotidienne
+- Jeu de mémoire avec quatre collections et trois difficultés, défi de lingala et découverte quotidienne
 - Mathématiques du quotidien avec 10 unités et trois niveaux d’âge
 - Parcours musical interactif : notes, portée, touches blanches et touches noires, avec fichiers WAV de secours sur iPhone
 - Laboratoire d’échecs interactif en sept sections : règles, tactiques, finales, jeu positionnel et consignes vocales
@@ -56,7 +56,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Communities, languages, environment, resources, food, music, arts, and notable people
 - Age-based quizzes for ages 7–10, 11–14, and 15+, with general, topic, and province modes
 - Province Sprint in solo or two-team mode
-- Memory game, Lingala challenge, and daily discovery
+- Memory game with four collections and three difficulty levels, Lingala challenge, and daily discovery
 - Everyday mathematics with 10 units and three age levels
 - Interactive music journey covering notes, staff reading, white keys, and black keys, with WAV fallback on iPhone
 - Seven-section interactive chess laboratory covering rules, tactics, endings, positional play, and spoken instructions
