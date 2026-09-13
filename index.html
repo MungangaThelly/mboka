@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="lessons.css">
   <link rel="stylesheet" href="lingala.css">
   <link rel="stylesheet" href="achievements.css">
+  <link rel="stylesheet" href="history-timeline.css">
   <link rel="stylesheet" href="kingdoms.css">
   <link rel="stylesheet" href="presidency.css">
   <link rel="stylesheet" href="heroes.css">
@@ -46,13 +47,13 @@
   <header class="topbar">
     <a class="brand" href="#accueil" aria-label="Mboka, accueil"><span class="brand-mark">M</span><span>Mboka</span></a>
     <nav class="primary-nav" aria-label="Navigation principale">
-      <a href="#explorer">Explorer</a><a href="#provinces">Provinces</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#enseignants">Enseignants</a>
+      <a href="#explorer">Explorer</a><a href="#provinces">Provinces</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#enseignants">Enseignants</a><a href="#histoire">Histoire</a>
       <details class="pathway-menu"><summary>Parcours</summary><div><a href="#presidence">Citoyenneté</a><a href="#environnement">Environnement</a><a href="#ressources">Ressources responsables</a></div></details>
     </nav>
     <div class="header-actions"><button class="install-button" id="installApp" hidden>Installer</button><label class="language-picker" aria-label="Langue"><span>◎</span><select id="languageSelect"><option value="fr">FR</option><option value="en">EN</option></select></label><button class="icon-button" id="soundToggle" title="Activer ou couper les sons" aria-label="Activer ou couper les sons">🔊</button><button class="profile" id="profileButton" aria-label="Ouvrir mon profil">KM</button></div>
   </header>
 
-  <nav class="module-nav" aria-label="Accès rapide aux modules"><a href="#explorer">Découvrir</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#quiz">Quiz</a><a href="#enseignants">Enseignants</a><a href="#presidence">Citoyenneté</a><a href="#environnement">Environnement</a><a href="#ressources">Ressources</a></nav>
+  <nav class="module-nav" aria-label="Accès rapide aux modules"><a href="#explorer">Découvrir</a><a href="#math">Maths</a><a href="#musicLab">Musique</a><a href="#chessLab">Échecs</a><a href="#quiz">Quiz</a><a href="#enseignants">Enseignants</a><a href="#presidence">Citoyenneté</a><a href="#environnement">Environnement</a><a href="#ressources">Ressources</a><a href="#histoire">Histoire</a></nav>
 
   <main id="mainContent">
     <section class="hero" id="accueil">
@@ -167,6 +168,7 @@
       </div>
     </section>
     <section class="achievement-section" id="reussites"><div class="achievement-heading"><div><span class="eyebrow">Figures inspirantes</span><h2>Des parcours<br>qui font avancer.</h2></div><p id="achievementIntro">Découvre des Congolaises et Congolais dont le travail rayonne dans la science, la paix, le sport et la société.</p></div><div class="achievement-grid" id="achievementGrid"></div></section>
+    <section class="history-section" id="histoire"><div class="history-heading"><div><span class="eyebrow">CHRONOLOGIE INTERACTIVE</span><h2>L’histoire de la RDC<br>à travers le temps.</h2></div><p>Relie les sociétés anciennes, la période coloniale, l’indépendance et la construction politique contemporaine.</p></div><div class="history-filters" id="historyFilters" role="group" aria-label="Filtrer les périodes historiques"></div><div class="history-timeline" id="historyTimeline"></div><p class="history-note" id="historyNote"></p></section>
     <section class="kingdom-section" id="royaumes"><div class="kingdom-heading"><div><span class="eyebrow light">Histoire et mémoire</span><h2>Royaumes et<br>sociétés anciennes.</h2></div><p id="kingdomIntro">Explore quatre grands ensembles historiques liés au territoire congolais et à l’histoire de l’Afrique centrale.</p></div><div class="kingdom-grid" id="kingdomGrid"></div></section>
     <section class="presidency-section" id="presidence"><div class="presidency-heading"><div><span class="eyebrow">Depuis l’indépendance</span><h2>La présidence<br>à travers le temps.</h2></div><p id="presidencyIntro">Découvre les cinq présidents de la RDC depuis 1960 et les grandes transitions qui ont marqué le pays.</p></div><div class="presidency-timeline" id="presidencyTimeline"></div><div class="presidency-context" id="presidencyContext"></div><p class="presidency-source" id="presidencySource"></p></section>
     <section class="heroes-section" id="heros"><div class="heroes-heading"><div><span class="eyebrow light">Mémoire et courage</span><h2>Héros nationaux<br>et grandes figures.</h2></div><p id="heroesIntro">Découvre des femmes et des hommes dont le courage, les idées ou le sacrifice ont marqué l’histoire congolaise.</p></div><div class="heroes-note" id="heroesNote"></div><div class="heroes-grid" id="heroesGrid"></div><p class="heroes-source" id="heroesSource"></p></section>
@@ -236,6 +238,7 @@
   <script src="app.js"></script>
   <script src="content-en.js"></script>
   <script src="i18n.js"></script>
+  <script src="history-timeline.js"></script>
   <script src="math.js"></script>
   <script src="music-game.js"></script>
   <script src="chess-game.js"></script>

@@ -19,6 +19,12 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Intégration automatique des 145 territoires dans la fiche de leur province, avec une présentation adaptée au mobile.
 - Restructured all 26 profiles into four chapters and connected each province entry to its administrative territories.
 
+### Chronologie historique / History timeline
+
+- Ajout de huit repères historiques, filtrables entre sociétés anciennes, période coloniale, indépendance et RDC contemporaine.
+- Ajout de sources documentaires, d’une navigation directe et d’une présentation bilingue adaptée au mobile.
+- Added eight sourced historical landmarks with period filters, direct navigation, bilingual content, and responsive presentation.
+
 ## 2026-08-16
 
 ### Carte des 145 territoires / 145-territory map

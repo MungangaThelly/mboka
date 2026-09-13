@@ -3,6 +3,7 @@ const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
 const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','pilot-measure.js','pilot-measure.css','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
+['history-timeline.js','history-timeline.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
 assert(manifest.start_url==='./index.html','Manifest start URL is incorrect');
@@ -30,6 +31,7 @@ assert(html.includes('id="chessBoard"')&&html.includes('id="chessSectionList"'),
 assert(html.includes('id="chessSpeak"'),'Chess spoken-instruction control is missing');
 assert(html.includes('class="skip-link"')&&html.includes('class="module-nav"'),'Accessible quick navigation is missing');
 assert(html.includes('class="pathway-menu"')&&html.includes('href="#enseignants">Enseignants</a>'),'Teacher and learning-path navigation is missing');
+assert(html.includes('id="histoire"')&&html.includes('id="historyTimeline"')&&html.includes('href="#histoire">Histoire</a>'),'Interactive history timeline or navigation is missing');
 assert(html.includes('href="#musicLab">Musique</a>')&&html.includes('href="#chessLab">Échecs</a>'),'Music and chess navigation links are missing');
 assert(html.includes('id="provinceBoundaryLayer"')&&html.includes('geoBoundaries COD ADM1'),'Real 26-province map or attribution is missing');
 assert(html.includes('id="territoryBoundaryLayer"')&&html.includes('geoBoundaries COD ADM2'),'145-territory map or attribution is missing');
@@ -41,6 +43,8 @@ assert(html.includes('id="printProgress"'),'Printable progress-report button is 
 assert(html.includes('id="sprintMode"'),'Province Sprint team-mode control is missing');
 assert(!/<input[^>]+type=["'](?:email|password)["']/i.test(html),'Pilot must not request email or passwords');
 const app=fs.readFileSync('app.js','utf8');
+const history=fs.readFileSync('history-timeline.js','utf8');
+assert((history.match(/period:'/g)||[]).length===8&&['early','colonial','independence','contemporary'].every(period=>history.includes(`${period}:`)),'History timeline must contain eight events and four filters');
 const math=fs.readFileSync('math.js','utf8');
 assert(math.includes('const mathUnits=')&&((math.match(/title:\[/g)||[]).length===10),'Everyday mathematics must contain 10 units');
 const music=fs.readFileSync('music-game.js','utf8');

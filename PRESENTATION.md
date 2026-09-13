@@ -56,6 +56,8 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 
 ### Outils pour les enseignants
 
+La chronologie historique interactive relie huit repères, des sociétés anciennes à la Constitution de 2006. Elle peut être filtrée par période et chaque événement renvoie vers une source documentaire.
+
 L’espace enseignant permet de :
 
 - Générer une fiche de 5 ou 10 questions
@@ -196,6 +198,8 @@ The regional groupings and built-in map are learning aids. Its open-data boundar
 - **French and English** for the interface and principal content
 
 ### Teacher tools
+
+The interactive history timeline connects eight landmarks, from early societies to the 2006 Constitution. It can be filtered by period and every event links to a documentary source.
 
 The teacher area can:
 
