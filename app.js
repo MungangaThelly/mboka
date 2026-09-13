@@ -317,7 +317,9 @@ const memoryPairs=[
   {id:'pondu',a:['🥬','Pondu','CUISINE'],b:['🍲','Feuilles de manioc','INGRÉDIENT']},
   {id:'congo',a:['≈','Fleuve Congo','GÉOGRAPHIE'],b:['🚤','Grande voie d’eau','SON RÔLE']},
   {id:'virunga',a:['🌋','Virunga','NATURE'],b:['🦍','Volcans et gorilles','À DÉCOUVRIR']},
-  {id:'kinshasa',a:['🏙️','Kinshasa','VILLE'],b:['★','Capitale de la RDC','SON STATUT']}
+  {id:'kinshasa',a:['🏙️','Kinshasa','VILLE'],b:['★','Capitale de la RDC','SON STATUT']},
+  {id:'fufu',a:['🥣','Fufu',['CUISINE','FOOD']],b:['🌽',['Manioc ou maïs','Cassava or maize'],['INGRÉDIENTS','INGREDIENTS']]},
+  {id:'lingala',a:['💬','Mbote','LINGALA'],b:['👋',['Bonjour / salut','Hello / greetings'],['SIGNIFICATION','MEANING']]}
 ];
 const memoryCollections={treasures:memoryPairs,provinces:provinces.map((province,index)=>({id:`province-${index}`,a:['⌖',province[0],['PROVINCE','PROVINCE']],b:['🏙️',province[1],['CHEF-LIEU','CAPITAL']]})),nature:[
   ['okapi','🦓',['Okapi','Okapi'],['Forêts du nord-est','North-eastern forests']],['bonobo','🐒',['Bonobo','Bonobo'],['Sud du fleuve Congo','South of the Congo River']],['gorille','🦍',['Gorille de Grauer','Grauer’s gorilla'],['Forêts de l’Est','Eastern forests']],['fleuve','≈',['Fleuve Congo','Congo River'],['Grand réseau d’eau','Major water network']],['virunga','🌋',['Virunga','Virunga'],['Volcans et montagnes','Volcanoes and mountains']],['salonga','🌳',['Salonga','Salonga'],['Forêt tropicale','Tropical forest']],['tanganyika','🌊',['Lac Tanganyika','Lake Tanganyika'],['Est de la RDC','Eastern DRC']],['garamba','🦒',['Garamba','Garamba'],['Savanes du nord-est','North-eastern savannas']]

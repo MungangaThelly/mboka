@@ -71,6 +71,7 @@ L’espace enseignant permet de :
 - Générer et imprimer un plan de leçon de 45 minutes
 - Imprimer un rapport individuel de progression enregistré sur l’appareil
 - Organiser une activité sans créer de compte
+- Enregistrer et exporter des revues pédagogiques anonymes sur l’exactitude, la clarté et le contexte culturel
 
 Le **Programme pilote** recueille des évaluations anonymes sur la facilité d’utilisation, le plaisir, l’apprentissage et l’activité préférée. Un parcours mesurable ajoute un code élève anonyme réutilisable, un pré-test, un post-test comparable après au moins trois séances et un export CSV calculant le gain d’apprentissage. Les réponses restent sur l’appareil.
 
@@ -218,6 +219,7 @@ The teacher area can:
 - Generate and print a 45-minute lesson plan
 - Print an individual progress report stored on the device
 - Run activities without creating accounts
+- Save and export anonymous pedagogical reviews covering accuracy, clarity, and cultural context
 
 The **Pilot Program** collects anonymous ratings for usability, enjoyment, learning, and favourite activities. Responses remain on the device and can be exported as CSV.
 

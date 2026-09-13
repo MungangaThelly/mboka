@@ -3,7 +3,7 @@ const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
 const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','pilot-measure.js','pilot-measure.css','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
-['history-timeline.js','history-timeline.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
+['history-timeline.js','history-timeline.css','content-review.js','content-review.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
 assert(manifest.start_url==='./index.html','Manifest start URL is incorrect');
@@ -22,7 +22,9 @@ assert(html.includes('id="privacyLink"'),'Privacy link must have a stable transl
 assert(!fs.readFileSync('i18n.js','utf8').includes("'footer>p:nth-of-type(2)'"),'Localization must not overwrite the privacy-link container');
 assert(html.includes('id="pilotForm"'),'Anonymous pilot form is missing');
 assert(html.includes('id="pilotMeasure"')&&html.includes('id="exportPilotResults"'),'Measurable pre/post pilot flow is missing');
+assert(html.includes('id="contentReviewForm"')&&html.includes('id="exportContentReviews"'),'Anonymous educational content-review workflow is missing');
 const pilotMeasure=fs.readFileSync('pilot-measure.js','utf8');
+const contentReview=fs.readFileSync('content-review.js','utf8');assert(contentReview.includes('mbokaContentReviews')&&contentReview.includes('cultural_context')&&contentReview.includes('suggested_source'),'Content-review evidence export is incomplete');
 assert(html.includes('id="pilotExistingCode"')&&pilotMeasure.includes("phase==='pre'")&&pilotMeasure.includes("phase==='post'"),'Reusable anonymous pre/post learner codes are missing');
 assert(pilotMeasure.includes("'pre_score','post_score','gain'")&&pilotMeasure.includes('mbokaPilotTests'),'Pilot learning-gain export is missing');
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
@@ -67,6 +69,7 @@ assert(app.includes('renderProgressReport'),'Printable progress-report generator
 assert(app.includes("sprintMode==='team'"),'Province Sprint team-mode logic is missing');
 assert(app.includes('buildProvinceQuiz')&&app.includes('quizTopicGroups')&&app.includes('quizStorageKey'),'Expanded province, topic, and difficulty quiz modes are missing');
 assert(app.includes('memoryCollections')&&app.includes('memoryPairTarget')&&app.includes('memoryRecordKey'),'Expanded memory collections and levels are missing');
+assert((app.match(/\{id:'(?:okapi|rumba|pondu|congo|virunga|kinshasa|fufu|lingala)'/g)||[]).length===8,'The default memory collection must contain eight pairs for advanced mode');
 assert(!/\beval\s*\(|new\s+Function\s*\(/.test(app),'Unsafe dynamic code execution found');
 assert((app.match(/name:'/g)||[]).length>=4&&app.includes('achievementProfiles'),'Achievement profiles are incomplete');
 assert(app.includes('kingdomProfiles')&&['Kongo','Luba','Lunda','Kuba'].every(name=>app.includes(`name:'${name}'`)),'Traditional kingdom profiles are incomplete');

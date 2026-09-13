@@ -37,6 +37,14 @@ Internal offline-cache numbers are not used as public versions. This document re
 - Ajout de quatre collections : trésors du Congo, provinces et chefs-lieux, nature et biodiversité, histoire et dates.
 - Ajout de trois difficultés de 4, 6 ou 8 paires et de records séparés pour chaque configuration.
 - Added four memory collections, three progressive board sizes, responsive layouts, and configuration-specific records.
+- Correction du mode avancé : la collection « Trésors du Congo » contient désormais les huit paires nécessaires et affiche bien 16 cartes.
+
+### Validation pédagogique / Pedagogical review
+
+- Ajout d’un formulaire anonyme de revue des contenus destiné aux éducateurs et spécialistes congolais.
+- Évaluation de l’exactitude, de la clarté, du contexte culturel et du public conseillé, avec correction et source suggérées.
+- Conservation locale et export CSV pour constituer une trace vérifiable des relectures.
+- Added an anonymous educator-review workflow with local storage and evidence-ready CSV export.
 
 ## 2026-08-16
 
