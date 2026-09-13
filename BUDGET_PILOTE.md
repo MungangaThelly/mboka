@@ -1,8 +1,11 @@
 # Budget indicatif — Pilote éducatif Mboka
 
-**Version :** août 2026  
-**Devise :** couronnes suédoises (SEK)  
-**Scénario de référence :** 3 écoles, 120 élèves, 12 enseignants, 6 mois  
+**Version :** septembre 2026
+
+**Devise :** couronnes suédoises (SEK)
+
+**Scénario de référence :** 3 écoles, 120 élèves, 12 enseignants, 6 mois
+
 **Statut :** budget de discussion à confirmer avec l’organisation porteuse, le partenaire congolais et les écoles
 
 ## 1. Résumé financier
@@ -13,19 +16,19 @@
 | Contribution en nature indicative d’IT-Weor AB | 80 000 SEK |
 | Valeur totale indicative du pilote | 570 000 SEK |
 
-La contribution en nature d’IT-Weor correspond à la plateforme déjà développée, à sa documentation existante et à une partie du temps de préparation. Elle ne constitue pas une dépense remboursable et devra être validée selon les règles du partenaire porteur.
+La contribution en nature d’IT-Weor correspond à la plateforme déjà développée — carte des 26 provinces et 145 territoires, contenus interactifs, outils enseignants, mesure avant/après, revue pédagogique et fonctionnement hors connexion — à sa documentation existante et à une partie du temps de préparation. Elle ne constitue pas une dépense remboursable et devra être validée selon les règles du partenaire porteur.
 
 ## 2. Budget détaillé demandé
 
 | Nº | Poste | Hypothèse principale | Montant (SEK) |
 | ---: | --- | --- | ---: |
 | 1 | Coordination et préparation | gouvernance, diagnostic initial, plan de travail et réunions de coordination | 55 000 |
-| 2 | Expertise pédagogique congolaise | relecture des contenus, adaptation aux âges et au contexte scolaire | 55 000 |
-| 3 | Adaptation technique de Mboka | accessibilité, fonctionnement sur les appareils retenus, corrections et documentation | 75 000 |
+| 2 | Expertise pédagogique congolaise | revue documentée des contenus et sources, adaptation aux âges et au contexte scolaire | 55 000 |
+| 3 | Adaptation technique de Mboka | accessibilité, appareils retenus, outils de mesure, corrections et documentation | 75 000 |
 | 4 | Formation des enseignants | préparation des supports et ateliers pour 12 enseignants | 30 000 |
 | 5 | Équipements et connectivité | petit parc mutualisé, installation, énergie ou données uniquement selon le diagnostic | 65 000 |
 | 6 | Mise en œuvre locale | coordination des séances, accompagnement des écoles et assistance de proximité | 65 000 |
-| 7 | Suivi et évaluation | pré-test, post-test, questionnaires, analyse et contrôle de la qualité des données | 40 000 |
+| 7 | Suivi et évaluation | codes anonymes, pré-test, post-test, exports, analyse et contrôle de la qualité des données | 40 000 |
 | 8 | Protection et inclusion | consentement, protection des mineurs, accessibilité et participation équilibrée | 15 000 |
 | 9 | Déplacements et logistique locale | visites des écoles, transport du matériel et communications | 30 000 |
 | 10 | Restitution et rapport final | atelier, rapport du pilote et recommandations de passage à l’échelle | 15 000 |

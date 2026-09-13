@@ -6,6 +6,11 @@ Internal offline-cache numbers are not used as public versions. This document re
 
 ## 2026-09-13
 
+### Documentation du pilote / Pilot documentation
+
+- Actualisation cohérente de la présentation, de la note conceptuelle, du budget, du protocole, de l’outil d’évaluation et du dossier de partenariat selon l’état actuel de Mboka.
+- Updated the presentation, concept note, budget, protocol, evaluation tool, and partnership pack to match the current platform and its measurable pilot features.
+
 ### Mesure du pilote / Pilot measurement
 
 - Ajout d’un code élève anonyme réutilisable, de pré-tests et post-tests comparables pour trois niveaux d’âge.

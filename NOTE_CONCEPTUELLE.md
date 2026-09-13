@@ -1,6 +1,6 @@
 # Note conceptuelle — Projet pilote Mboka en République démocratique du Congo
 
-**Version de discussion partenariale — août 2026**
+**Version de discussion partenariale — septembre 2026**
 
 ## 1. Informations générales
 
@@ -22,7 +22,7 @@
 
 ## 2. Résumé du projet
 
-Mboka est une plateforme éducative bilingue, interactive, installable et utilisable hors connexion. Elle permet aux élèves, enseignants et familles de découvrir la République démocratique du Congo à travers des parcours thématiques, les profils des 26 provinces, une carte interactive, des quiz, des jeux et des outils pédagogiques.
+Mboka est une plateforme éducative bilingue, interactive, installable et utilisable hors connexion. Elle permet aux élèves, enseignants et familles de découvrir la République démocratique du Congo à travers des parcours thématiques, une encyclopédie structurée des 26 provinces, une carte interactive des 145 territoires, une chronologie historique sourcée, des quiz, des jeux et des outils pédagogiques.
 
 Le projet pilote vise à tester Mboka dans des établissements scolaires congolais, à mesurer ses effets sur les apprentissages et à adapter ses contenus aux réalités pédagogiques locales. Il donnera une place centrale aux enseignants et spécialistes congolais dans la validation des contenus et l’évolution de la plateforme.
 
@@ -40,16 +40,19 @@ Le diagnostic sera précisé avec les écoles partenaires avant le lancement du 
 
 Mboka propose actuellement :
 
-- des profils bilingues des 26 provinces ;
+- des profils bilingues structurés des 26 provinces, reliés à exactement 145 territoires ;
 - des contenus sur la géographie, l’histoire, les langues, la culture, l’environnement et les ressources ;
-- des quiz adaptés à plusieurs groupes d’âge ;
-- une carte interactive couvrant les 26 provinces et les 145 territoires, ainsi que des jeux éducatifs ;
+- une chronologie de huit repères historiques reliés à des sources documentaires ;
+- des quiz généraux, thématiques et provinciaux adaptés à trois groupes d’âge ;
+- une carte interactive couvrant les 26 provinces et les 145 territoires, un jeu de mémoire à quatre collections et trois difficultés, ainsi que des laboratoires de mathématiques, musique et échecs ;
 - des badges, scores et parcours de progression enregistrés sur l’appareil ;
 - des fiches d’activités, plans de leçon et rapports imprimables ;
+- un pré-test et un post-test anonymes comparables, avec calcul du gain et export CSV local ;
+- un outil de revue pédagogique anonyme et une bibliothèque documentaire visible ;
 - une installation en tant que Progressive Web App et un fonctionnement hors connexion ;
 - une approche respectueuse de la vie privée, sans compte utilisateur ni publicité.
 
-Pendant le pilote, des parcours complémentaires pourront être développés avec des experts congolais autour de la citoyenneté, de la biodiversité, du climat, de l’agriculture, des ressources naturelles et de leur exploitation responsable.
+Les parcours déjà disponibles sur la citoyenneté, l’environnement et l’utilisation responsable des ressources seront relus, adaptés et approfondis avec des experts congolais pendant le pilote.
 
 ## 5. Objectif général
 

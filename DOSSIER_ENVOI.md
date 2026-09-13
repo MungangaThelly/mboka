@@ -6,9 +6,9 @@
 
 Mboka est une plateforme éducative bilingue, installable et utilisable hors connexion, conçue par IT-Weor AB en Suède pour aider les élèves, enseignants et familles à mieux connaître la République démocratique du Congo.
 
-La plateforme propose des parcours culturels et civiques, des mathématiques, la musique, les échecs, des quiz, des outils enseignants et une carte interactive couvrant les 26 provinces et les 145 territoires. Elle fonctionne sans compte utilisateur, sans publicité et avec une collecte minimale de données.
+La plateforme propose une encyclopédie structurée des provinces, une chronologie historique sourcée, des parcours culturels et civiques, des mathématiques, la musique, les échecs, des quiz par thème ou province, quatre collections de mémoire, des outils enseignants et une carte interactive couvrant les 26 provinces et exactement 145 territoires. Elle fonctionne sans compte utilisateur, sans publicité et avec une collecte minimale de données.
 
-Le pilote proposé durerait six mois dans trois écoles, avec environ 120 élèves et 12 enseignants. Il mesurerait l’évolution des connaissances avant et après utilisation, l’adoption par les enseignants, le fonctionnement hors connexion et la satisfaction des participants. Les contenus prioritaires seraient relus et adaptés avec des éducateurs congolais.
+Le pilote proposé durerait six mois dans trois écoles, avec environ 120 élèves et 12 enseignants. Un code anonyme, un pré-test, un post-test et un export local du gain sont déjà intégrés. Le pilote mesurerait l’évolution des connaissances, l’adoption par les enseignants, le fonctionnement hors connexion et la satisfaction des participants. Les contenus et leurs sources seraient revus et adaptés avec des éducateurs congolais au moyen de l’outil de revue pédagogique intégré.
 
 IT-Weor AB recherche :
 

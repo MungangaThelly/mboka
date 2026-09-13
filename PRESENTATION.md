@@ -45,7 +45,7 @@ Les regroupements régionaux et la carte intégrée servent à l’apprentissage
 - **Carte vectorielle interactive à deux niveaux** montrant les 26 provinces et exactement 145 territoires regroupés par province
 - **Quiz par âge** : Explorateur (7–10 ans), Aventurier (11–14 ans) et Maître (15 ans et plus)
 - **Sprint des provinces** en solo ou en mode classe à deux équipes pour associer provinces et chefs-lieux
-- **Jeu de mémoire** autour des trésors du Congo
+- **Jeu de mémoire** avec quatre collections — trésors, provinces, nature et histoire — et trois difficultés de 4, 6 ou 8 paires
 - **Mathématiques du quotidien** avec 10 unités contextualisées et trois niveaux d’âge
 - **Parcours musical interactif** pour écouter, lire une portée et jouer sur les touches blanches et noires, avec lecture WAV compatible iPhone
 - **Laboratoire d’échecs interactif** en sept sections, des règles fondamentales au calcul positionnel, avec consignes vocales
@@ -133,8 +133,11 @@ La commande `npm test` contrôle notamment :
 - La présence de la politique de confidentialité
 - La présence de la politique de confidentialité complète en anglais
 - L’absence de dépendance réseau dans la page principale
-- Les 26 provinces et leurs données associées
+- Les 26 provinces, les 145 territoires et leurs données associées
 - Les banques de questions françaises et anglaises
+- Les modes du quiz, les quatre collections du jeu de mémoire et leurs niveaux de difficulté
+- Les huit repères de la chronologie et leurs sources documentaires
+- Les outils de mesure avant/après et de revue pédagogique
 - La cohérence entre les fichiers construits et le cache hors connexion
 - L’absence de champs d’identité dans le questionnaire pilote
 
@@ -149,7 +152,7 @@ Les contenus doivent continuer à être relus par des éducateurs, historiens, l
 1. Organiser un pilote avec 5 à 10 élèves et un enseignant, puis comparer les scores pré-test/post-test anonymes.
 2. Analyser les réponses anonymes exportées.
 3. Faire relire les contenus par des éducateurs congolais.
-4. Ajouter des sources visibles aux leçons.
+4. Étendre la bibliothèque documentaire et rattacher davantage de sources à chaque leçon.
 5. Développer Lingala, Swahili, Kikongo et Tshiluba avec des locuteurs qualifiés.
 6. Faire relire et approfondir progressivement les profils déjà disponibles pour les 26 provinces.
 7. Améliorer l’accessibilité et tester davantage d’appareils.
@@ -195,7 +198,7 @@ The regional groupings and built-in map are learning aids. Its open-data boundar
 - **Two-level interactive vector map** showing all 26 provinces and exactly 145 territories grouped by province
 - **Age-based quizzes**: Explorer (ages 7–10), Adventurer (ages 11–14), and Master (ages 15+)
 - **Province Sprint** in solo or two-team classroom mode, matching provinces with their capitals
-- **Memory game** featuring treasures of the Congo
+- **Memory game** with four collections—treasures, provinces, nature, and history—and 4-, 6-, or 8-pair difficulty levels
 - **Everyday mathematics** with 10 contextualised units and three age levels
 - **Interactive music journey** for listening, staff reading, and playing white and black keys, with iPhone-compatible WAV playback
 - **Seven-section interactive chess laboratory**, from fundamental rules to positional calculation, with spoken instructions
@@ -225,7 +228,7 @@ The teacher area can:
 - Run activities without creating accounts
 - Save and export anonymous pedagogical reviews covering accuracy, clarity, and cultural context
 
-The **Pilot Program** collects anonymous ratings for usability, enjoyment, learning, and favourite activities. Responses remain on the device and can be exported as CSV.
+The **Pilot Program** collects anonymous ratings for usability, enjoyment, learning, and favourite activities. A measurable pathway adds a reusable anonymous learner code, a pre-test, a comparable post-test after at least three sessions, and a CSV export that calculates learning gain. Responses remain on the device.
 
 ### Privacy and security
 
@@ -283,8 +286,11 @@ The `npm test` command checks:
 - Presence of the privacy notice
 - Presence of the complete English privacy information
 - Absence of external network dependencies in the main page
-- All 26 provinces and their associated data
+- All 26 provinces, exactly 145 territories, and their associated data
 - French and English question banks
+- Quiz modes, the four memory collections, and their difficulty levels
+- The eight timeline landmarks and their documentary sources
+- Pre/post measurement and pedagogical-review tools
 - Alignment between build files and the offline cache
 - Absence of identity fields in the pilot questionnaire
 
@@ -299,7 +305,7 @@ Congolese educators, historians, linguists, and subject specialists should conti
 1. Run a pilot with 5–10 students and one teacher, then compare anonymous pre-test/post-test scores.
 2. Analyse the exported anonymous feedback.
 3. Review the content with Congolese educators.
-4. Add visible sources to lessons.
+4. Expand the documentary library and connect more sources to each lesson.
 5. Develop Lingala, Swahili, Kikongo, and Tshiluba with qualified speakers.
 6. Continue reviewing and deepening the profiles already available for all 26 provinces.
 7. Improve accessibility and test more devices.

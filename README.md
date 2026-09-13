@@ -89,7 +89,7 @@ Mboka requires no account, name, email address, or password. Progress and option
 
 ## Production and validation
 
-The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks, all 26 provinces, exactly 145 territories, teacher tools, team mode, mathematics and music content, the seven chess sections, iPhone audio fallback, spoken controls, and offline asset coverage.
+The static production build is generated in `dist/` and deployed through Vercel. `npm test` verifies core security configuration, privacy coverage, bilingual content counts, question banks and quiz modes, all 26 provinces, exactly 145 territories, the sourced history timeline, memory collections and difficulties, teacher and pilot-measurement tools, pedagogical reviews, team mode, mathematics and music content, the seven chess sections, iPhone audio fallback, spoken controls, and offline asset coverage.
 
 Production: [mboka.nuhar.se](https://mboka.nuhar.se)
 

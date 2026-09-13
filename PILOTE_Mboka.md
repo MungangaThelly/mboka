@@ -1,6 +1,6 @@
 # Protocole du pilote éducatif Mboka
 
-**Version de travail — août 2026**
+**Version de travail — septembre 2026**
 
 ## 1. Finalité
 
@@ -164,6 +164,8 @@ Ces seuils sont des propositions à approuver avec les partenaires avant le pré
 La décision finale ne doit pas reposer sur un seul seuil. Un gain d’apprentissage doit être interprété avec la qualité de mise en œuvre, les absences, les difficultés techniques et les commentaires des participants.
 
 ## 11. Méthode d’évaluation
+
+La plateforme intègre déjà un parcours avant/après fondé sur un code élève anonyme réutilisable. Le post-test est proposé après au moins trois séances et l’export CSV local calcule automatiquement le score initial, le score final et le gain observé. Ces données doivent être vérifiées, agrégées et interprétées par l’équipe du pilote selon le protocole convenu.
 
 Chaque élève reçoit un code local aléatoire ou attribué par l’école, utilisé uniquement pour rapprocher le pré-test et le post-test. La liste reliant éventuellement ce code à un élève reste sous la responsabilité de l’école et n’est transmise ni à IT-Weor ni au bailleur.
 

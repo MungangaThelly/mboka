@@ -1,8 +1,12 @@
 # Outil d’évaluation du pilote Mboka
 
+**Version de travail — septembre 2026**
+
 **Version de travail — à relire et tester avec les enseignants congolais avant utilisation**
 
 ## 1. Consignes
+
+Mboka intègre désormais une version numérique anonyme du pré-test et du post-test, accessible dans l’espace du programme pilote. Elle utilise un code élève réutilisable, recommande au moins trois séances avant le post-test et produit un export CSV local avec le gain calculé. Le présent document reste la référence imprimable et permet une administration sur papier lorsque les appareils ou l’organisation de la classe l’exigent.
 
 - utiliser ce questionnaire avant la première séance et après la quatrième séance ;
 - prévoir environ 15 minutes ;
