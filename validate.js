@@ -3,6 +3,7 @@ const vm=require('vm');
 function assert(condition,message){if(!condition)throw new Error(message)}
 const required=['index.html','privacy.html','app.js','i18n.js','content-en.js','math.js','music-game.js','chess-game.js','pilot-measure.js','pilot-measure.css','province-boundaries.js','territory-boundaries.js','territory-catalog.js','generate-territory-map.js','drc-adm2.geojson','sw.js','manifest.webmanifest','vercel.json','hardening.css','responsive.css','real-map.css','territories.css','achievements.css','kingdoms.css','communities.css','food.css','environment.css','resources.css','creativity.css','math.css','music-game.css','chess-game.css','icon.svg','README.md','PRESENTATION.md','CHANGELOG.md'];
 required.forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
+['pilot-dashboard.js','pilot-dashboard.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 ['history-timeline.js','history-timeline.css','content-review.js','content-review.css','sources.js','sources.css'].forEach(file=>assert(fs.existsSync(file),`Missing required file: ${file}`));
 const manifest=JSON.parse(fs.readFileSync('manifest.webmanifest','utf8'));
 const vercel=JSON.parse(fs.readFileSync('vercel.json','utf8'));
@@ -27,6 +28,9 @@ const pilotMeasure=fs.readFileSync('pilot-measure.js','utf8');
 const contentReview=fs.readFileSync('content-review.js','utf8');assert(contentReview.includes('mbokaContentReviews')&&contentReview.includes('cultural_context')&&contentReview.includes('suggested_source'),'Content-review evidence export is incomplete');
 assert(html.includes('id="pilotExistingCode"')&&pilotMeasure.includes("phase==='pre'")&&pilotMeasure.includes("phase==='post'"),'Reusable anonymous pre/post learner codes are missing');
 assert(pilotMeasure.includes("'pre_score','post_score','gain'")&&pilotMeasure.includes('mbokaPilotTests'),'Pilot learning-gain export is missing');
+const pilotDashboard=fs.readFileSync('pilot-dashboard.js','utf8');
+assert(html.includes('id="impactDashboard"')&&html.includes('id="impactCsvFile"')&&html.includes('id="printImpactReport"'),'Local pilot impact dashboard is missing');
+assert(pilotDashboard.includes('parseCsv')&&pilotDashboard.includes('2*1024*1024')&&pilotDashboard.includes('window.print()'),'Pilot dashboard validation, local analysis, or printable report is missing');
 assert(html.includes('id="mathUnitGrid"')&&html.includes('id="mathLevelPicker"'),'Everyday mathematics interface is missing');
 assert(html.includes('id="quizMode"')&&html.includes('id="quizTopic"')&&html.includes('id="quizProvince"'),'Quiz mode, topic, or province controls are missing');
 assert(html.includes('id="musicKeyboard"')&&html.includes('id="musicSectionList"'),'Interactive music-learning interface is missing');

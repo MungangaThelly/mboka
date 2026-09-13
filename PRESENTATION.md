@@ -77,6 +77,8 @@ L’espace enseignant permet de :
 
 Le **Programme pilote** recueille des évaluations anonymes sur la facilité d’utilisation, le plaisir, l’apprentissage et l’activité préférée. Un parcours mesurable ajoute un code élève anonyme réutilisable, un pré-test, un post-test comparable après au moins trois séances et un export CSV calculant le gain d’apprentissage. Les réponses restent sur l’appareil.
 
+Le **tableau de bord d’impact** importe ce CSV directement dans le navigateur, rapproche les évaluations anonymes complètes, normalise les scores, présente les résultats par école et niveau, puis génère un rapport imprimable. Le fichier importé n’est ni téléversé ni conservé par Mboka.
+
 ### Confidentialité et sécurité
 
 Mboka applique une approche de minimisation des données :
@@ -229,6 +231,8 @@ The teacher area can:
 - Save and export anonymous pedagogical reviews covering accuracy, clarity, and cultural context
 
 The **Pilot Program** collects anonymous ratings for usability, enjoyment, learning, and favourite activities. A measurable pathway adds a reusable anonymous learner code, a pre-test, a comparable post-test after at least three sessions, and a CSV export that calculates learning gain. Responses remain on the device.
+
+The **impact dashboard** imports that CSV directly in the browser, pairs complete anonymous assessments, normalises scores, presents results by school and level, and generates a printable report. Mboka neither uploads nor stores the imported file.
 
 ### Privacy and security
 

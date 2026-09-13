@@ -6,6 +6,12 @@ Internal offline-cache numbers are not used as public versions. This document re
 
 ## 2026-09-13
 
+### Tableau de bord d’impact / Impact dashboard
+
+- Ajout d’un import CSV local qui rapproche les pré-tests et post-tests anonymes, calcule les moyennes normalisées et présente la couverture et les résultats par groupe.
+- Ajout d’un rapport d’impact imprimable, sans téléversement ni conservation du fichier importé.
+- Added local CSV analysis, anonymous pre/post pairing, normalised metrics, group summaries, and a printable impact report without uploading the imported file.
+
 ### Documentation du pilote / Pilot documentation
 
 - Actualisation cohérente de la présentation, de la note conceptuelle, du budget, du protocole, de l’outil d’évaluation et du dossier de partenariat selon l’état actuel de Mboka.

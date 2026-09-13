@@ -25,6 +25,7 @@ Mboka aide les élèves, familles et enseignants à explorer la République dém
 - Badges, scores et progression conservés localement
 - Fiches d’activités, plans de leçon et rapports de progression imprimables
 - Pilote éducatif mesurable : code élève anonyme réutilisable, pré-test/post-test et export CSV local du gain d’apprentissage
+- Tableau de bord d’impact local : import du CSV, moyennes normalisées, couverture, résultats par groupe et rapport imprimable
 - Revue pédagogique anonyme pour documenter exactitude, clarté, contexte culturel et sources suggérées
 - Bibliothèque documentaire visible et statut éditorial distinguant données sourcées et aperçus à relire localement
 - Installation PWA et fonctionnement hors connexion
@@ -66,6 +67,7 @@ Mboka helps students, families, and teachers explore the Democratic Republic of 
 - Badges, scores, and progress stored locally
 - Printable worksheets, lesson plans, and progress reports
 - Measurable educational pilot with reusable anonymous learner codes, pre/post tests, and local learning-gain CSV export
+- Local impact dashboard with CSV import, normalised averages, data coverage, group results, and a printable report
 - Anonymous pedagogical review for documenting accuracy, clarity, cultural context, and suggested sources
 - Visible documentary library and editorial status distinguishing sourced data from locally reviewable overviews
 - PWA installation and offline use
